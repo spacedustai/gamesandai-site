@@ -194,6 +194,10 @@ details.incident .body{padding:0 14px 12px}
 :root[data-os="win"] .os-panel[data-panel="mac"]{display:none}
 :root:not([data-os]) .os-tabs{display:none}
 
+/* Long words in section titles (e.g. "Commendations") overflow a 400px
+   screen at 2.5rem; scale titles down on narrow screens only. */
+h2.sec{font-size:min(var(--step-3),9vw)}
+
 /* Inline styles from the prototypes, moved here */
 .quest h2.sec{font-size:var(--step-2)}
 .next .eyebrow{margin:0}
@@ -201,3 +205,76 @@ details.incident .body{padding:0 14px 12px}
 /* "Up next" when the next lesson isn't written yet */
 .next .soon{font-family:var(--font-display);font-size:1.2rem;color:var(--ink-soft)}
 .next .soon small{display:inline-block;margin-left:8px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--rule);border-radius:4px;padding:1px 6px;vertical-align:middle}
+
+/* Course home and week pages: one column, no lesson rail */
+.page{padding-block:44px 80px}
+.page > section.wide{max-width:none}
+.page > section.wide > p{max-width:68ch}
+
+/* World map of Gobbleton (course home). The SVG is decorative; the district
+   list below it carries the same links for keyboard and screen readers. */
+.gmap{margin:22px 0 8px;overflow-x:auto}
+.gmap svg{display:block;width:100%;min-width:560px;height:auto}
+.gmap .ground{fill:var(--paper-2);stroke:var(--rule);stroke-width:2}
+.gmap .road{fill:none;stroke:var(--rule);stroke-width:20;stroke-linecap:round;stroke-linejoin:round}
+.gmap .road-line{fill:none;stroke:var(--ink-soft);stroke-width:2;stroke-dasharray:8 10}
+.gmap .plot{fill:var(--paper);stroke:var(--ink);stroke-width:2}
+.gmap .locked .plot{stroke:var(--ink-soft);stroke-dasharray:6 5}
+.gmap .open .plot{fill:color-mix(in srgb,var(--parcel) 30%,var(--paper));stroke:var(--rust);stroke-width:2.5}
+.gmap a:hover .plot{fill:color-mix(in srgb,var(--parcel) 55%,var(--paper))}
+.gmap .icon{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.gmap .locked .icon{stroke:var(--ink-soft)}
+.gmap .dname{font-family:var(--font-display);font-size:15px;fill:var(--ink);text-anchor:middle}
+.gmap .locked .dname{fill:var(--ink-soft)}
+.gmap .weeks{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;fill:var(--ink-soft);text-anchor:middle}
+.gmap .here rect{fill:var(--parcel);stroke:var(--parcel-ink);stroke-width:1.5}
+.gmap .here text{font-family:var(--font-mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;fill:var(--parcel-ink);text-anchor:middle}
+.gmap .city{font-family:var(--font-display);font-size:30px;fill:var(--ink);text-anchor:middle;letter-spacing:.04em}
+.gmap .city-sub{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;fill:var(--ink-soft);text-anchor:middle}
+
+.districts{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.district{border:1px solid var(--rule);border-radius:8px;padding:12px 14px;background:var(--paper)}
+.district.open{border:2px solid var(--ink)}
+.district .eyebrow{margin:0 0 2px}
+.district h3{font-family:var(--font-display);font-weight:400;font-size:1.25rem;line-height:1.15;margin:0 0 6px}
+.district h3 a{color:var(--ink);text-decoration-color:var(--parcel);text-decoration-thickness:3px}
+.district h3 a:hover{color:var(--rust)}
+.district p{margin:0 0 6px;font-size:.95rem}
+.district .status{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft);margin:0}
+.district.open .status{color:var(--moss)}
+
+/* Syllabus */
+.phase h3{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:30px 0 8px}
+.weeks{list-style:none;margin:0;padding:0;border-top:3px solid var(--ink)}
+.weeks > li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.weeks .wk{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);padding-top:3px}
+.weeks h4{margin:0 0 4px;font-size:1.05rem}
+.weeks p{margin:0;font-size:.95rem}
+.weeks .ingame{color:var(--ink-soft);font-size:.9rem;margin-top:4px}
+.weeks .soon-tag,.module .soon-tag{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);border:1.5px solid var(--rule);border-radius:4px;padding:0 5px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+@media (max-width:520px){.weeks > li{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+/* Week page: the lesson list */
+.modules{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:12px}
+.module{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:start;border:1px solid var(--rule);border-radius:10px;padding:16px 18px;background:var(--paper)}
+.module .no{font-family:var(--font-display);font-size:1.1rem;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--parcel);color:var(--parcel-ink)}
+.module.soon .no{background:var(--paper-2);color:var(--ink-soft)}
+.module.lab{border:2px solid var(--ink)}
+.module .eyebrow{margin:0 0 2px}
+.module h3{font-family:var(--font-display);font-weight:400;font-size:1.4rem;line-height:1.1;margin:0 0 6px;text-wrap:balance}
+.module h3 a{color:var(--ink);text-decoration:none}
+.module h3 a:hover{color:var(--rust);text-decoration:underline}
+.module.soon h3{color:var(--ink-soft)}
+.module p{margin:0 0 8px}
+.module .facts{font-family:var(--font-mono);font-size:.8rem;color:var(--ink-soft);margin:0;display:flex;flex-wrap:wrap;gap:4px 18px}
+.module .signed{display:none;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--moss);border:2px solid var(--moss);padding:1px 8px;transform:rotate(-2deg);margin-left:8px;vertical-align:3px}
+.module.is-done .signed{display:inline-block}
+
+/* Week page: achievements, using the lesson badge with saved progress */
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.badges .badge{margin-top:0}
+.badge.is-done{border-style:solid;border-color:var(--parcel)}
+.badge.is-done .medal{filter:none;opacity:1;background:var(--parcel)}
+.when-done{display:none}
+.is-done .when-done{display:inline}
+.is-done .when-locked{display:none}
