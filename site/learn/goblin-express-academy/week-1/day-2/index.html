@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Snag Gets a Route — Goblin Express Academy</title>
+<meta name="description" content="Turn yesterday&#x27;s open field into a real level inside the Depot, and learn the rhythm that keeps agent work under control: one change, play it, save it, or send it back.">
+<link rel="canonical" href="https://gamesandai.org/learn/goblin-express-academy/week-1/day-2/">
+<link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Snag Gets a Route — Goblin Express Academy">
+<meta property="og:description" content="Turn yesterday&#x27;s open field into a real level inside the Depot, and learn the rhythm that keeps agent work under control: one change, play it, save it, or send it back.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gamesandai.org/learn/goblin-express-academy/week-1/day-2/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../../../assets/css/academy.css">
+<!-- Picks macOS or Windows before first paint; see academy.js. -->
+<script>try{var o=localStorage.getItem('gea:os')}catch(e){}document.documentElement.dataset.os=o==='mac'||o==='win'?o:/Win/i.test(navigator.userAgent)?'win':'mac'</script>
+<script src="../../../../assets/js/academy.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../../../../">Games and AI</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../../" aria-current="true">Learn</a>
+      <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+.map{font:600 .95rem/1.25 var(--font-mono);background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;overflow-x:auto;white-space:pre;letter-spacing:.18em;margin:10px 0}
+.map .w{color:var(--ink-soft)} .map .c{color:var(--rust)} .map .p{color:var(--moss)} .map .d{color:var(--parcel-ink);background:var(--parcel);border-radius:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:var(--step--1);color:var(--ink-soft);margin:0 0 14px}
+.legend code{letter-spacing:0}
+</style>
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Learn</a> / <a href="../../">Goblin Express Academy</a> / <a href="../">Week 1: The Depot</a> / Day 2</nav>
+    <span class="stamp">Training Module 1.2</span>
+    <h1 id="top">Snag Gets a Route</h1>
+    <p class="dek">Turn yesterday's open field into a real level inside the Depot, and learn the rhythm that keeps agent work under control: one change, play it, save it, or send it back.</p>
+    <ul class="meta">
+      <li><b>~70 min</b> core + optional side quest</li>
+      <li><b>Mac or Windows</b></li>
+      <li><b>You'll ship:</b> a walled Depot level with dashing and juice</li>
+    </ul>
+    <div class="road" aria-hidden="true">
+      <div class="runner">
+        <svg viewBox="0 0 120 110" role="presentation">
+          <rect x="62" y="22" width="44" height="40" rx="4" fill="#F2BE3A" stroke="#2A2008" stroke-width="3"/>
+          <path d="M62 34h44M84 22v40" stroke="#2A2008" stroke-width="2"/>
+          <text x="84" y="57" font-family="monospace" font-size="8" text-anchor="middle" fill="#2A2008">FRAGILE?</text>
+          <ellipse cx="44" cy="54" rx="22" ry="24" fill="#6E9B4A" stroke="#1F2219" stroke-width="3"/>
+          <path d="M24 42 L2 30 L24 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M62 40 L80 26 L64 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="38" cy="50" r="6" fill="#FFF8E0"/><circle cx="54" cy="50" r="6" fill="#FFF8E0"/>
+          <circle cx="40" cy="51" r="3" fill="#1F2219"/><circle cx="56" cy="51" r="3" fill="#1F2219"/>
+          <path d="M36 66 Q46 74 58 64" stroke="#1F2219" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M44 67 l3 5 l3-5" fill="#FFF8E0" stroke="#1F2219" stroke-width="1.5"/>
+          <path d="M34 78 L28 100 M54 78 L62 100" stroke="#1F2219" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="dropoff">Depot door</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Lesson parts">
+    <h2>Today's shift</h2>
+    <ol>
+      <li><a href="#memo"><span class="n">00</span><span>Shift memo</span><span class="t">5m</span></a></li>
+      <li><a href="#fresh"><span class="n">01</span><span>Clocking back in</span><span class="t">10m</span></a></li>
+      <li><a href="#rhythm"><span class="n">02</span><span>The delivery rhythm</span><span class="t">10m</span></a></li>
+      <li><a href="#route"><span class="n">03</span><span>Build the route</span><span class="t">40m</span></a></li>
+      <li><a href="#checkpoint"><span class="n">04</span><span>Checkpoint</span><span class="t">5m</span></a></li>
+      <li><a href="#quest"><span class="n">★</span><span>Side quest</span><span class="t">30m</span></a></li>
+    </ol>
+    <div class="total">Core: 70 min · Optional: +30</div>
+  </nav>
+
+  <main>
+    <section id="memo">
+      <p class="eyebrow">00 · Shift memo</p>
+      <h2 class="sec">Couriers need roads</h2>
+      <div class="memo">
+        <header>
+          <span>To:</span><b>Courier Snag's handler (you)</b>
+          <span>From:</span><b>Madam Grizzletooth, Proprietor</b>
+          <span>Re:</span><b>Yesterday's "delivery zone" was a field</b>
+        </header>
+        <p>Good first shift. The customers were rude, which means they're engaged.</p>
+        <p>Today Snag works inside the Depot, among the walls, the crate stacks and the forklift nobody admits to driving. That means a real level, real collisions, and a lot more ways for things to go sideways.</p>
+        <p>Something you'll notice: Claude has no memory of yesterday's conversation. Everything it knows about our game, it learns by reading the warehouse. Keep the warehouse tidy.</p>
+        <p class="sig">— G.</p>
+      </div>
+      <h3>By the end of this module you will</h3>
+      <ul>
+        <li>Start a fresh session and get Claude up to speed from the project itself.</li>
+        <li>Work in small loops: one change, play, then commit or roll back.</li>
+        <li>Show Claude a bug with a screenshot instead of describing it.</li>
+        <li>Undo a change you don't like, using Git through Claude.</li>
+        <li>Have a Depot level you can edit by hand, with a dash and some juice.</li>
+      </ul>
+    </section>
+
+    <section id="fresh">
+      <p class="eyebrow">01 · Clocking back in · 10 min</p>
+      <h2 class="sec">The courier forgets. The warehouse doesn't.</h2>
+      <p class="lead">Each new Claude Code session starts with an empty conversation. What carries over is your project: the files, and the Git history you started yesterday.</p>
+      <div class="code"><span class="lbl">Terminal or PowerShell</span><pre>cd goblin-express
+claude</pre><button type="button">Copy</button></div>
+      <p>Then get Claude oriented before you ask for anything:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Read this project and tell me in five bullets what the game does today and how the code is organized. Then look at the Git history and tell me what's been committed so far.</pre><button type="button">Copy</button></div>
+      <p>Check the summary against what you remember. If Claude misreads something, that's useful: it's a sign the code isn't as clear as you thought, and the next person (or agent) will trip on it too.</p>
+      <p class="note">Mid-task and want yesterday's conversation back? <code>claude --continue</code> resumes the most recent conversation in this folder. For a new day's work, a fresh start is usually better: less stale context, and Claude reads the code as it is now.</p>
+
+      <div class="policy">
+        <span class="num">§5</span>
+        <p><strong>Company policy</strong>If it matters tomorrow, it lives in the files. A decision made only in chat is a decision forgotten.</p>
+      </div>
+    </section>
+
+    <section id="rhythm">
+      <p class="eyebrow">02 · The delivery rhythm · 10 min</p>
+      <h2 class="sec">One parcel at a time</h2>
+      <p class="lead">Ask for five features at once and you'll get five half-right changes tangled together. Ask for one, check it, and save it, and every step is easy to judge and easy to undo.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 640 220" role="img" aria-label="The delivery rhythm: ask for one change, play it, then commit if good or describe the problem or roll back if not">
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--ink-soft)"/></marker>
+          </defs>
+          <g font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+            <rect x="12" y="78" width="130" height="62" rx="8" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/>
+            <text x="77" y="105" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Ask</text>
+            <text x="77" y="124" text-anchor="middle" font-size="12" fill="var(--ink-soft)">one change</text>
+
+            <rect x="196" y="78" width="130" height="62" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="261" y="105" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Play it</text>
+            <text x="261" y="124" text-anchor="middle" font-size="12" fill="var(--ink-soft)">you're the tester</text>
+
+            <polygon points="400,109 444,79 488,109 444,139" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="444" y="114" text-anchor="middle" font-weight="700" font-size="14" fill="var(--ink)">Good?</text>
+
+            <rect x="530" y="78" width="100" height="62" rx="8" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)" stroke-width="2"/>
+            <text x="580" y="105" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Commit</text>
+            <text x="580" y="124" text-anchor="middle" font-size="12" fill="var(--ink-soft)">save point</text>
+
+            <rect x="374" y="168" width="140" height="44" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="444" y="195" text-anchor="middle" font-size="13" fill="var(--ink)">Roll back to last save</text>
+
+            <rect x="374" y="8" width="140" height="44" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="444" y="35" text-anchor="middle" font-size="13" fill="var(--ink)">Say what feels wrong</text>
+          </g>
+          <g fill="none" stroke="var(--ink-soft)" stroke-width="1.5">
+            <path d="M142 109 H194" marker-end="url(#arr2)"/>
+            <path d="M326 109 H398" marker-end="url(#arr2)"/>
+            <path d="M488 109 H528" marker-end="url(#arr2)"/>
+            <path d="M444 79 V54" marker-end="url(#arr2)"/>
+            <path d="M374 30 H261 V76" marker-end="url(#arr2)"/>
+            <path d="M444 139 V166" marker-end="url(#arr2)"/>
+            <path d="M374 190 H77 V142" marker-end="url(#arr2)"/>
+          </g>
+          <g font-family="JetBrains Mono, monospace" font-size="11" fill="var(--ink-soft)">
+            <text x="508" y="101" text-anchor="middle">yes</text>
+            <text x="452" y="64">close</text>
+            <text x="452" y="158">way off</text>
+          </g>
+        </svg>
+        <figcaption>After a commit, the next change starts back at Ask. Close means describe the problem and let Claude adjust. Way off means roll back and re-brief; don't patch a bad foundation.</figcaption>
+      </figure>
+
+      <p>In the default permission mode, Claude shows each edit before applying it. You don't need to read every line, but skim them: you'll start to recognize when a "small fix" is touching far more of the file than it should. That's your cue to press <kbd>Esc</kbd> and ask why.</p>
+    </section>
+
+    <section id="route">
+      <p class="eyebrow">03 · Build the route · 40 min</p>
+      <h2 class="sec">Inside the Depot</h2>
+
+      <h3>1. Lay out the Depot</h3>
+      <p>Levels are content, and content should be easy for humans to change. So we'll ask for the map as plain text in the code:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Replace the open field with a small level: the Goblin Express Depot. Use a tile grid with outer walls and stacks of crates that Snag can't walk through, leaving a few different routes between the pickup shelves and the drop-off door. Parcels should only spawn at the pickup shelves.
+
+Store the level layout as a text map in the code, one character per tile, so I can edit it by hand. Tell me your approach and the map legend before you build.</pre><button type="button">Copy</button></div>
+      <p>The map Claude proposes will look something like this:</p>
+      <div class="map" role="img" aria-label="Example text map of the Depot"><span class="w">####################</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CC</span>      <span class="c">CC</span>     <span class="w">#</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CC</span>  <span class="c">C</span>   <span class="c">CC</span>  <span class="c">C</span>  <span class="w">#</span>
+<span class="w">#</span>       <span class="c">C</span>          <span class="w">#</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CCCC</span>   <span class="c">CC</span>     <span class="d">D</span><span class="w">#</span>
+<span class="w">#</span>          <span class="c">CC</span>     <span class="d">D</span><span class="w">#</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CC</span>  <span class="c">C</span>          <span class="w">#</span>
+<span class="w">####################</span></div>
+      <p class="legend"><span><code>#</code> wall</span><span><code>C</code> crates</span><span><code>P</code> pickup shelf</span><span><code>D</code> drop-off door</span></p>
+      <p>When it's built, play a shift. Then do something important: open <code>index.html</code> in any text editor, move a few crates in the map yourself, save, and reload the game. If your edit works, the level is truly data. If it breaks, tell Claude exactly what you changed and what happened.</p>
+      <p>Happy with it? One word does it:</p>
+      <div class="code"><span class="lbl">Prompt</span><pre>Commit this.</pre><button type="button">Copy</button></div>
+
+      <h3>2. Show, don't tell</h3>
+      <p>Collisions on a new tile map are rarely perfect. Snag might snag (sorry) on corners, slip into a crate, or stop dead against a wall. Describing that precisely is hard; a screenshot is easy.</p>
+
+      <div class="os">
+        <div class="os-tabs" role="tablist" aria-label="Operating system">
+          <button type="button" role="tab" data-os="mac" aria-selected="true">macOS</button>
+          <button type="button" role="tab" data-os="win" aria-selected="false">Windows</button>
+        </div>
+        <div class="os-panel" data-panel="mac" role="tabpanel">
+          <p>Press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> and drag around the problem. The screenshot lands on your Desktop.</p>
+        </div>
+        <div class="os-panel" data-panel="win" role="tabpanel">
+          <p>Press <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> and drag around the problem. Click the notification to open it in Snipping Tool and save it somewhere easy to find, like your Desktop.</p>
+        </div>
+      </div>
+      <p>Now drag the image file onto the Claude Code window. Its path drops into your prompt. Finish the sentence:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>[screenshot] Snag gets stuck on this crate corner when I hold right and up together. He should slide along walls instead of stopping dead.</pre><button type="button">Copy</button></div>
+      <p class="note">No bugs to show? Screenshot the whole level and ask Claude what a new player would find confusing about it. It's surprisingly good at spotting readability problems.</p>
+
+      <h3>3. Return to sender</h3>
+      <p>Not every idea survives contact with the controller. Try a bold one:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Make the camera follow Snag and zoom in 2x, so the Depot feels bigger than the screen.</pre><button type="button">Copy</button></div>
+      <p>Play it. Whether you love it or hate it, practice throwing it away:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>I don't want that. Put the game back exactly the way it was at the last commit.</pre><button type="button">Copy</button></div>
+      <p>Reload and check it's really back. Liked the camera after all? Ask Claude to bring it back properly and commit it. The point is that you now know an experiment costs nothing, because the save point is always there.</p>
+
+      <div class="policy">
+        <span class="num">§6</span>
+        <p><strong>Company policy</strong>Don't patch a bad delivery. If a change is way off, send it back to the last commit and re-brief. Fixing a wrong foundation costs more than rebuilding it.</p>
+      </div>
+
+      <h3>4. Make Snag feel scrappy</h3>
+      <p>Movement through a maze is where game feel lives. Describe the feeling and let Claude find the levers:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Snag should feel quick and scrappy. Add a short dash on Space with a cooldown, a little dust puff when he dashes, and a tiny screen shake when a parcel is delivered. Put every tuning value (speeds, dash length, cooldown, shake strength) together near the top of the file with a short comment on each.</pre><button type="button">Copy</button></div>
+      <p>Then tune by feel, one value at a time, in plain words: "the dash feels floaty," "the shake is seasick." Commit when it feels right.</p>
+
+      <div class="policy">
+        <span class="num">§7</span>
+        <p><strong>Company policy</strong>Every tuning number lives in one place. Designers, artists and future-you will thank you, and so will Claude.</p>
+      </div>
+
+      <h3>5. Clock out</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit any remaining changes, then show me today's commits, one line each.</pre><button type="button">Copy</button></div>
+      <p>That list is your shift log. If it's one giant commit, that's fine for today; notice how much harder it would be to undo just the camera or just the dash.</p>
+    </section>
+
+    <section id="checkpoint">
+      <p class="eyebrow">04 · Checkpoint · 5 min</p>
+      <h2 class="sec">Sign the timesheet</h2>
+      <p>Tick these off. They're saved in this browser only.</p>
+      <ul class="checklist" data-lesson="w1d2">
+        <li><label><input type="checkbox" id="d1"><span>Claude summarized the project from a fresh session, and the summary was right</span></label></li>
+        <li><label><input type="checkbox" id="d2"><span>The Depot level loads from a text map, and my own hand edit to it worked</span></label></li>
+        <li><label><input type="checkbox" id="d3"><span>I gave Claude a screenshot and it fixed or explained what it showed</span></label></li>
+        <li><label><input type="checkbox" id="d4"><span>I rolled the game back to the last commit, and checked it really was back</span></label></li>
+        <li><label><input type="checkbox" id="d5"><span>Snag dashes, kicks up dust, and deliveries shake the screen</span></label></li>
+        <li><label><input type="checkbox" id="d6"><span>Today's work is in at least three commits</span></label></li>
+      </ul>
+      <div class="badge" data-lesson="w1d2" data-earned="Earned. You sent a bad change back and nothing broke. Madam Grizzletooth calls this &quot;management.&quot;" aria-live="polite">
+        <div class="medal" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="36" height="36"><rect x="8" y="12" width="24" height="20" rx="2" fill="none" stroke="var(--parcel-ink)" stroke-width="3"/><path d="M8 18h24M20 12v20" stroke="var(--parcel-ink)" stroke-width="2.5"/><path d="M30 6 a8 8 0 1 0 2 9" stroke="var(--parcel-ink)" stroke-width="2.5" fill="none"/><path d="M32 3v6h-6" stroke="var(--parcel-ink)" stroke-width="2.5" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Return to Sender</h4>
+          <p class="badge-text">Locked. Finish the checklist to earn it.</p>
+        </div>
+      </div>
+      <h3>Debrief questions</h3>
+      <ul>
+        <li>What did Claude get wrong in its project summary, and what does that say about the code?</li>
+        <li>When did you describe a feeling instead of a fix? Did Claude find a lever you wouldn't have?</li>
+        <li>Which change today would you have been nervous to try without a commit to fall back on?</li>
+      </ul>
+    </section>
+
+    <section id="quest">
+      <div class="quest">
+        <p class="eyebrow">★ Side quest · optional · ~30 min</p>
+        <h2 class="sec">A second opinion</h2>
+        <p>Ask Claude to review its own work, without touching anything:</p>
+        <div class="code wrapme"><span class="lbl">Prompt</span><pre>Review index.html as if you were a senior gameplay programmer joining this project. List the three problems that will hurt us most as the game grows, and why. Don't change any code.</pre><button type="button">Copy</button></div>
+        <p>Pick the one you agree with most and have Claude fix it, using the rhythm from today. Then run the same review on your own game from yesterday's side quest. Day 3 starts where this review leaves off.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="next">
+        <div>
+          <p class="eyebrow">Up next · Day 3</p>
+          <span class="soon">Out of the Shoebox <small>Coming soon</small></span>
+        </div>
+        <p class="verified">Commands last verified 2026-10-23 against the <a href="https://code.claude.com/docs/en/terminal-guide" target="_blank" rel="noopener">Claude Code docs</a>.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>© 2026 Games and AI · <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
