@@ -7,7 +7,7 @@ In priority order.
 Done on 2026-10-24: the plain-HTML site, the course home with the Gobbleton world map, the Week 1 page, and Days 1 and 2.
 
 1. Confirm or change the "Built as" defaults in `06-site-spec.md`: the course's look, the URLs, and free or gated.
-2. Push the repo to GitHub, turn on GitHub Pages, and send the testers the preview link.
+2. Send the testers the preview link: https://spacedustai.com/gamesandai-site/learn/goblin-express-academy/ (pushed and live on GitHub Pages since 2026-10-24).
 3. Point gamesandai.org at the site once the Substack newsletter has moved to `newsletter.gamesandai.org` (see the repo README).
 
 ## Content

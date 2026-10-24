@@ -37,11 +37,14 @@ which Git ignores.
 
 ## Deploying
 
-Pushing to `main` deploys `site/` with GitHub Actions. One-time setup on GitHub:
-**Settings → Pages → Source: GitHub Actions**.
+Pushing to `main` deploys `site/` with GitHub Actions (**Settings → Pages →
+Source: GitHub Actions**, already set). Until gamesandai.org points here, the
+site is live at https://spacedustai.com/gamesandai-site/, the project URL under the
+`spacedustai` organization's Pages domain.
 
-All links inside `site/` are relative, so the site works both at a project URL
-(`<user>.github.io/gamesandai-site/`) and on the custom domain.
+All links inside `site/` are relative, so the site works both at that project
+URL and on the custom domain. The exception is `404.html`: its links are
+root-relative, so they only lead back into the site on the custom domain.
 
 ### Moving gamesandai.org off Substack
 

@@ -43,4 +43,4 @@ The course is the **Learn section of gamesandai.org**: a subsection of the site,
 3. ~~Build the lesson components and port Day 1. Compare it side by side with the prototype until they match.~~ Done; the visible text matches the prototype word for word.
 4. ~~Port Day 2 to prove the components are reusable.~~ Done.
 5. ~~Add the course home with the world map, and the Week 1 page.~~ Done.
-6. Push to GitHub, turn on GitHub Pages, and send the testers the preview link.
+6. ~~Push to GitHub and turn on GitHub Pages.~~ Done: live at https://spacedustai.com/gamesandai-site/. Next, send the testers the preview link.
