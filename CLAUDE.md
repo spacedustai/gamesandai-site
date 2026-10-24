@@ -9,8 +9,12 @@ Owner: Craig Robinson.
   `.html` file that is served as-is. Don't add a bundler, a static site
   generator or a package.json. (The site was moved off Astro/MDX on 2026-10-24
   for this reason.)
-- **Only `site/` is published.** `docs/` holds planning material and tester
-  notes and must never be linked from or copied into `site/`.
+- **Only `site/` is published.** `docs/` holds planning material and must never
+  be linked from or copied into `site/`.
+- **The repo is public** (github.com/spacedustai/gamesandai-site), so everything
+  committed is visible. Raw tester notes and screenshots go in
+  `docs/goblin-express-academy/reference/feedback/`, which Git ignores. Never
+  commit them; summarize them in the course's `08-feedback-log.md` instead.
 - **Links are relative** (`../`, `assets/...`), never root-relative (`/learn/`),
   so the site works at a GitHub Pages project URL and on the custom domain. The
   one exception is `site/404.html`, which GitHub serves at any path.

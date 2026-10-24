@@ -4,6 +4,7 @@ Newest first. Add new decisions at the top.
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-10-24 | For now, the GitHub repo (`spacedustai/gamesandai-site`) is public and the site is hosted on GitHub Pages. Raw tester notes stay out of Git: `reference/feedback/` is ignored, and it was removed from the history before the repo went public. | GitHub's free organization plan serves Pages only from public repos. Netlify's free plan was ruled out: it can't deploy private organization repos, and its monthly credits cap deploys. |
 | 2026-10-24 | The site is plain HTML, CSS and JavaScript with no build step, in a new repo, `gamesandai-site`. The earlier Astro/MDX site is abandoned. Lessons are hand-written HTML pages that share one stylesheet and one script. | Craig: Astro/MDX offered no advantage. |
 | 2026-10-24 | The repo goes on GitHub, and the site will likely be hosted on GitHub Pages. Only `site/` is published; this folder never is. | Craig's direction. This folder holds tester notes. |
 | 2026-10-24 | The course is a subsection of a new website Craig is building, which is partly built already. The host site's stack and conventions take precedence. | Craig's direction. |

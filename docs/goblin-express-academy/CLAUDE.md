@@ -21,7 +21,7 @@ Every learner builds the same game, **Goblin Express**: a goblin courier deliver
 | `docs/09-next-steps.md` | The backlog, in priority order |
 | `prototypes/lessons/week-01/` | Week 1 Day 1 and Day 2 as the original standalone HTML pages. Both are ported to the site; kept for reference |
 | `../../site/learn/goblin-express-academy/` | The live course: course home, week pages and lessons |
-| `reference/feedback/` | Original tester notes and screenshots |
+| `reference/feedback/` | Original tester notes and screenshots. On disk only: Git ignores this folder because the repo is public |
 
 ## Rules that are easy to get wrong
 

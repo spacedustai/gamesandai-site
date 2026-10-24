@@ -2,7 +2,7 @@
 
 ## Jeremy: Windows 11, beginner on the command line (October 23–24, 2026)
 
-Source notes and screenshots: `reference/feedback/2026-10-jeremy/`. Tested Week 1, Day 1 through installation, the health check and the start of first-run setup.
+Source notes and screenshots: `reference/feedback/2026-10-jeremy/` (on disk only, not in Git). Tested Week 1, Day 1 through installation, the health check and the start of first-run setup.
 
 | # | Feedback | Change made |
 | --- | --- | --- |

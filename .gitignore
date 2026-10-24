@@ -1,3 +1,6 @@
 .DS_Store
 .env
 *.log
+
+# Raw tester notes and screenshots stay on disk only; the repo is public.
+docs/goblin-express-academy/reference/feedback/

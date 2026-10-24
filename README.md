@@ -31,7 +31,9 @@ docs/
 .github/workflows/pages.yml   deploys site/ to GitHub Pages
 ```
 
-`docs/` is never published. It holds planning material, including tester notes.
+`docs/` is never deployed, but the repo is public, so it can be read on GitHub.
+Raw tester notes stay in `docs/goblin-express-academy/reference/feedback/`,
+which Git ignores.
 
 ## Deploying
 
