@@ -4,11 +4,11 @@ In priority order.
 
 ## Site
 
-1. Read the host site's existing code, then settle the open decisions in `06-site-spec.md`, especially how much of the course's own look survives inside it.
-2. Add the course section to the host site and bring in the design system.
-3. Build the lesson components. Port Day 1, then Day 2, and check each against its prototype.
-4. Add the course home with the Gobbleton world map, and the Week 1 page.
-5. Deploy a preview for testers.
+Done on 2026-10-24: the plain-HTML site, the course home with the Gobbleton world map, the Week 1 page, and Days 1 and 2.
+
+1. Confirm or change the "Built as" defaults in `06-site-spec.md`: the course's look, the URLs, and free or gated.
+2. Push the repo to GitHub, turn on GitHub Pages, and send the testers the preview link.
+3. Point gamesandai.org at the site once the Substack newsletter has moved to `newsletter.gamesandai.org` (see the repo README).
 
 ## Content
 

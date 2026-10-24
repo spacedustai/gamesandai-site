@@ -40,6 +40,45 @@ before writing or changing course content: it sets the voice, the Mac and
 Windows rules, what counts as an achievement, and how decisions and tester
 feedback get logged.
 
+### Adding a lesson
+
+Copy the closest existing lesson, such as
+`site/learn/goblin-express-academy/week-1/day-2/index.html`, and replace its
+content. A lesson page holds content only; apart from the one-line Mac/Windows
+script in `<head>`, it has no `<style>` or `<script>` of its own. Then update:
+
+- `<title>`, description, canonical and `og:` tags, and the `../` depth of asset paths
+- the breadcrumb, the "Training Module W.D" stamp, the title, the one-sentence summary and the meta row
+- the lesson rail: one link per section with its minutes, and the totals
+- `data-lesson="w<week>d<day>"` on the checklist and the badge, and the badge's `data-earned` text
+- the "Up next" link and the "last verified" date in the footer
+
+With no build step, nothing updates itself. Also update the previous lesson's
+"Up next", the module list on the week page, and the `data-progress` lesson
+list on the course home's district card.
+
+### Component markup
+
+Styles for all of these are in `academy.css`; behavior is in `academy.js`.
+
+- **Policy callout** (numbering continues across lessons):
+  `<div class="policy"><span class="num">§8</span><p><strong>Company policy</strong>…</p></div>`
+- **Prompt or command:** `<div class="code wrapme"><span class="lbl">Prompt</span><pre>…</pre><button type="button">Copy</button></div>`.
+  Label commands `Terminal`, `PowerShell` or `Terminal or PowerShell`, and drop `wrapme` so long commands scroll instead of wrapping.
+- **Mac/Windows tabs:** `<div class="os">` holding
+  `<div class="os-tabs" role="tablist" aria-label="Operating system">` with
+  `<button type="button" role="tab" data-os="mac">macOS</button>` and a `data-os="win"` twin,
+  then `<div class="os-panel" data-panel="mac" role="tabpanel">…</div>` and its `win` twin.
+  The script wires up the ARIA ids; every tab group on the site follows one saved choice.
+- **Steps:** `<ol class="steps"><li><div><h4>…</h4><p>…</p></div></li></ol>`
+- **Incident report:** `<details class="incident"><summary>Symptom <span>cause</span></summary><div class="body">…</div></details>`
+- **Customer reviews:** `<div class="reviews"><div class="review"><div class="stars" aria-label="2 stars">★★☆☆☆</div><p>…</p><small>— Old Mother Wort</small></div></div>`
+- **Memo:** `<div class="memo"><header>` with To/From/Re pairs, then paragraphs and `<p class="sig">— G.</p>`
+- **Diagram:** `<figure class="figure"><svg role="img" aria-label="…">…</svg><figcaption>…</figcaption></figure>`, colored with `var(--ink)`, `var(--rust)` and the other tokens so it follows the theme
+- **Note:** `<p class="note">…</p>` or `<div class="note">…</div>`
+- **Checklist and achievement:** copy the checkpoint section of an existing lesson
+- **Side quest:** `<section id="quest"><div class="quest">…</div></section>`
+
 ## Preview
 
 ```bash

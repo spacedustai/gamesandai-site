@@ -4,6 +4,8 @@ Newest first. Add new decisions at the top.
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-10-24 | The site is plain HTML, CSS and JavaScript with no build step, in a new repo, `gamesandai-site`. The earlier Astro/MDX site is abandoned. Lessons are hand-written HTML pages that share one stylesheet and one script. | Craig: Astro/MDX offered no advantage. |
+| 2026-10-24 | The repo goes on GitHub, and the site will likely be hosted on GitHub Pages. Only `site/` is published; this folder never is. | Craig's direction. This folder holds tester notes. |
 | 2026-10-24 | The course is a subsection of a new website Craig is building, which is partly built already. The host site's stack and conventions take precedence. | Craig's direction. |
 | 2026-10-24 | Development moves to Claude Code so the site can be built and deployed. | Lessons need a real site with shared components. |
 | 2026-10-24 | Day 1 walks through the first-run setup screens: theme, login, defaults and folder trust. | A tester stopped at the theme picker because the lesson only said "sign in". |
