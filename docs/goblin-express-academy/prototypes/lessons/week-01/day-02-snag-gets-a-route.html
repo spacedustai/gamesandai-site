@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Snag Gets a Route</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a goblin employee handbook. One reading column, a slim sticky lesson rail, parcel-yellow used only for "do this now" moments. */
+:root{
+  --paper:#ECEEE4;        /* moss-tinted handbook paper */
+  --paper-2:#E1E5D6;
+  --ink:#1F2219;
+  --ink-soft:#4E5546;
+  --moss:#3F6B32;
+  --rust:#A9481F;
+  --parcel:#F2BE3A;
+  --parcel-ink:#2A2008;
+  --soot:#2B2533;
+  --rule:#C6CCB8;
+  --code-bg:#22201F;
+  --code-fg:#EDE7D6;
+  --good:#3F7D3A;
+  --font-display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --font-body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --step--1:.875rem; --step-0:1.0625rem; --step-1:1.3rem; --step-2:1.75rem; --step-3:2.5rem; --step-4:clamp(2.6rem,7vw,4.4rem);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#17151B; --paper-2:#211E27; --ink:#E7E4D8; --ink-soft:#A8A497; --moss:#8DBF6E; --rust:#E07A4A;
+  --parcel:#F2BE3A; --parcel-ink:#2A2008; --soot:#0F0D12; --rule:#34303C; --code-bg:#0F0E12; --code-fg:#EDE7D6; --good:#8DBF6E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#17151B; --paper-2:#211E27; --ink:#E7E4D8; --ink-soft:#A8A497; --moss:#8DBF6E; --rust:#E07A4A;
+  --parcel:#F2BE3A; --parcel-ink:#2A2008; --soot:#0F0D12; --rule:#34303C; --code-bg:#0F0E12; --code-fg:#EDE7D6; --good:#8DBF6E; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.6}
+a{color:var(--moss);text-underline-offset:3px}
+a:hover{color:var(--rust)}
+:focus-visible{outline:3px solid var(--parcel);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Hero */
+.hero{background:var(--soot);color:#EDE7D6;overflow:hidden;position:relative}
+.hero .wrap{padding-block:28px 0}
+.crumbs{font-family:var(--font-mono);font-size:var(--step--1);color:#B9B3A3;letter-spacing:.04em}
+.crumbs a{color:#D9D2BE}
+.stamp{display:inline-block;margin-top:22px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--parcel);border:2px solid var(--parcel);padding:3px 10px;transform:rotate(-2deg)}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:var(--step-4);line-height:1;margin:16px 0 10px;letter-spacing:.01em;text-wrap:balance;color:#F4EFE0}
+.hero .dek{max-width:60ch;color:#D3CDBD;font-size:var(--step-1);line-height:1.45;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:20px 0 0;padding:0;list-style:none;font-family:var(--font-mono);font-size:var(--step--1);color:#B9B3A3}
+.meta b{color:#F4EFE0;font-weight:600}
+.road{position:relative;height:96px;margin-top:22px;border-top:2px dashed #4A4352}
+.road::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18px;background:repeating-linear-gradient(90deg,#3A3342 0 40px,#2F2A36 40px 80px)}
+.runner{position:absolute;bottom:14px;left:4%;width:86px;animation:run 9s linear infinite}
+.runner svg{display:block;width:100%;height:auto;animation:bob .38s ease-in-out infinite alternate}
+.dropoff{position:absolute;right:4%;bottom:18px;font-family:var(--font-mono);font-size:.72rem;color:var(--parcel);letter-spacing:.1em;text-transform:uppercase;border:2px dashed var(--parcel);padding:6px 10px;border-radius:6px}
+@keyframes run{0%{left:-90px}100%{left:calc(100% - 140px)}}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+@media (prefers-reduced-motion: reduce){.runner{animation:none;left:8%}.runner svg{animation:none}}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;padding-block:44px 80px}
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start}
+.rail h2{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px;font-weight:600}
+.rail ol{list-style:none;margin:0;padding:0;display:grid;gap:2px;counter-reset:s}
+.rail li a{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:baseline;padding:7px 10px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:.95rem}
+.rail li a:hover{background:var(--paper-2);color:var(--ink)}
+.rail .n{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft)}
+.rail .t{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.rail .total{margin-top:14px;padding:10px;border-top:1px solid var(--rule);font-family:var(--font-mono);font-size:.8rem;color:var(--ink-soft)}
+main{min-width:0}
+main > section{max-width:68ch;margin-bottom:64px;scroll-margin-top:20px}
+.eyebrow{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin:0 0 6px;font-weight:600}
+h2.sec{font-family:var(--font-display);font-weight:400;font-size:var(--step-3);line-height:1.05;margin:0 0 18px;text-wrap:balance}
+h3{font-size:var(--step-1);margin:34px 0 10px;text-wrap:balance}
+p{margin:0 0 14px}
+.lead{font-size:var(--step-1);line-height:1.5;color:var(--ink)}
+
+/* Memo */
+.memo{background:var(--paper-2);border:1px solid var(--rule);padding:22px 24px;position:relative;transform:rotate(-.4deg)}
+.memo header{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;font-family:var(--font-mono);font-size:.82rem;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:14px}
+.memo header b{color:var(--ink);font-weight:600}
+.memo p:last-child{margin:0}
+.memo .sig{font-family:var(--font-display);font-size:1.1rem;color:var(--rust)}
+
+/* Policy callout */
+.policy{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;border-top:3px solid var(--ink);border-bottom:1px solid var(--rule);padding:14px 0;margin:24px 0}
+.policy .num{font-family:var(--font-display);font-size:1.6rem;line-height:1;color:var(--rust)}
+.policy p{margin:0}
+.policy strong{display:block;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px}
+
+/* Diagram */
+.figure{margin:22px 0;overflow-x:auto}
+.figure svg{display:block;width:100%;min-width:520px;height:auto}
+.figure figcaption{font-size:var(--step--1);color:var(--ink-soft);margin-top:8px}
+
+/* OS tabs */
+.os{margin-top:20px}
+.os-tabs{display:flex;gap:6px;border-bottom:2px solid var(--ink);flex-wrap:wrap}
+.os-tabs button{appearance:none;border:2px solid var(--ink);border-bottom:none;background:transparent;color:var(--ink);font:600 .95rem var(--font-body);padding:9px 18px;border-radius:8px 8px 0 0;cursor:pointer;margin-bottom:-2px}
+.os-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.os-tabs button:hover:not([aria-selected="true"]){background:var(--paper-2)}
+.os-panel{padding-top:8px}
+
+.steps{list-style:none;margin:16px 0 0;padding:0;counter-reset:step;display:grid;gap:22px}
+.steps > li{counter-increment:step;display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px}
+.steps > li::before{content:counter(step);font-family:var(--font-display);font-size:1.15rem;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--parcel);color:var(--parcel-ink)}
+.steps h4{margin:4px 0 6px;font-size:1.05rem}
+.steps > li > div{min-width:0}
+.steps p{margin:0 0 10px}
+
+/* Code */
+.code{position:relative;margin:10px 0 12px}
+.code pre{margin:0;background:var(--code-bg);color:var(--code-fg);font:400 .88rem/1.55 var(--font-mono);padding:14px 16px;padding-right:76px;border-radius:8px;overflow-x:auto;white-space:pre}
+.code.wrapme pre{white-space:pre-wrap}
+.code .lbl{position:absolute;left:12px;top:-9px;font:600 .68rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;background:var(--paper);color:var(--ink-soft);padding:0 6px}
+.code button{position:absolute;right:8px;top:8px;font:600 .75rem var(--font-mono);background:#3A3632;color:#EDE7D6;border:1px solid #57514A;border-radius:6px;padding:5px 9px;cursor:pointer}
+.code button:hover{background:#4A453F}
+code{font-family:var(--font-mono);font-size:.88em;background:var(--paper-2);padding:1px 5px;border-radius:4px}
+kbd{font-family:var(--font-mono);font-size:.82em;border:1px solid var(--rule);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--paper)}
+
+/* Incident reports (troubleshooting) */
+details.incident{border:1px solid var(--rule);border-left:4px solid var(--rust);border-radius:6px;margin:8px 0;background:var(--paper)}
+details.incident summary{cursor:pointer;padding:10px 14px;font-weight:700;list-style:none;display:flex;gap:10px;align-items:baseline}
+details.incident summary::-webkit-details-marker{display:none}
+details.incident summary::before{content:"+";font-family:var(--font-mono);color:var(--rust)}
+details.incident[open] summary::before{content:"−"}
+details.incident summary span{font-family:var(--font-mono);font-weight:400;font-size:.8rem;color:var(--ink-soft)}
+details.incident .body{padding:0 14px 12px}
+.incidents h4{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 6px}
+
+.note{font-size:var(--step--1);color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:12px;margin:12px 0}
+
+/* Review cards */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0}
+.review{border:1px solid var(--rule);border-radius:8px;padding:12px 14px;background:var(--paper)}
+.review .stars{color:var(--rust);letter-spacing:2px;font-size:.95rem}
+.review p{margin:4px 0 0;font-size:.95rem}
+.review small{color:var(--ink-soft);font-family:var(--font-mono);font-size:.75rem}
+
+/* Checkpoint */
+.checklist{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px}
+.checklist label{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;cursor:pointer;background:var(--paper)}
+.checklist input{width:20px;height:20px;margin-top:2px;accent-color:var(--moss)}
+.checklist input:checked + span{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--moss)}
+.badge{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;border:2px dashed var(--rule);border-radius:12px;padding:16px;margin-top:18px;transition:border-color .3s}
+.badge .medal{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--paper-2);filter:grayscale(1);opacity:.55;transition:all .4s}
+.badge h4{margin:0;font-family:var(--font-display);font-weight:400;font-size:1.3rem}
+.badge p{margin:2px 0 0;font-size:.92rem;color:var(--ink-soft)}
+.badge.earned{border-style:solid;border-color:var(--parcel)}
+.badge.earned .medal{filter:none;opacity:1;background:var(--parcel);animation:pop .5s ease-out}
+@keyframes pop{0%{transform:scale(.6)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.badge.earned .medal{animation:none}}
+
+.quest{border:2px solid var(--ink);border-radius:10px;padding:18px 20px;background:var(--paper-2)}
+.quest .eyebrow{color:var(--moss)}
+.next{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;border-top:3px solid var(--ink);padding-top:16px}
+.next .go{font-family:var(--font-display);font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.verified{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-soft)}
+
+@media (max-width: 860px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:28px}
+  .rail{position:static}
+  .rail ol{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+}
+</style>
+</head>
+<body>
+
+
+<style>
+.map{font:600 .95rem/1.25 var(--font-mono);background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;overflow-x:auto;white-space:pre;letter-spacing:.18em;margin:10px 0}
+.map .w{color:var(--ink-soft)} .map .c{color:var(--rust)} .map .p{color:var(--moss)} .map .d{color:var(--parcel-ink);background:var(--parcel);border-radius:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:var(--step--1);color:var(--ink-soft);margin:0 0 14px}
+.legend code{letter-spacing:0}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="#top">Learn</a> / Goblin Express Academy / Week 1: The Depot / Day 2</div>
+    <span class="stamp">Training Module 1.2</span>
+    <h1 id="top">Snag Gets a Route</h1>
+    <p class="dek">Turn yesterday's open field into a real level inside the Depot, and learn the rhythm that keeps agent work under control: one change, play it, save it, or send it back.</p>
+    <ul class="meta">
+      <li><b>~70 min</b> core + optional side quest</li>
+      <li><b>Mac or Windows</b></li>
+      <li><b>You'll ship:</b> a walled Depot level with dashing and juice</li>
+    </ul>
+    <div class="road" aria-hidden="true">
+      <div class="runner">
+        <svg viewBox="0 0 120 110" role="presentation">
+          <rect x="62" y="22" width="44" height="40" rx="4" fill="#F2BE3A" stroke="#2A2008" stroke-width="3"/>
+          <path d="M62 34h44M84 22v40" stroke="#2A2008" stroke-width="2"/>
+          <text x="84" y="57" font-family="monospace" font-size="8" text-anchor="middle" fill="#2A2008">FRAGILE?</text>
+          <ellipse cx="44" cy="54" rx="22" ry="24" fill="#6E9B4A" stroke="#1F2219" stroke-width="3"/>
+          <path d="M24 42 L2 30 L24 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M62 40 L80 26 L64 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="38" cy="50" r="6" fill="#FFF8E0"/><circle cx="54" cy="50" r="6" fill="#FFF8E0"/>
+          <circle cx="40" cy="51" r="3" fill="#1F2219"/><circle cx="56" cy="51" r="3" fill="#1F2219"/>
+          <path d="M36 66 Q46 74 58 64" stroke="#1F2219" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M44 67 l3 5 l3-5" fill="#FFF8E0" stroke="#1F2219" stroke-width="1.5"/>
+          <path d="M34 78 L28 100 M54 78 L62 100" stroke="#1F2219" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="dropoff">Depot door</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Lesson parts">
+    <h2>Today's shift</h2>
+    <ol>
+      <li><a href="#memo"><span class="n">00</span><span>Shift memo</span><span class="t">5m</span></a></li>
+      <li><a href="#fresh"><span class="n">01</span><span>Clocking back in</span><span class="t">10m</span></a></li>
+      <li><a href="#rhythm"><span class="n">02</span><span>The delivery rhythm</span><span class="t">10m</span></a></li>
+      <li><a href="#route"><span class="n">03</span><span>Build the route</span><span class="t">40m</span></a></li>
+      <li><a href="#checkpoint"><span class="n">04</span><span>Checkpoint</span><span class="t">5m</span></a></li>
+      <li><a href="#quest"><span class="n">★</span><span>Side quest</span><span class="t">30m</span></a></li>
+    </ol>
+    <div class="total">Core: 70 min · Optional: +30</div>
+  </nav>
+
+  <main>
+    <section id="memo">
+      <p class="eyebrow">00 · Shift memo</p>
+      <h2 class="sec">Couriers need roads</h2>
+      <div class="memo">
+        <header>
+          <span>To:</span><b>Courier Snag's handler (you)</b>
+          <span>From:</span><b>Madam Grizzletooth, Proprietor</b>
+          <span>Re:</span><b>Yesterday's "delivery zone" was a field</b>
+        </header>
+        <p>Good first shift. The customers were rude, which means they're engaged.</p>
+        <p>Today Snag works inside the Depot, among the walls, the crate stacks and the forklift nobody admits to driving. That means a real level, real collisions, and a lot more ways for things to go sideways.</p>
+        <p>Something you'll notice: Claude has no memory of yesterday's conversation. Everything it knows about our game, it learns by reading the warehouse. Keep the warehouse tidy.</p>
+        <p class="sig">— G.</p>
+      </div>
+      <h3>By the end of this module you will</h3>
+      <ul>
+        <li>Start a fresh session and get Claude up to speed from the project itself.</li>
+        <li>Work in small loops: one change, play, then commit or roll back.</li>
+        <li>Show Claude a bug with a screenshot instead of describing it.</li>
+        <li>Undo a change you don't like, using Git through Claude.</li>
+        <li>Have a Depot level you can edit by hand, with a dash and some juice.</li>
+      </ul>
+    </section>
+
+    <section id="fresh">
+      <p class="eyebrow">01 · Clocking back in · 10 min</p>
+      <h2 class="sec">The courier forgets. The warehouse doesn't.</h2>
+      <p class="lead">Each new Claude Code session starts with an empty conversation. What carries over is your project: the files, and the Git history you started yesterday.</p>
+      <div class="code"><span class="lbl">Terminal or PowerShell</span><pre>cd goblin-express
+claude</pre><button type="button">Copy</button></div>
+      <p>Then get Claude oriented before you ask for anything:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Read this project and tell me in five bullets what the game does today and how the code is organized. Then look at the Git history and tell me what's been committed so far.</pre><button type="button">Copy</button></div>
+      <p>Check the summary against what you remember. If Claude misreads something, that's useful: it's a sign the code isn't as clear as you thought, and the next person (or agent) will trip on it too.</p>
+      <p class="note">Mid-task and want yesterday's conversation back? <code>claude --continue</code> resumes the most recent conversation in this folder. For a new day's work, a fresh start is usually better: less stale context, and Claude reads the code as it is now.</p>
+
+      <div class="policy">
+        <span class="num">§5</span>
+        <p><strong>Company policy</strong>If it matters tomorrow, it lives in the files. A decision made only in chat is a decision forgotten.</p>
+      </div>
+    </section>
+
+    <section id="rhythm">
+      <p class="eyebrow">02 · The delivery rhythm · 10 min</p>
+      <h2 class="sec">One parcel at a time</h2>
+      <p class="lead">Ask for five features at once and you'll get five half-right changes tangled together. Ask for one, check it, and save it, and every step is easy to judge and easy to undo.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 640 220" role="img" aria-label="The delivery rhythm: ask for one change, play it, then commit if good or describe the problem or roll back if not">
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--ink-soft)"/></marker>
+          </defs>
+          <g font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+            <rect x="12" y="78" width="130" height="62" rx="8" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/>
+            <text x="77" y="105" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Ask</text>
+            <text x="77" y="124" text-anchor="middle" font-size="12" fill="var(--ink-soft)">one change</text>
+
+            <rect x="196" y="78" width="130" height="62" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="261" y="105" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Play it</text>
+            <text x="261" y="124" text-anchor="middle" font-size="12" fill="var(--ink-soft)">you're the tester</text>
+
+            <polygon points="400,109 444,79 488,109 444,139" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="444" y="114" text-anchor="middle" font-weight="700" font-size="14" fill="var(--ink)">Good?</text>
+
+            <rect x="530" y="78" width="100" height="62" rx="8" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)" stroke-width="2"/>
+            <text x="580" y="105" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Commit</text>
+            <text x="580" y="124" text-anchor="middle" font-size="12" fill="var(--ink-soft)">save point</text>
+
+            <rect x="374" y="168" width="140" height="44" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="444" y="195" text-anchor="middle" font-size="13" fill="var(--ink)">Roll back to last save</text>
+
+            <rect x="374" y="8" width="140" height="44" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="444" y="35" text-anchor="middle" font-size="13" fill="var(--ink)">Say what feels wrong</text>
+          </g>
+          <g fill="none" stroke="var(--ink-soft)" stroke-width="1.5">
+            <path d="M142 109 H194" marker-end="url(#arr2)"/>
+            <path d="M326 109 H398" marker-end="url(#arr2)"/>
+            <path d="M488 109 H528" marker-end="url(#arr2)"/>
+            <path d="M444 79 V54" marker-end="url(#arr2)"/>
+            <path d="M374 30 H261 V76" marker-end="url(#arr2)"/>
+            <path d="M444 139 V166" marker-end="url(#arr2)"/>
+            <path d="M374 190 H77 V142" marker-end="url(#arr2)"/>
+          </g>
+          <g font-family="JetBrains Mono, monospace" font-size="11" fill="var(--ink-soft)">
+            <text x="508" y="101" text-anchor="middle">yes</text>
+            <text x="452" y="64">close</text>
+            <text x="452" y="158">way off</text>
+          </g>
+        </svg>
+        <figcaption>After a commit, the next change starts back at Ask. Close means describe the problem and let Claude adjust. Way off means roll back and re-brief; don't patch a bad foundation.</figcaption>
+      </figure>
+
+      <p>In the default permission mode, Claude shows each edit before applying it. You don't need to read every line, but skim them: you'll start to recognize when a "small fix" is touching far more of the file than it should. That's your cue to press <kbd>Esc</kbd> and ask why.</p>
+    </section>
+
+    <section id="route">
+      <p class="eyebrow">03 · Build the route · 40 min</p>
+      <h2 class="sec">Inside the Depot</h2>
+
+      <h3>1. Lay out the Depot</h3>
+      <p>Levels are content, and content should be easy for humans to change. So we'll ask for the map as plain text in the code:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Replace the open field with a small level: the Goblin Express Depot. Use a tile grid with outer walls and stacks of crates that Snag can't walk through, leaving a few different routes between the pickup shelves and the drop-off door. Parcels should only spawn at the pickup shelves.
+
+Store the level layout as a text map in the code, one character per tile, so I can edit it by hand. Tell me your approach and the map legend before you build.</pre><button type="button">Copy</button></div>
+      <p>The map Claude proposes will look something like this:</p>
+      <div class="map" role="img" aria-label="Example text map of the Depot"><span class="w">####################</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CC</span>      <span class="c">CC</span>     <span class="w">#</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CC</span>  <span class="c">C</span>   <span class="c">CC</span>  <span class="c">C</span>  <span class="w">#</span>
+<span class="w">#</span>       <span class="c">C</span>          <span class="w">#</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CCCC</span>   <span class="c">CC</span>     <span class="d">D</span><span class="w">#</span>
+<span class="w">#</span>          <span class="c">CC</span>     <span class="d">D</span><span class="w">#</span>
+<span class="w">#</span><span class="p">P</span>  <span class="c">CC</span>  <span class="c">C</span>          <span class="w">#</span>
+<span class="w">####################</span></div>
+      <p class="legend"><span><code>#</code> wall</span><span><code>C</code> crates</span><span><code>P</code> pickup shelf</span><span><code>D</code> drop-off door</span></p>
+      <p>When it's built, play a shift. Then do something important: open <code>index.html</code> in any text editor, move a few crates in the map yourself, save, and reload the game. If your edit works, the level is truly data. If it breaks, tell Claude exactly what you changed and what happened.</p>
+      <p>Happy with it? One word does it:</p>
+      <div class="code"><span class="lbl">Prompt</span><pre>Commit this.</pre><button type="button">Copy</button></div>
+
+      <h3>2. Show, don't tell</h3>
+      <p>Collisions on a new tile map are rarely perfect. Snag might snag (sorry) on corners, slip into a crate, or stop dead against a wall. Describing that precisely is hard; a screenshot is easy.</p>
+
+      <div class="os">
+        <div class="os-tabs" role="tablist" aria-label="Operating system">
+          <button role="tab" data-os="mac" aria-selected="true">macOS</button>
+          <button role="tab" data-os="win" aria-selected="false">Windows</button>
+        </div>
+        <div class="os-panel" data-panel="mac" role="tabpanel">
+          <p>Press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd> and drag around the problem. The screenshot lands on your Desktop.</p>
+        </div>
+        <div class="os-panel" data-panel="win" role="tabpanel" hidden>
+          <p>Press <kbd>Win</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> and drag around the problem. Click the notification to open it in Snipping Tool and save it somewhere easy to find, like your Desktop.</p>
+        </div>
+      </div>
+      <p>Now drag the image file onto the Claude Code window. Its path drops into your prompt. Finish the sentence:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>[screenshot] Snag gets stuck on this crate corner when I hold right and up together. He should slide along walls instead of stopping dead.</pre><button type="button">Copy</button></div>
+      <p class="note">No bugs to show? Screenshot the whole level and ask Claude what a new player would find confusing about it. It's surprisingly good at spotting readability problems.</p>
+
+      <h3>3. Return to sender</h3>
+      <p>Not every idea survives contact with the controller. Try a bold one:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Make the camera follow Snag and zoom in 2x, so the Depot feels bigger than the screen.</pre><button type="button">Copy</button></div>
+      <p>Play it. Whether you love it or hate it, practice throwing it away:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>I don't want that. Put the game back exactly the way it was at the last commit.</pre><button type="button">Copy</button></div>
+      <p>Reload and check it's really back. Liked the camera after all? Ask Claude to bring it back properly and commit it. The point is that you now know an experiment costs nothing, because the save point is always there.</p>
+
+      <div class="policy">
+        <span class="num">§6</span>
+        <p><strong>Company policy</strong>Don't patch a bad delivery. If a change is way off, send it back to the last commit and re-brief. Fixing a wrong foundation costs more than rebuilding it.</p>
+      </div>
+
+      <h3>4. Make Snag feel scrappy</h3>
+      <p>Movement through a maze is where game feel lives. Describe the feeling and let Claude find the levers:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Snag should feel quick and scrappy. Add a short dash on Space with a cooldown, a little dust puff when he dashes, and a tiny screen shake when a parcel is delivered. Put every tuning value (speeds, dash length, cooldown, shake strength) together near the top of the file with a short comment on each.</pre><button type="button">Copy</button></div>
+      <p>Then tune by feel, one value at a time, in plain words: "the dash feels floaty," "the shake is seasick." Commit when it feels right.</p>
+
+      <div class="policy">
+        <span class="num">§7</span>
+        <p><strong>Company policy</strong>Every tuning number lives in one place. Designers, artists and future-you will thank you, and so will Claude.</p>
+      </div>
+
+      <h3>5. Clock out</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit any remaining changes, then show me today's commits, one line each.</pre><button type="button">Copy</button></div>
+      <p>That list is your shift log. If it's one giant commit, that's fine for today; notice how much harder it would be to undo just the camera or just the dash.</p>
+    </section>
+
+    <section id="checkpoint">
+      <p class="eyebrow">04 · Checkpoint · 5 min</p>
+      <h2 class="sec">Sign the timesheet</h2>
+      <p>Tick these off. They're saved in this browser only.</p>
+      <ul class="checklist">
+        <li><label><input type="checkbox" id="d1"><span>Claude summarized the project from a fresh session, and the summary was right</span></label></li>
+        <li><label><input type="checkbox" id="d2"><span>The Depot level loads from a text map, and my own hand edit to it worked</span></label></li>
+        <li><label><input type="checkbox" id="d3"><span>I gave Claude a screenshot and it fixed or explained what it showed</span></label></li>
+        <li><label><input type="checkbox" id="d4"><span>I rolled the game back to the last commit, and checked it really was back</span></label></li>
+        <li><label><input type="checkbox" id="d5"><span>Snag dashes, kicks up dust, and deliveries shake the screen</span></label></li>
+        <li><label><input type="checkbox" id="d6"><span>Today's work is in at least three commits</span></label></li>
+      </ul>
+      <div class="badge" id="badge" aria-live="polite">
+        <div class="medal" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="36" height="36"><rect x="8" y="12" width="24" height="20" rx="2" fill="none" stroke="var(--parcel-ink)" stroke-width="3"/><path d="M8 18h24M20 12v20" stroke="var(--parcel-ink)" stroke-width="2.5"/><path d="M30 6 a8 8 0 1 0 2 9" stroke="var(--parcel-ink)" stroke-width="2.5" fill="none"/><path d="M32 3v6h-6" stroke="var(--parcel-ink)" stroke-width="2.5" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Return to Sender</h4>
+          <p id="badge-text">Locked. Finish the checklist to earn it.</p>
+        </div>
+      </div>
+      <h3>Debrief questions</h3>
+      <ul>
+        <li>What did Claude get wrong in its project summary, and what does that say about the code?</li>
+        <li>When did you describe a feeling instead of a fix? Did Claude find a lever you wouldn't have?</li>
+        <li>Which change today would you have been nervous to try without a commit to fall back on?</li>
+      </ul>
+    </section>
+
+    <section id="quest">
+      <div class="quest">
+        <p class="eyebrow">★ Side quest · optional · ~30 min</p>
+        <h2 class="sec" style="font-size:var(--step-2)">A second opinion</h2>
+        <p>Ask Claude to review its own work, without touching anything:</p>
+        <div class="code wrapme"><span class="lbl">Prompt</span><pre>Review index.html as if you were a senior gameplay programmer joining this project. List the three problems that will hurt us most as the game grows, and why. Don't change any code.</pre><button type="button">Copy</button></div>
+        <p>Pick the one you agree with most and have Claude fix it, using the rhythm from today. Then run the same review on your own game from yesterday's side quest. Day 3 starts where this review leaves off.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="next">
+        <div>
+          <p class="eyebrow" style="margin:0">Up next · Day 3</p>
+          <a class="go" href="#top">Out of the Shoebox</a>
+        </div>
+        <p class="verified">Commands last verified 2026-10-23 against the <a href="https://code.claude.com/docs/en/terminal-guide" target="_blank" rel="noopener">Claude Code docs</a>.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  var store = {
+    get: function(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+    set: function(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  };
+
+  // OS tabs: every tab group on the page follows the same choice
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.os-tabs button'));
+  function select(os){
+    buttons.forEach(function(b){
+      var on = b.dataset.os === os;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+    });
+    document.querySelectorAll('.os-panel[data-panel]').forEach(function(p){ p.hidden = p.dataset.panel !== os; });
+    store.set('ge-os-choice', os);
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ select(b.dataset.os); });
+    b.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){ var n = b.dataset.os === 'mac' ? 'win' : 'mac'; select(n); b.parentNode.querySelector('[data-os="' + n + '"]').focus(); }
+    });
+  });
+  var saved = store.get('ge-os-choice');
+  select(saved === 'mac' || saved === 'win' ? saved : (/Win/i.test(navigator.userAgent) ? 'win' : 'mac'));
+
+  // Copy buttons
+  document.querySelectorAll('.code button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = btn.parentNode.querySelector('pre');
+      function done(msg){ btn.textContent = msg; setTimeout(function(){ btn.textContent = 'Copy'; }, 1600); }
+      function fallback(){
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        done('Selected');
+      }
+      try { navigator.clipboard.writeText(pre.textContent).then(function(){ done('Copied'); }, fallback); }
+      catch(e){ fallback(); }
+    });
+  });
+
+  // Checklist + achievement
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input'));
+  var badge = document.getElementById('badge'), badgeText = document.getElementById('badge-text');
+  function update(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    var all = n === boxes.length;
+    badge.classList.toggle('earned', all);
+    badgeText.textContent = all ? 'Earned. You sent a bad change back and nothing broke. Madam Grizzletooth calls this "management."'
+                                : 'Locked. ' + n + ' of ' + boxes.length + ' done.';
+  }
+  boxes.forEach(function(b){
+    b.checked = store.get('ge-' + b.id) === '1';
+    b.addEventListener('change', function(){ store.set('ge-' + b.id, b.checked ? '1' : '0'); update(); });
+  });
+  update();
+})();
+</script>
+
+</body>
+</html>
