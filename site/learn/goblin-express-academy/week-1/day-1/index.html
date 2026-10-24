@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clocking In — Goblin Express Academy</title>
+<meta name="description" content="Install Claude Code on your Mac or Windows machine, learn how an agent actually works, and get Snag delivering parcels in a browser before your coffee goes cold.">
+<link rel="canonical" href="https://gamesandai.org/learn/goblin-express-academy/week-1/day-1/">
+<link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Clocking In — Goblin Express Academy">
+<meta property="og:description" content="Install Claude Code on your Mac or Windows machine, learn how an agent actually works, and get Snag delivering parcels in a browser before your coffee goes cold.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gamesandai.org/learn/goblin-express-academy/week-1/day-1/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../../../assets/css/academy.css">
+<!-- Picks macOS or Windows before first paint; see academy.js. -->
+<script>try{var o=localStorage.getItem('gea:os')}catch(e){}document.documentElement.dataset.os=o==='mac'||o==='win'?o:/Win/i.test(navigator.userAgent)?'win':'mac'</script>
+<script src="../../../../assets/js/academy.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../../../../">Games and AI</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../../" aria-current="true">Learn</a>
+      <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Learn</a> / <a href="../../">Goblin Express Academy</a> / <a href="../">Week 1: The Depot</a> / Day 1</nav>
+    <span class="stamp">Training Module 1.1</span>
+    <h1 id="top">Clocking In</h1>
+    <p class="dek">Install Claude Code on your Mac or Windows machine, learn how an agent actually works, and get Snag delivering parcels in a browser before your coffee goes cold.</p>
+    <ul class="meta">
+      <li><b>~70 min</b> core + optional side quest</li>
+      <li><b>Mac or Windows</b></li>
+      <li><b>You'll ship:</b> a playable delivery prototype</li>
+    </ul>
+    <div class="road" aria-hidden="true">
+      <div class="runner">
+        <svg viewBox="0 0 120 110" role="presentation">
+          <rect x="62" y="22" width="44" height="40" rx="4" fill="#F2BE3A" stroke="#2A2008" stroke-width="3"/>
+          <path d="M62 34h44M84 22v40" stroke="#2A2008" stroke-width="2"/>
+          <text x="84" y="57" font-family="monospace" font-size="8" text-anchor="middle" fill="#2A2008">FRAGILE?</text>
+          <ellipse cx="44" cy="54" rx="22" ry="24" fill="#6E9B4A" stroke="#1F2219" stroke-width="3"/>
+          <path d="M24 42 L2 30 L24 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M62 40 L80 26 L64 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="38" cy="50" r="6" fill="#FFF8E0"/><circle cx="54" cy="50" r="6" fill="#FFF8E0"/>
+          <circle cx="40" cy="51" r="3" fill="#1F2219"/><circle cx="56" cy="51" r="3" fill="#1F2219"/>
+          <path d="M36 66 Q46 74 58 64" stroke="#1F2219" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M44 67 l3 5 l3-5" fill="#FFF8E0" stroke="#1F2219" stroke-width="1.5"/>
+          <path d="M34 78 L28 100 M54 78 L62 100" stroke="#1F2219" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="dropoff">Drop-off</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Lesson parts">
+    <h2>Today's shift</h2>
+    <ol>
+      <li><a href="#memo"><span class="n">00</span><span>Shift memo</span><span class="t">5m</span></a></li>
+      <li><a href="#agent"><span class="n">01</span><span>How the agent works</span><span class="t">10m</span></a></li>
+      <li><a href="#install"><span class="n">02</span><span>Install Claude Code</span><span class="t">20m</span></a></li>
+      <li><a href="#shift"><span class="n">03</span><span>Your first shift</span><span class="t">30m</span></a></li>
+      <li><a href="#checkpoint"><span class="n">04</span><span>Checkpoint</span><span class="t">5m</span></a></li>
+      <li><a href="#quest"><span class="n">★</span><span>Side quest</span><span class="t">30m</span></a></li>
+    </ol>
+    <div class="total">Core: 70 min · Optional: +30</div>
+  </nav>
+
+  <main>
+    <section id="memo">
+      <p class="eyebrow">00 · Shift memo</p>
+      <h2 class="sec">Welcome to the payroll</h2>
+      <div class="memo">
+        <header>
+          <span>To:</span><b>New courier (you)</b>
+          <span>From:</span><b>Madam Grizzletooth, Proprietor</b>
+          <span>Re:</span><b>Your first day, and the new hire who never sleeps</b>
+        </header>
+        <p>You've shipped games before. Good. That experience is exactly what this job needs; we're just changing who does the typing.</p>
+        <p>Goblin Express has hired an assistant called Claude. It reads the whole warehouse in seconds, writes code, runs it, and fixes what it broke. It does not get tired and it does not eat the parcels, which already makes it our best employee.</p>
+        <p>It is also very confident, occasionally wrong, and will happily build the wrong thing beautifully if you give it vague directions. Your job is to direct it like a lead, not type for it like a junior. By the end of today you'll have a delivery game running in your browser that you didn't hand-write.</p>
+        <p class="sig">— G.</p>
+      </div>
+      <h3>By the end of this module you will</h3>
+      <ul>
+        <li>Have Claude Code installed, signed in and passing its own health check.</li>
+        <li>Understand the agent loop well enough to predict what it will do next.</li>
+        <li>Ask for the approach before the code, and push back when it's wrong.</li>
+        <li>Have a playable Goblin Express prototype open in your browser.</li>
+      </ul>
+      <p class="note"><strong>Before you start:</strong> you need a paid Claude plan (Pro or higher) or an Anthropic Console account with billing set up. A Mac on macOS 13 or later, or a 64-bit PC on Windows 10 version 1809 or later. No Node.js required.</p>
+    </section>
+
+    <section id="agent">
+      <p class="eyebrow">01 · How the agent works · 10 min</p>
+      <h2 class="sec">It's a courier, not autocomplete</h2>
+      <p class="lead">Chat assistants hand you code to paste. Claude Code works inside your project folder: it reads files, runs commands, edits code and checks the result, in a loop, until the job is done or it needs you.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 640 230" role="img" aria-label="The agent loop: read, plan, act, check, then back to read or report to you">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--ink-soft)"/></marker>
+          </defs>
+          <g font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+            <rect x="12" y="84" width="104" height="62" rx="8" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/>
+            <text x="64" y="112" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">You</text>
+            <text x="64" y="131" text-anchor="middle" font-size="12" fill="var(--ink-soft)">set the goal</text>
+
+            <rect x="172" y="20" width="120" height="62" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="232" y="47" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Read</text>
+            <text x="232" y="66" text-anchor="middle" font-size="12" fill="var(--ink-soft)">files, errors, docs</text>
+
+            <rect x="348" y="20" width="120" height="62" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="408" y="47" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Plan</text>
+            <text x="408" y="66" text-anchor="middle" font-size="12" fill="var(--ink-soft)">decide the steps</text>
+
+            <rect x="348" y="148" width="120" height="62" rx="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="408" y="175" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Act</text>
+            <text x="408" y="194" text-anchor="middle" font-size="12" fill="var(--ink-soft)">edit, run commands</text>
+
+            <rect x="172" y="148" width="120" height="62" rx="8" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)" stroke-width="2"/>
+            <text x="232" y="175" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">Check</text>
+            <text x="232" y="194" text-anchor="middle" font-size="12" fill="var(--ink-soft)">did it work?</text>
+
+            <rect x="524" y="84" width="104" height="62" rx="8" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <text x="576" y="112" text-anchor="middle" font-weight="700" font-size="14" fill="var(--ink)">Asks you</text>
+            <text x="576" y="131" text-anchor="middle" font-size="12" fill="var(--ink-soft)">permission, done</text>
+          </g>
+          <g fill="none" stroke="var(--ink-soft)" stroke-width="1.5">
+            <path d="M116 104 L170 60" marker-end="url(#arr)"/>
+            <path d="M292 51 H346" marker-end="url(#arr)"/>
+            <path d="M408 82 V146" marker-end="url(#arr)"/>
+            <path d="M348 179 H294" marker-end="url(#arr)"/>
+            <path d="M232 148 V84" marker-end="url(#arr)"/>
+            <path d="M468 51 Q500 51 522 96" marker-end="url(#arr)"/>
+            <path d="M524 132 Q500 178 470 178" marker-end="url(#arr)"/>
+          </g>
+          <text x="212" y="120" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--ink-soft)" text-anchor="end">not yet</text>
+        </svg>
+        <figcaption>The loop. The highlighted step is where your experience matters most: an agent can only check what it can see or run.</figcaption>
+      </figure>
+
+      <p>Three things follow from this that will save you hours this course:</p>
+      <ul>
+        <li><strong>Outcomes beat instructions.</strong> "Parcels should feel heavy when carried" gives Claude room to read your code and find the right place. "Change line 40" makes it a typist.</li>
+        <li><strong>It only knows what's in the folder and the conversation.</strong> Your design intent, your engine conventions and your taste are invisible until you write them down. (Week 2 is about exactly this.)</li>
+        <li><strong>It checks its work only as well as it can observe it.</strong> Today you'll be the eyes. Week 3 teaches Claude to playtest for itself.</li>
+      </ul>
+
+      <div class="policy">
+        <span class="num">§1</span>
+        <p><strong>Company policy</strong>Know the route before you run. For anything bigger than a tweak, ask Claude how it intends to do the job before it starts.</p>
+      </div>
+    </section>
+
+    <section id="install">
+      <p class="eyebrow">02 · Install Claude Code · 20 min</p>
+      <h2 class="sec">Get your uniform</h2>
+      <p>Pick your platform. Claude Code's native installer handles everything, including updates, and needs no Node.js.</p>
+      <div class="note"><strong>New to the command line?</strong> A <em>terminal</em> is a window where you type commands instead of clicking. The program inside it that reads those commands is called a <em>shell</em>: on a Mac that's usually zsh, and on Windows it's PowerShell. Claude Code runs inside the terminal and runs shell commands for you. You won't need to learn shell commands for this course; the few you need are on this page, ready to copy.</div>
+
+      <div class="os">
+        <div class="os-tabs" role="tablist" aria-label="Operating system">
+          <button type="button" role="tab" data-os="mac" aria-selected="true">macOS</button>
+          <button type="button" role="tab" data-os="win" aria-selected="false">Windows</button>
+        </div>
+
+        <div class="os-panel" data-panel="mac" role="tabpanel">
+          <ol class="steps">
+            <li><div>
+              <h4>Open Terminal</h4>
+              <p>Press <kbd>Cmd</kbd> + <kbd>Space</kbd>, type <code>Terminal</code>, press <kbd>Enter</kbd>. Already live in iTerm, Ghostty or Warp? Use that.</p>
+            </div></li>
+            <li><div>
+              <h4>Check for Git</h4>
+              <div class="code"><span class="lbl">Terminal</span><pre>git --version</pre><button type="button">Copy</button></div>
+              <p>If it prints a version number, you're set. If macOS offers to install the <em>command line developer tools</em>, click <strong>Install</strong> and let it finish; that's Apple's Git, plus the compilers some tools expect. No prompt? Run <code>xcode-select --install</code>. Claude uses Git constantly, and you'll lean on it from Week 2.</p>
+            </div></li>
+            <li><div>
+              <h4>Run the installer</h4>
+              <div class="code"><span class="lbl">Terminal</span><pre>curl -fsSL https://claude.ai/install.sh | bash</pre><button type="button">Copy</button></div>
+              <p>You can run it from any folder. It can look stuck for a minute or two while it downloads, which is normal. You're done when it prints <em>Claude Code successfully installed!</em></p>
+              <p><strong>Read the Setup notes</strong> at the end of the output. If they say the install folder isn't in your PATH, run the fix under <em>command not found: claude</em> below before moving on.</p>
+              <p class="note">Prefer Homebrew? <code>brew install --cask claude-code</code> works too, but Homebrew installs don't auto-update; run <code>brew upgrade claude-code</code> now and then.</p>
+            </div></li>
+            <li><div>
+              <h4>Check the install</h4>
+              <p>Open a <strong>new</strong> Terminal window, then run these (note the two dashes in <code>--version</code>):</p>
+              <div class="code"><span class="lbl">Terminal</span><pre>claude --version
+claude doctor</pre><button type="button">Copy</button></div>
+              <p>The first prints a version number. The second checks your setup and should end with <em>No installation issues found.</em> Lines saying you're <em>not signed in</em> are expected; you'll sign in in a minute.</p>
+            </div></li>
+          </ol>
+
+          <div class="incidents">
+            <h4>Incident reports (Mac)</h4>
+            <details class="incident">
+              <summary>command not found: claude <span>the install folder isn't on your PATH</span></summary>
+              <div class="body">
+                <p>The installer prints the exact fix under <em>Setup notes</em> at the end. For zsh, the macOS default:</p>
+                <div class="code"><span class="lbl">Terminal</span><pre>echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.zshrc
+source ~/.zshrc</pre><button type="button">Copy</button></div>
+                <p>Open a new window and try <code>claude</code> again.</p>
+              </div>
+            </details>
+            <details class="incident">
+              <summary>HTML in the terminal, or "syntax error near unexpected token" <span>got a web page instead of the script</span></summary>
+              <div class="body"><p>Run the command again. If it keeps happening, install with Homebrew instead. If the page says the app is unavailable in your region, Claude Code isn't offered in your country yet.</p></div>
+            </details>
+            <details class="incident">
+              <summary>dyld errors, or "built for Mac OS X 13.0" <span>macOS too old</span></summary>
+              <div class="body"><p>Claude Code needs macOS 13 or later. Check under Apple menu → About This Mac, and update through Software Update.</p></div>
+            </details>
+          </div>
+        </div>
+
+        <div class="os-panel" data-panel="win" role="tabpanel">
+          <ol class="steps">
+            <li><div>
+              <h4>Install Git for Windows (recommended)</h4>
+              <p>Download it from <a href="https://git-scm.com/downloads/win" target="_blank" rel="noopener">git-scm.com/downloads/win</a> and accept the defaults. Git is the tool Claude uses to save and undo your work, and it includes Git Bash, a shell Claude prefers for running commands. Without it, Claude Code uses PowerShell instead, which also works.</p>
+            </div></li>
+            <li><div>
+              <h4>Open Terminal</h4>
+              <p>Press <kbd>Win</kbd> + <kbd>X</kbd> and choose <strong>Terminal</strong>. On Windows 10 the entry may be called <strong>Windows PowerShell</strong> instead. Either way you get a PowerShell window: the prompt starts with <code>PS</code>, like <code>PS C:\Users\you&gt;</code>. No <code>PS</code> means you're in CMD. Avoid any entry marked <em>(Admin)</em> or <em>(x86)</em>.</p>
+              <p>The folder it opens in is fine. You can run the installer from anywhere.</p>
+            </div></li>
+            <li><div>
+              <h4>Run the installer</h4>
+              <div class="code"><span class="lbl">PowerShell</span><pre>irm https://claude.ai/install.ps1 | iex</pre><button type="button">Copy</button></div>
+              <p>It can look stuck for a minute or two while it downloads. That's normal, so leave the window open. When it finishes, you'll see something like this:</p>
+              <div class="code"><span class="lbl">Example output</span><pre>Setting up Claude Code...
+✔ Claude Code successfully installed!
+  Version: 2.1.310
+  Location: C:\Users\you\.local\bin\claude.exe
+
+⚠ Setup notes:
+  • Native installation exists but C:\Users\you\.local\bin
+    is not in your PATH. ...</pre></div>
+              <p><strong>Read the Setup notes.</strong> If they say the install folder is not in your PATH, Windows doesn't know where to find <code>claude</code> yet, and the next step will fail. Fix it now by pasting these two lines into the same window:</p>
+              <div class="code"><span class="lbl">PowerShell</span><pre>$currentPath = [Environment]::GetEnvironmentVariable('PATH', 'User')
+[Environment]::SetEnvironmentVariable('PATH', "$currentPath;$env:USERPROFILE\.local\bin", 'User')</pre><button type="button">Copy</button></div>
+              <p>Nothing prints when it works. No Setup notes at all? Skip this.</p>
+              <details class="incident">
+                <summary>Prefer to click? <span>fix PATH in Windows settings</span></summary>
+                <div class="body">
+                  <ol>
+                    <li>Press the <kbd>Win</kbd> key, type <code>environment variables</code>, and choose <strong>Edit environment variables for your account</strong>.</li>
+                    <li>Under <strong>User variables</strong>, select the existing <strong>Path</strong> row and click <strong>Edit</strong>.</li>
+                    <li>Click <strong>New</strong> and paste the folder from the installer's <em>Location</em> line, without <code>claude.exe</code> on the end. For example, <code>C:\Users\you\.local\bin</code>.</li>
+                    <li>Click <strong>OK</strong> in each window to close them all.</li>
+                  </ol>
+                  <p>Add the <em>folder</em> to the existing <strong>Path</strong> entry. Creating a new variable, or pointing at <code>claude.exe</code> itself, won't help Windows find it.</p>
+                </div>
+              </details>
+              <p class="note">Stuck in CMD? Use <code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code>. Using WinGet? <code>winget install Anthropic.ClaudeCode</code>.</p>
+            </div></li>
+            <li><div>
+              <h4>Check the install</h4>
+              <p>Close <strong>every</strong> Terminal window so the PATH change takes effect, open a new one, then:</p>
+              <div class="code"><span class="lbl">PowerShell</span><pre>claude --version
+claude doctor</pre><button type="button">Copy</button></div>
+              <p>Note the two dashes in <code>--version</code>. The first command prints a version number, like <code>2.1.310 (Claude Code)</code>. The second checks your setup and should end with <em>No installation issues found.</em> Lines saying you're <em>not signed in</em> are expected; you'll sign in in a minute.</p>
+            </div></li>
+          </ol>
+
+          <div class="incidents">
+            <h4>Incident reports (Windows)</h4>
+            <details class="incident">
+              <summary>'claude' is not recognized <span>install folder isn't on your PATH</span></summary>
+              <div class="body">
+                <div class="code"><span class="lbl">PowerShell</span><pre>$currentPath = [Environment]::GetEnvironmentVariable('PATH', 'User')
+[Environment]::SetEnvironmentVariable('PATH', "$currentPath;$env:USERPROFILE\.local\bin", 'User')</pre><button type="button">Copy</button></div>
+                <p>Close PowerShell, open a new window, try again.</p>
+              </div>
+            </details>
+            <details class="incident">
+              <summary>'irm' is not recognized <span>you're in CMD</span></summary>
+              <div class="body"><p>Open PowerShell instead, or use the CMD command in the note above.</p></div>
+            </details>
+            <details class="incident">
+              <summary>Could not create SSL/TLS secure channel <span>older Windows 10</span></summary>
+              <div class="body">
+                <div class="code"><span class="lbl">PowerShell</span><pre>[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+irm https://claude.ai/install.ps1 | iex</pre><button type="button">Copy</button></div>
+              </div>
+            </details>
+            <details class="incident">
+              <summary>"does not support 32-bit Windows" <span>wrong PowerShell</span></summary>
+              <div class="body"><p>You opened <em>Windows PowerShell (x86)</em>. Close it and open the entry without "(x86)".</p></div>
+            </details>
+            <details class="incident">
+              <summary>Prefer a Linux environment? <span>WSL</span></summary>
+              <div class="body"><p>If you already develop in WSL, open your WSL shell and run the macOS/Linux command, <code>curl -fsSL https://claude.ai/install.sh | bash</code>, there. Keep the project inside the WSL filesystem. For this course, native Windows is the simpler path, and it's what Unity and Unreal weeks assume.</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <h3>Sign in</h3>
+      <p>Make a folder for the course and start Claude in it. These commands work in both Terminal and PowerShell:</p>
+      <div class="code"><span class="lbl">Terminal or PowerShell</span><pre>mkdir goblin-express
+cd goblin-express
+claude</pre><button type="button">Copy</button></div>
+      <p>The first time you run <code>claude</code>, it walks you through a few one-time setup screens. You can't click in the terminal: use the <kbd>↑</kbd> <kbd>↓</kbd> arrow keys to move and <kbd>Enter</kbd> to choose. When in doubt, the highlighted default is fine.</p>
+      <ol class="steps">
+        <li><div>
+          <h4>Pick a text style</h4>
+          <p>You'll see the Claude Code welcome art and a list of themes, with a sample code change below it. Pick the one that's easiest to read in your terminal; <em>Dark mode</em> suits most Windows and Mac terminals. You can change it later with <code>/theme</code>.</p>
+        </div></li>
+        <li><div>
+          <h4>Log in</h4>
+          <p>Choose to log in with your Claude account (the one with your Pro or higher plan). If you're using an Anthropic Console account with API billing instead, choose that. A browser window opens; sign in, approve access, then come back to the terminal and press <kbd>Enter</kbd> if it asks.</p>
+        </div></li>
+        <li><div>
+          <h4>Accept the remaining defaults</h4>
+          <p>Claude Code may show a short safety note and offer recommended terminal settings. Read them, then press <kbd>Enter</kbd> to continue.</p>
+        </div></li>
+        <li><div>
+          <h4>Trust the folder</h4>
+          <p>It asks whether you trust the files in this folder. Say yes: it's yours, and it's empty. If the folder named here isn't <code>goblin-express</code>, press <kbd>Esc</kbd>, then <code>cd</code> into the right folder and run <code>claude</code> again.</p>
+        </div></li>
+      </ol>
+      <p>You're ready when you see a prompt box waiting for you to type. You only do this setup once per computer.</p>
+
+      <div class="policy">
+        <span class="num">§2</span>
+        <p><strong>Company policy</strong>One project, one folder. Claude works where you start it, so never start it in your home directory or your Desktop "just to try something."</p>
+      </div>
+    </section>
+
+    <section id="shift">
+      <p class="eyebrow">03 · Your first shift · 30 min</p>
+      <h2 class="sec">Snag's first delivery</h2>
+      <p class="lead">You're in the Claude Code prompt inside an empty <code>goblin-express</code> folder. Time to build the smallest version of the game that's still a game.</p>
+
+      <h3>Four controls to know</h3>
+      <ul>
+        <li><kbd>Shift</kbd> + <kbd>Tab</kbd> cycles permission modes, such as auto-accepting edits. Leave it on the default today so you see each change before it lands.</li>
+        <li><kbd>Esc</kbd> interrupts Claude mid-task. Use it the moment it heads somewhere you don't want.</li>
+        <li><code>/help</code> lists commands.</li>
+        <li><code>exit</code>, or <kbd>Ctrl</kbd> + <kbd>D</kbd> twice, leaves Claude Code.</li>
+      </ul>
+
+      <h3>1. Brief the courier</h3>
+      <p>Paste this brief. Its last line asks Claude to talk through the approach before writing anything, which is all the planning a job this size needs:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Make a tiny top-down delivery game in one file called index.html, with no libraries and no build step.
+
+The player is Snag, a goblin courier, drawn as a green circle. Move with WASD or the arrow keys. A yellow parcel appears at a random spot; walk over it to pick it up, then carry it to a glowing drop-off zone on the other side of the map. Each delivery adds 1 to the score and spawns a new parcel. A shift lasts 60 seconds. Show the score and the time left at the top, and a "Shift over" screen with the final score and a key to restart.
+
+Before you write any code, tell me in a few lines how you'll structure it, and ask me about anything that's unclear.</pre><button type="button">Copy</button></div>
+      <p>Read the approach Claude describes before you let it build. Look for three things: does it match what you asked, did it add anything you didn't ask for, and did it ask about anything ambiguous? If something's off, say so in plain words and let it revise.</p>
+
+      <h3>2. Green-light it and watch</h3>
+      <p>When the approach looks right, tell Claude to go ahead. It will write the file and ask permission before creating it. Then open the game:</p>
+      <div class="os-inline">
+        <div class="code"><span class="lbl">macOS</span><pre>open index.html</pre><button type="button">Copy</button></div>
+        <div class="code"><span class="lbl">Windows</span><pre>start index.html</pre><button type="button">Copy</button></div>
+      </div>
+      <p class="note">Run these in a second terminal window, or type <code>!</code> before the command at the Claude prompt to run it as a shell command.</p>
+
+      <h3>3. Play it, then direct the next change</h3>
+      <p>Play a full shift. You'll notice things: too slow, drop-off too far, parcel hard to see. Tell Claude what you <em>felt</em>, not which numbers to change. Then add the feature that makes it Goblin Express:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>After each delivery, the customer rates it from 1 to 5 stars based on how quickly the parcel arrived after pickup. Show the stars and a short, grumpy one-line review for a couple of seconds. Write at least ten different reviews and keep them in a list that's easy to edit.</pre><button type="button">Copy</button></div>
+      <p>A change this small and clear doesn't need an approach discussion; just ask. When the reviews come in, they might look like these:</p>
+      <div class="reviews" aria-label="Example customer reviews">
+        <div class="review"><div class="stars" aria-label="2 stars">★★☆☆☆</div><p>Parcel arrived warm. It was not supposed to be warm.</p><small>— Old Mother Wort</small></div>
+        <div class="review"><div class="stars" aria-label="5 stars">★★★★★</div><p>Fast. Suspiciously fast. Did you even go round the bog?</p><small>— The Professor</small></div>
+        <div class="review"><div class="stars" aria-label="1 star">★☆☆☆☆</div><p>My snail got here before the parcel did. My snail was IN the parcel.</p><small>— Lil' Grub</small></div>
+      </div>
+      <p>Change the game until you'd show it to a colleague. Then stop: the game should stay this small until tomorrow.</p>
+
+      <div class="policy">
+        <span class="num">§3</span>
+        <p><strong>Company policy</strong>Describe the feeling, not the fix. "Snag feels sluggish" lets Claude find the speed value, the acceleration and the frame-rate bug you didn't know about.</p>
+      </div>
+
+      <h3>4. Clock out: save the game</h3>
+      <p>Before you leave, put today's work under version control. You don't need to remember any Git commands; ask Claude:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Set this folder up as a Git repository with a sensible .gitignore, and commit everything with a clear message describing what the game does so far.</pre><button type="button">Copy</button></div>
+      <p>Watch what it runs. If this is your first time using Git on this machine, Claude will notice Git doesn't know your name and email yet and ask you for them. Tomorrow starts from this commit, and if a change ever goes badly, this is the save point you load.</p>
+
+      <div class="policy">
+        <span class="num">§4</span>
+        <p><strong>Company policy</strong>No courier clocks out with unsaved work. End every shift with a commit.</p>
+      </div>
+    </section>
+
+    <section id="checkpoint">
+      <p class="eyebrow">04 · Checkpoint · 5 min</p>
+      <h2 class="sec">Sign the timesheet</h2>
+      <p>Tick these off. They're saved in this browser only.</p>
+      <ul class="checklist" data-lesson="w1d1">
+        <li><label><input type="checkbox" id="c1"><span><code>claude doctor</code> runs without errors</span></label></li>
+        <li><label><input type="checkbox" id="c2"><span>I asked for the approach first and changed at least one thing before Claude built it</span></label></li>
+        <li><label><input type="checkbox" id="c3"><span>A full 60-second shift plays in my browser, with score and restart</span></label></li>
+        <li><label><input type="checkbox" id="c4"><span>Customers leave star ratings and grumpy reviews</span></label></li>
+        <li><label><input type="checkbox" id="c5"><span>I interrupted Claude with Esc at least once, on purpose</span></label></li>
+        <li><label><input type="checkbox" id="c6"><span>The game is committed to Git</span></label></li>
+      </ul>
+      <div class="badge" data-lesson="w1d1" data-earned="Earned. You got your first build running. Madam Grizzletooth is mildly impressed." aria-live="polite">
+        <div class="medal" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="36" height="36"><rect x="8" y="12" width="24" height="20" rx="2" fill="none" stroke="var(--parcel-ink)" stroke-width="3"/><path d="M8 18h24M20 12v20" stroke="var(--parcel-ink)" stroke-width="2.5"/><path d="M14 8l6 4 6-4" stroke="var(--parcel-ink)" stroke-width="2.5" fill="none"/></svg>
+        </div>
+        <div>
+          <h4>Clocked In</h4>
+          <p class="badge-text">Locked. Finish the checklist to earn it.</p>
+        </div>
+      </div>
+      <h3>Debrief questions</h3>
+      <p>Jot down answers; we'll use them on Day 2.</p>
+      <ul>
+        <li>Where did Claude's plan differ from what you pictured? Whose version was better?</li>
+        <li>What did you have to tell it that you assumed was obvious?</li>
+        <li>How long would today's prototype have taken you by hand?</li>
+      </ul>
+    </section>
+
+    <section id="quest">
+      <div class="quest">
+        <p class="eyebrow">★ Side quest · optional · ~30 min</p>
+        <h2 class="sec">Same order, different courier</h2>
+        <p>Pick a genre you know well and name your own tiny game. Make a new folder with that name, next to <code>goblin-express</code> rather than inside it, and give Claude a one-paragraph brief. Ask for the approach first, and push back on it at least twice. Compare: what did your domain knowledge change about the result?</p>
+        <p>If you've built the same mechanic in an engine before, note how long it took. You'll want that number in Week 9.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="next">
+        <div>
+          <p class="eyebrow">Up next · Day 2</p>
+          <a class="go" href="../day-2/">Snag Gets a Route</a>
+        </div>
+        <p class="verified">Install steps last verified 2026-10-23 against the <a href="https://code.claude.com/docs/en/terminal-guide" target="_blank" rel="noopener">Claude Code docs</a>.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>© 2026 Games and AI · <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
