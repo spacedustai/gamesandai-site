@@ -1,0 +1,317 @@
+/* Site shell for gamesandai.org: tokens, base type, header and footer.
+   Course pages under learn/goblin-express-academy/ load academy.css instead,
+   which styles the same header and footer markup in the course's palette. */
+
+/* ---- tokens ---------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --bg: #fbfaf8;
+  --bg-raised: #ffffff;
+  --fg: #1b1a18;
+  --fg-muted: #5e5a54;
+  --border: #e3ded6;
+  --accent: #a8452a;
+  --accent-fg: #ffffff;
+  --code-bg: #f4f1ec;
+
+  --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --measure: 68ch;
+  --wide: 1140px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #14130f;
+    --bg-raised: #1d1b17;
+    --fg: #edeae4;
+    --fg-muted: #a09a90;
+    --border: #322e28;
+    --accent: #e08b6c;
+    --accent-fg: #14130f;
+    --code-bg: #201e19;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #14130f;
+  --bg-raised: #1d1b17;
+  --fg: #edeae4;
+  --fg-muted: #a09a90;
+  --border: #322e28;
+  --accent: #e08b6c;
+  --accent-fg: #14130f;
+  --code-bg: #201e19;
+}
+
+/* ---- reset ----------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 2rem 0 0.6rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.4rem + 2.2vw, 2.9rem);
+  margin-top: 0;
+}
+h2 {
+  font-size: 1.55rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- layout helpers -------------------------------------------------- */
+.wrap {
+  width: min(100% - 2.5rem, var(--wide));
+  margin-inline: auto;
+}
+
+.prose {
+  width: min(100% - 2.5rem, var(--measure));
+  margin-inline: auto;
+}
+
+.muted {
+  color: var(--fg-muted);
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--fg-muted);
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-fg);
+  padding: 0.55rem 1.05rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 550;
+  font-size: 0.95rem;
+}
+
+.button:hover {
+  color: var(--accent-fg);
+  filter: brightness(1.08);
+}
+
+/* ---- header and footer ----------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-raised);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.site-header-inner {
+  width: min(100% - 2.5rem, var(--wide));
+  margin-inline: auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.3rem;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--fg-muted);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current='page'] {
+  color: var(--accent);
+}
+
+.site-main {
+  padding: 3rem 0 4rem;
+  min-height: 60vh;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.6rem 0 calc(1.6rem + env(safe-area-inset-bottom, 0px));
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+.site-footer-inner {
+  width: min(100% - 2.5rem, var(--wide));
+  margin-inline: auto;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---- home ------------------------------------------------------------ */
+.home-hero {
+  max-width: 46rem;
+  margin-bottom: 3.5rem;
+}
+
+.lede {
+  font-size: 1.18rem;
+  color: var(--fg-muted);
+  margin-bottom: 0.7rem;
+}
+
+.scope-note {
+  font-size: 0.95rem;
+  margin: 0 0 1.6rem;
+}
+
+.section-title {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---- course cards (home and Learn index) ----------------------------- */
+.course-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.course-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-raised);
+  padding: 1.25rem 1.4rem;
+  text-decoration: none;
+  max-width: 46rem;
+}
+
+.course-card:hover {
+  color: inherit;
+  border-color: var(--accent);
+}
+
+.course-card svg {
+  width: 72px;
+  height: auto;
+}
+
+.course-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.course-card:hover h3 {
+  color: var(--accent);
+}
+
+.course-card .tagline {
+  font-style: italic;
+  margin: 0.1rem 0 0.5rem;
+  color: var(--fg-muted);
+}
+
+.course-card p {
+  margin: 0 0 0.5rem;
+}
+
+.course-card .course-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .course-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
