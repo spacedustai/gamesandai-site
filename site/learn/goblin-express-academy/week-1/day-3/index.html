@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Out of the Shoebox — Goblin Express Academy</title>
+<meta name="description" content="Unpack the one-file game into a project with a place for everything, without changing a thing the player can feel.">
+<link rel="canonical" href="https://gamesandai.org/learn/goblin-express-academy/week-1/day-3/">
+<link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Out of the Shoebox — Goblin Express Academy">
+<meta property="og:description" content="Unpack the one-file game into a project with a place for everything, without changing a thing the player can feel.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gamesandai.org/learn/goblin-express-academy/week-1/day-3/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../../../assets/css/academy.css">
+<!-- Picks macOS or Windows before first paint; see academy.js. -->
+<script>try{var o=localStorage.getItem('gea:os')}catch(e){}document.documentElement.dataset.os=o==='mac'||o==='win'?o:/Win/i.test(navigator.userAgent)?'win':'mac'</script>
+<script src="../../../../assets/js/academy.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../../../../">Games and AI</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../../" aria-current="true">Learn</a>
+      <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Learn</a> / <a href="../../">Goblin Express Academy</a> / <a href="../">Week 1: The Depot</a> / Day 3</nav>
+    <span class="stamp">Training Module 1.3</span>
+    <h1 id="top">Out of the Shoebox</h1>
+    <p class="dek">Unpack the one-file game into a project with a place for everything, without changing a thing the player can feel.</p>
+    <ul class="meta">
+      <li><b>~70 min</b> core + optional side quest</li>
+      <li><b>Mac or Windows</b></li>
+      <li><b>You'll ship:</b> the same game, unpacked into a project that can grow</li>
+    </ul>
+    <div class="road" aria-hidden="true">
+      <div class="runner">
+        <svg viewBox="0 0 120 110" role="presentation">
+          <rect x="62" y="22" width="44" height="40" rx="4" fill="#F2BE3A" stroke="#2A2008" stroke-width="3"/>
+          <path d="M62 34h44M84 22v40" stroke="#2A2008" stroke-width="2"/>
+          <text x="84" y="57" font-family="monospace" font-size="8" text-anchor="middle" fill="#2A2008">FRAGILE?</text>
+          <ellipse cx="44" cy="54" rx="22" ry="24" fill="#6E9B4A" stroke="#1F2219" stroke-width="3"/>
+          <path d="M24 42 L2 30 L24 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M62 40 L80 26 L64 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="38" cy="50" r="6" fill="#FFF8E0"/><circle cx="54" cy="50" r="6" fill="#FFF8E0"/>
+          <circle cx="40" cy="51" r="3" fill="#1F2219"/><circle cx="56" cy="51" r="3" fill="#1F2219"/>
+          <path d="M36 66 Q46 74 58 64" stroke="#1F2219" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M44 67 l3 5 l3-5" fill="#FFF8E0" stroke="#1F2219" stroke-width="1.5"/>
+          <path d="M34 78 L28 100 M54 78 L62 100" stroke="#1F2219" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="dropoff">Shelf 3B</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Lesson parts">
+    <h2>Today's shift</h2>
+    <ol>
+      <li><a href="#memo"><span class="n">00</span><span>Shift memo</span><span class="t">5m</span></a></li>
+      <li><a href="#why"><span class="n">01</span><span>Why one file stops working</span><span class="t">10m</span></a></li>
+      <li><a href="#plan"><span class="n">02</span><span>Plan the move</span><span class="t">15m</span></a></li>
+      <li><a href="#move"><span class="n">03</span><span>Make the move</span><span class="t">35m</span></a></li>
+      <li><a href="#checkpoint"><span class="n">04</span><span>Checkpoint</span><span class="t">5m</span></a></li>
+      <li><a href="#quest"><span class="n">★</span><span>Side quest</span><span class="t">30m</span></a></li>
+    </ol>
+    <div class="total">Core: 70 min · Optional: +30</div>
+  </nav>
+
+  <main>
+    <section id="memo">
+      <p class="eyebrow">00 · Shift memo</p>
+      <h2 class="sec">Everything in one shoebox</h2>
+      <div class="memo">
+        <header>
+          <span>To:</span><b>Courier Snag's handler (you)</b>
+          <span>From:</span><b>Madam Grizzletooth, Proprietor</b>
+          <span>Re:</span><b>Moving day</b>
+        </header>
+        <p>Two shifts in, and Snag has a level, a dash and a trail of dust behind him. Good.</p>
+        <p>Here is the problem. All of it lives in one file: the map, the reviews, the tuning numbers, the controls and the rules. Goblin Express kept its accounts the same way, in one shoebox, until the shoebox caught fire.</p>
+        <p>Today we move into a proper warehouse, with shelves, labels and a place for everything. The rule for moving day is the rule for every delivery: nothing lost, nothing broken. If Snag plays differently tonight than he did this morning, somebody dropped a box.</p>
+        <p class="sig">— G.</p>
+      </div>
+      <h3>By the end of this module you will</h3>
+      <ul>
+        <li>Write down what "still works" means before you change anything.</li>
+        <li>Brief Claude on the constraints it can't see for itself.</li>
+        <li>Split the game into files one safe step at a time, with a commit after each.</li>
+        <li>Find an error in the browser and hand it to Claude.</li>
+        <li>Make a change that touches one small file instead of the whole game.</li>
+      </ul>
+    </section>
+
+    <section id="why">
+      <p class="eyebrow">01 · Why one file stops working · 10 min</p>
+      <h2 class="sec">One shoebox, every parcel</h2>
+      <p class="lead">A single file was the right call on Day 1: nothing to set up and nothing to lose track of. Two days later, every change, whether it's a review line, a crate or the dash, happens in the same few hundred lines.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 640 250" role="img" aria-label="Before: one file, index.html, holds the map, reviews, tuning, controls, rules and drawing. After: the same game in eight small files with one job each, so a change to the reviews touches only reviews.js.">
+          <defs>
+            <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--ink-soft)"/></marker>
+          </defs>
+          <g font-family="JetBrains Mono, monospace" font-size="11" fill="var(--ink-soft)">
+            <text x="12" y="16">BEFORE: ONE SHOEBOX</text>
+            <text x="348" y="16">AFTER: SHELVES</text>
+          </g>
+          <rect x="12" y="28" width="280" height="214" rx="8" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/>
+          <g font-family="Atkinson Hyperlegible, system-ui, sans-serif">
+            <text x="152" y="54" text-anchor="middle" font-weight="700" font-size="15" fill="var(--ink)">index.html</text>
+            <rect x="32" y="68" width="240" height="22" rx="4" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+            <text x="44" y="83" font-size="12" fill="var(--ink)">the Depot map</text>
+            <rect x="32" y="96" width="240" height="22" rx="4" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)" stroke-width="2"/>
+            <text x="44" y="111" font-size="12" fill="var(--ink)">customer reviews</text>
+            <rect x="32" y="124" width="240" height="22" rx="4" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+            <text x="44" y="139" font-size="12" fill="var(--ink)">tuning values</text>
+            <rect x="32" y="152" width="240" height="22" rx="4" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+            <text x="44" y="167" font-size="12" fill="var(--ink)">controls</text>
+            <rect x="32" y="180" width="240" height="22" rx="4" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+            <text x="44" y="195" font-size="12" fill="var(--ink)">rules: parcels, timer, score</text>
+            <rect x="32" y="208" width="240" height="22" rx="4" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
+            <text x="44" y="223" font-size="12" fill="var(--ink)">drawing</text>
+          </g>
+          <path d="M298 135 H342" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#arr3)"/>
+          <g font-family="JetBrains Mono, monospace" font-size="13">
+            <rect x="348" y="28" width="134" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="360" y="48" font-weight="600" fill="var(--ink)">index.html</text>
+            <text x="360" y="66" font-size="11" fill="var(--ink-soft)">the page</text>
+            <rect x="494" y="28" width="134" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="506" y="48" font-weight="600" fill="var(--ink)">style.css</text>
+            <text x="506" y="66" font-size="11" fill="var(--ink-soft)">the look</text>
+            <rect x="348" y="83" width="134" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="360" y="103" font-weight="600" fill="var(--ink)">level.js</text>
+            <text x="360" y="121" font-size="11" fill="var(--ink-soft)">the Depot map</text>
+            <rect x="494" y="83" width="134" height="48" rx="6" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)" stroke-width="2"/>
+            <text x="506" y="103" font-weight="600" fill="var(--ink)">reviews.js</text>
+            <text x="506" y="121" font-size="11" fill="var(--ink-soft)">customer reviews</text>
+            <rect x="348" y="138" width="134" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="360" y="158" font-weight="600" fill="var(--ink)">config.js</text>
+            <text x="360" y="176" font-size="11" fill="var(--ink-soft)">tuning values</text>
+            <rect x="494" y="138" width="134" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="506" y="158" font-weight="600" fill="var(--ink)">input.js</text>
+            <text x="506" y="176" font-size="11" fill="var(--ink-soft)">controls</text>
+            <rect x="348" y="193" width="134" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="360" y="213" font-weight="600" fill="var(--ink)">game.js</text>
+            <text x="360" y="231" font-size="11" fill="var(--ink-soft)">the rules</text>
+            <rect x="494" y="193" width="134" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="506" y="213" font-weight="600" fill="var(--ink)">draw.js</text>
+            <text x="506" y="231" font-size="11" fill="var(--ink-soft)">drawing</text>
+          </g>
+        </svg>
+        <figcaption>Same game, same code, different shelves. On the right, a change to the reviews touches one small file, and the file name alone tells you what changed.</figcaption>
+      </figure>
+
+      <p>Keeping everything in one file starts to cost you in three ways:</p>
+      <ul>
+        <li><strong>Claude reads more than it needs.</strong> To change one review, it has to find its way past the map, the controls and the drawing code. That's slower, fills up more of what it can hold in mind at once, and puts unrelated code right next to every edit.</li>
+        <li><strong>You can't review at a glance.</strong> Every edit Claude shows you is in <code>index.html</code>. With separate files, the file name tells you whether a "small fix" to the dash also touched the level.</li>
+        <li><strong>Not everyone on a team should touch code.</strong> Designers tune numbers, writers edit reviews, level designers move crates. Give each of those its own file and they can work without breaking the game.</li>
+      </ul>
+      <p class="note">If you did Day 2's side quest, Claude's review probably named the single file as a problem. Today deals with it.</p>
+
+      <div class="policy">
+        <span class="num">§8</span>
+        <p><strong>Company policy</strong>A place for everything. Each file does one job, and data lives apart from code. If you can't say what a file is for in one sentence, it's two files.</p>
+      </div>
+    </section>
+
+    <section id="plan">
+      <p class="eyebrow">02 · Plan the move · 15 min</p>
+      <h2 class="sec">Measure twice, carry once</h2>
+      <p class="lead">Splitting a file without changing what it does is called a refactor. A refactor is easy to judge, because the game should play exactly the same afterward. You only have to decide what "the same" means before anything moves.</p>
+
+      <h3>1. Start from a save point</h3>
+      <div class="code"><span class="lbl">Terminal or PowerShell</span><pre>cd goblin-express
+claude</pre><button type="button">Copy</button></div>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Check that everything is committed. If anything isn't, commit it with a clear message so we start the move from a clean save point.</pre><button type="button">Copy</button></div>
+      <p>If the move goes badly, this is the commit you send everything back to, just like on Day 2.</p>
+
+      <h3>2. Write down what "still works" means</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Before we change anything, read the game and write a checklist of everything a player can see or do, from the start of a shift to the "Shift over" screen: the controls, the dash and its cooldown, the dust and screen shake, the level layout, parcels and the drop-off, scoring, the timer, the reviews and the restart. Keep it short enough to play through in two minutes. Save it as PLAYTEST.md and commit it.</pre><button type="button">Copy</button></div>
+      <p>Then play through the list once, on the game as it is now. If something on it doesn't happen, or you notice something the list missed, fix the list, not the game. You'll run this same list after every step of the move. (In Week 3, Claude learns to run it for you.)</p>
+
+      <div class="policy">
+        <span class="num">§9</span>
+        <p><strong>Company policy</strong>Moving day changes nothing. A refactor moves code around; it never changes what the player feels. Write down what "still works" means before you start, and check it after every step.</p>
+      </div>
+
+      <h3>3. Brief the move</h3>
+      <p>Claude knows a lot about project structure. What it can't know is how this game gets opened and who will edit it. Put that in the brief:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>I want to split index.html into a small project with a place for everything, without changing how the game plays. Constraints:
+
+- No libraries, no build step, and nothing to install.
+- The game must still start by opening index.html directly in a browser, with no local web server.
+- The tuning values, the level map and the customer reviews each get their own file, so someone who doesn't code can edit them.
+- Each file does one job.
+
+Tell me the folder layout you'd use, what goes in each file, and the order you'd move things in, starting with the data. Make the steps small enough that I can test each one. Don't change any code yet.</pre><button type="button">Copy</button></div>
+      <p>The layout Claude proposes will look something like this:</p>
+      <div class="code"><span class="lbl">Example layout</span><pre>goblin-express/
+├── index.html      the page: canvas, score, and the scripts to load
+├── style.css       how the page looks
+├── PLAYTEST.md     your checklist
+└── js/
+    ├── config.js   tuning values, each with a comment
+    ├── level.js    the Depot text map
+    ├── reviews.js  customer reviews
+    ├── input.js    keyboard controls
+    ├── game.js     the rules: parcels, timer, score, dash
+    └── draw.js     everything on screen</pre></div>
+      <p>Check its answer the way you checked the approach on Day 1. Does it keep every constraint? Did it add anything you didn't ask for, like a framework, a bundler or a <code>package.json</code>? Are the steps small? Push back on anything that's off, in plain words.</p>
+      <p class="note"><strong>Why "no local web server"?</strong> Modern JavaScript can split code into <em>modules</em> that load each other, but browsers refuse to load modules, or read data files, from a page you opened by double-clicking. Without that line, Claude may reach for them, and the game goes blank. Later in the course, when Claude starts running the game itself, a local server earns its keep. For now, double-click keeps it simple.</p>
+
+      <div class="policy">
+        <span class="num">§10</span>
+        <p><strong>Company policy</strong>Say what Claude can't see. How the game gets opened, what the team can install, which machines it has to run on: if it isn't in the brief, Claude will guess.</p>
+      </div>
+    </section>
+
+    <section id="move">
+      <p class="eyebrow">03 · Make the move · 35 min</p>
+      <h2 class="sec">Moving day</h2>
+      <p class="lead">Move the data first, then the code. After each step, play the checklist, then commit. It's Day 2's rhythm, applied to a bigger job.</p>
+
+      <h3>1. Let the edits through</h3>
+      <p>A move creates a lot of files, and approving each one gets old fast. You've checked the plan and you have a save point, so this is a good time to stop approving every edit. Press <kbd>Shift</kbd> + <kbd>Tab</kbd> until the status bar under the prompt shows <code>⏵⏵ accept edits on</code>.</p>
+      <p>Claude now creates and edits files in this folder without asking. It still asks before running other commands, including Git, and every edit still scrolls past for you to skim. On Windows, if <kbd>Shift</kbd> + <kbd>Tab</kbd> does nothing, try <kbd>Alt</kbd> + <kbd>M</kbd>.</p>
+
+      <h3>2. Move the data</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Go ahead with the first step only. Then stop, and tell me what to check.</pre><button type="button">Copy</button></div>
+      <p>Reload the game in the browser (<kbd>Cmd</kbd> + <kbd>R</kbd> on a Mac, <kbd>Ctrl</kbd> + <kbd>R</kbd> or <kbd>F5</kbd> on Windows) and play through <code>PLAYTEST.md</code>. Everything the same? Save it:</p>
+      <div class="code"><span class="lbl">Prompt</span><pre>Commit this step.</pre><button type="button">Copy</button></div>
+
+      <h3>3. Move the code</h3>
+      <p>Now the rest, one step at a time:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Do the next step, then stop so I can test it.</pre><button type="button">Copy</button></div>
+      <p>Play the checklist, commit, and repeat until the plan is done. Five steps means five play-throughs and five commits. That feels slow, but when something breaks, you'll know exactly which step did it.</p>
+
+      <h3>4. When the screen goes blank</h3>
+      <p>Somewhere in a move like this, something usually breaks: a blank screen, a Snag who won't move, a review that never appears. The browser records why in its <em>console</em>, a panel of messages from the page. Open it:</p>
+      <div class="os">
+        <div class="os-tabs" role="tablist" aria-label="Operating system">
+          <button type="button" role="tab" data-os="mac" aria-selected="true">macOS</button>
+          <button type="button" role="tab" data-os="win" aria-selected="false">Windows</button>
+        </div>
+        <div class="os-panel" data-panel="mac" role="tabpanel">
+          <p>In Chrome or Edge, press <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>J</kbd>. In Firefox, <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>K</kbd>. In Safari, first turn on <strong>Settings → Advanced → Show features for web developers</strong>, then press <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>C</kbd>.</p>
+        </div>
+        <div class="os-panel" data-panel="win" role="tabpanel">
+          <p>In Chrome or Edge, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd>. In Firefox, <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd>. Or press <kbd>F12</kbd> in any of them and choose the <strong>Console</strong> tab.</p>
+        </div>
+      </div>
+      <p>Red lines are errors. Copy them, or take a screenshot of the console like on Day 2, and paste them in:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>[paste the error] After the last step the screen is blank. This is from the browser console. Fix it without changing how the game plays.</pre><button type="button">Copy</button></div>
+
+      <div class="incidents">
+        <h4>Incident reports</h4>
+        <details class="incident">
+          <summary>Blank screen, and the console mentions CORS <span>modules opened from a file</span></summary>
+          <div class="body">
+            <p>Claude split the code into JavaScript modules, which browsers won't load from a page opened by double-clicking. Remind it of the constraint:</p>
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>The game has to start by double-clicking index.html, with no web server. Use plain script tags instead of modules.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+        <details class="incident">
+          <summary>The level or reviews won't load, and the console mentions "file" <span>data read with fetch</span></summary>
+          <div class="body"><p>A page opened from disk isn't allowed to read other files on its own. Ask Claude to keep the map and the reviews in <code>.js</code> files that <code>index.html</code> loads with script tags, rather than in <code>.txt</code> or <code>.json</code> files the code reads.</p></div>
+        </details>
+        <details class="incident">
+          <summary>"… is not defined" <span>scripts load in the wrong order</span></summary>
+          <div class="body"><p>Plain scripts run top to bottom, in the order <code>index.html</code> lists them. If <code>game.js</code> uses something from <code>config.js</code>, <code>config.js</code> has to come first. Paste the error and Claude will reorder them.</p></div>
+        </details>
+        <details class="incident">
+          <summary>Changing a tuning value does nothing <span>copied, not moved</span></summary>
+          <div class="body">
+            <p>The old number may still be in two places, and the game is using the other one.</p>
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>Search the project for tuning values that are defined more than once, and make sure each one lives only in the config file.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+        <details class="incident">
+          <summary>It's way off, and each fix makes it worse <span>a bad step</span></summary>
+          <div class="body">
+            <p>Don't patch it (§6). Send it back and redo the step smaller:</p>
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>Put everything back to the last commit. Then redo that step in two smaller pieces, and stop after the first.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+      </div>
+
+      <h3>5. Check the move with fresh eyes</h3>
+      <p>When the last step is committed, press <kbd>Shift</kbd> + <kbd>Tab</kbd> until the status bar shows <code>⏸ manual mode on</code>, the default from Days 1 and 2. Then start a fresh conversation, so Claude sees the project the way a newcomer would:</p>
+      <div class="code"><span class="lbl">Prompt</span><pre>/clear</pre><button type="button">Copy</button></div>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Read this project and tell me in five bullets how it's organized. Then tell me which file you'd open to change a customer review, to move a crate, and to make the dash longer.</pre><button type="button">Copy</button></div>
+      <p>Three questions, three different small files? The move worked. <code>/clear</code> doesn't delete anything, by the way: the old conversation is saved, and the project is exactly as you left it.</p>
+
+      <h3>6. Collect on the move</h3>
+      <p>Now make a change the new shelves make easy. The regulars deserve their own voices:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Every parcel is now for one of our regulars: Old Mother Wort, who sends cursed things; the Professor, who orders explosive lab supplies; and Lil' Grub, who keeps ordering live animals. Show who each parcel is for when Snag picks it up, and give each customer their own set of at least five reviews, in their own voice, in the reviews file.</pre><button type="button">Copy</button></div>
+      <p>Watch which files Claude opens and edits. It should be a couple of small ones, and the level shouldn't be one of them. Play a shift, then edit one review yourself: open the reviews file in any text editor, change a line, save, and reload the game. That's a writer's whole workflow now, and none of it touches game code.</p>
+      <div class="reviews" aria-label="Example customer reviews">
+        <div class="review"><div class="stars" aria-label="3 stars">★★★☆☆</div><p>The hex arrived on time. It's on the cat now, but it was on time.</p><small>— Old Mother Wort</small></div>
+        <div class="review"><div class="stars" aria-label="1 star">★☆☆☆☆</div><p>You shook it. I can tell you shook it. The ceiling can tell you shook it.</p><small>— The Professor</small></div>
+        <div class="review"><div class="stars" aria-label="4 stars">★★★★☆</div><p>Frog arrived happy. Courier did not. Correct ratio.</p><small>— Lil' Grub</small></div>
+      </div>
+
+      <h3>7. Clock out</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit any remaining changes, then show me today's commits, one line each, and the project's files as a tree.</pre><button type="button">Copy</button></div>
+      <p>Compare that log with yesterday's. Every step of the move is its own commit, so if one broke something you didn't catch, you can send back that step alone.</p>
+    </section>
+
+    <section id="checkpoint">
+      <p class="eyebrow">04 · Checkpoint · 5 min</p>
+      <h2 class="sec">Sign the timesheet</h2>
+      <p>Tick these off. They're saved in this browser only.</p>
+      <ul class="checklist" data-lesson="w1d3">
+        <li><label><input type="checkbox" id="e1"><span><code>PLAYTEST.md</code> lists what the game does, and I played through it before the move</span></label></li>
+        <li><label><input type="checkbox" id="e2"><span>I checked Claude's proposed layout against my constraints before any code moved</span></label></li>
+        <li><label><input type="checkbox" id="e3"><span>The game still opens straight from <code>index.html</code> and plays exactly as it did this morning</span></label></li>
+        <li><label><input type="checkbox" id="e4"><span>The tuning values, the level map and the reviews each live in their own file</span></label></li>
+        <li><label><input type="checkbox" id="e5"><span>Each step of the move has its own commit</span></label></li>
+        <li><label><input type="checkbox" id="e6"><span>Each regular has their own reviews, and I edited one by hand</span></label></li>
+      </ul>
+      <div class="badge" data-lesson="w1d3" data-earned="Earned. You moved the whole game and didn't drop a single parcel. Madam Grizzletooth would like you to do her filing next." aria-live="polite">
+        <div class="medal" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="36" height="36"><path d="M13 7h14l-1.5 9a5.5 5.5 0 0 1-11 0z" fill="none" stroke="var(--parcel-ink)" stroke-width="3" stroke-linejoin="round"/><path d="M20 22v9M14 32h12" stroke="var(--parcel-ink)" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h4>Handle With Care</h4>
+          <p class="badge-text">Locked. Finish the checklist to earn it.</p>
+        </div>
+      </div>
+      <h3>Debrief questions</h3>
+      <ul>
+        <li>What did <code>PLAYTEST.md</code> list that you wouldn't have thought to check?</li>
+        <li>Which constraint did Claude need from you, and what would it have done without it?</li>
+        <li>Which step of the move would you most want to be able to undo on its own?</li>
+      </ul>
+    </section>
+
+    <section id="quest">
+      <div class="quest">
+        <p class="eyebrow">★ Side quest · optional · ~30 min</p>
+        <h2 class="sec">Unpack your own game</h2>
+        <p>Run the same move on the game from your Day 1 side quest. Write its playtest list first, then brief the split with constraints of your own: maybe it has to run on the oldest laptop in the studio, or a designer will be editing the enemy stats. Compare the layout Claude proposes with the one it gave you for Goblin Express. Which differences come from your constraints, and which from the game?</p>
+        <p>Then ask either project a question about the future, without building anything:</p>
+        <div class="code wrapme"><span class="lbl">Prompt</span><pre>If we add a second level, which files change, and what would you add? Don't change any code.</pre><button type="button">Copy</button></div>
+        <p>A good answer names one or two files. A long list is a sign the move isn't finished.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="next">
+        <div>
+          <p class="eyebrow">Up next · Day 4</p>
+          <span class="soon">Day 4 <small>Coming soon</small></span>
+        </div>
+        <p class="verified">Commands last verified 2026-10-24 against the Claude Code docs on <a href="https://code.claude.com/docs/en/permission-modes" target="_blank" rel="noopener">permission modes</a> and <a href="https://code.claude.com/docs/en/interactive-mode" target="_blank" rel="noopener">interactive mode</a>.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>© 2026 Games and AI · <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
