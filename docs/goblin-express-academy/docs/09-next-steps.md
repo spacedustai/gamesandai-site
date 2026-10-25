@@ -12,10 +12,10 @@ Done on 2026-10-24: the plain-HTML site, the course home with the Gobbleton worl
 
 ## Content
 
-1. Fold in Jeremy's remaining Day 1 feedback (sign-in onward), then get Days 2 and 3 tested.
+1. Fold in Jeremy's remaining Day 1 feedback (sign-in onward), then get Days 2 to 4 tested.
 2. Find a Mac tester for Day 1.
-3. Write Week 1 Day 4 and the boss-delivery lab.
-4. Build the Week 1 reference build of Goblin Express with Claude Code, following the lessons exactly. This proves the prompts work, provides catch-up checkpoints and gives screenshots for the pages. Day 3 was run on 2026-10-25 (see the feedback log). Craig built Days 1 and 2 himself, so they still need a scripted run.
+3. Write the Week 1 boss-delivery lab. (Day 4 was written on 2026-10-25.)
+4. Build the Week 1 reference build of Goblin Express with Claude Code, following the lessons exactly. This proves the prompts work, provides catch-up checkpoints and gives screenshots for the pages. Days 3 and 4 were run on 2026-10-25 (see the feedback log). Craig built Days 1 and 2 himself, so they still need a scripted run.
 5. Answer the open questions in `03-shared-game-brief.md`, especially the 2D art style, since Week 5 and the site visuals depend on it.
 6. Outline Weeks 2 and 3 day by day.
 

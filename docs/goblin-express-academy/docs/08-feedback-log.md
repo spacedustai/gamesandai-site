@@ -1,5 +1,22 @@
 # Feedback log
 
+## Reference run: Week 1, Day 4 (October 25, 2026)
+
+Run before the page was written, on a copy of Craig's Goblin Express from the end of Day 3, with the same setup as the Day 3 run. A scripted playtest from `file://` checked every slice: the job board, tips and savings, the 1-star counter, getting fired, and the existing controls. Every slice passed. About $4.75 of usage and 21 minutes of Claude time.
+
+| # | Finding | How the page uses it |
+| --- | --- | --- |
+| 1 | Asked for design questions with suggested answers, Claude asked 15, grouped by feature, and invited a reply like "all suggestions, except 4 and 9". | Step 2 shows three of them and explains the menu form. |
+| 2 | When the answers arrived, Claude started editing code at once, with no design written down. | The answer prompt also asks for `DESIGN.md` and says "don't build anything yet"; an incident report covers stopping it with Esc. |
+| 3 | `DESIGN.md` was clear enough for a designer, and Claude listed six details it had filled in on its own. | Step 4 tells learners to check those guesses. |
+| 4 | Asked for about three slices with the quickest test for each, Claude ordered them getting fired, tips, board, and suggested temporary tuning values to test quickly. | The slice plan and §12. |
+| 5 | The math check found that far jobs paid 3× for 37% more walking, so near jobs were never worth taking. It also found that a sloppy first shift couldn't buy anything, and that firing would be rare. | The math step, its example table and §13. |
+| 6 | A fresh session comparing the game with `DESIGN.md` found three real differences and a list of undocumented extras. | Step 5 and the settle prompt. |
+| 7 | Claude again kept asking to run Node or find a browser to check its work. | Day 3's note covers it; Day 4 says Claude can't see the browser yet, so the learner is the tester. |
+| 8 | Clock-out with "on main" stayed on main. The shop side quest, built in a fresh session from `DESIGN.md` alone, worked: buying, prices, the key delay and the speed upgrade all checked out. | No change. |
+
+**Still needed:** a human run on Mac and Windows. The reference copy is in a scratch folder; Craig's own `goblin-express` still ends at Day 3.
+
 ## Reference run: Week 1, Day 3 (October 25, 2026)
 
 Run against Craig's own Goblin Express, which he had built through Day 2 and its side quest. Every Day 3 prompt went word for word to a headless Claude Code session (2.1.310, Opus 5.5) with no user settings or hooks; `/clear` meant a new session. After every step, an automated playtest opened `index.html` from `file://` and checked controls, dash, pickup, delivery, reviews, timer and restart. Every step passed. About $3.50 of usage and 11 minutes of Claude time.
