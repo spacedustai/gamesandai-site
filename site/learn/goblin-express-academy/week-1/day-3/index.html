@@ -206,7 +206,7 @@ claude</pre><button type="button">Copy</button></div>
 - The tuning values, the level map and the customer reviews each get their own file, so someone who doesn't code can edit them.
 - Each file does one job.
 
-Tell me the folder layout you'd use, what goes in each file, and the order you'd move things in, starting with the data. Make the steps small enough that I can test each one. Don't change any code yet.</pre><button type="button">Copy</button></div>
+Tell me the folder layout you'd use, what goes in each file, and the order you'd move things in, starting with the data. Keep it to about six steps, each small enough that I can test it. Don't change any code yet.</pre><button type="button">Copy</button></div>
       <p>The layout Claude proposes will look something like this:</p>
       <div class="code"><span class="lbl">Example layout</span><pre>goblin-express/
 ├── index.html      the page: canvas, score, and the scripts to load
@@ -219,7 +219,7 @@ Tell me the folder layout you'd use, what goes in each file, and the order you'd
     ├── input.js    keyboard controls
     ├── game.js     the rules: parcels, timer, score, dash
     └── draw.js     everything on screen</pre></div>
-      <p>Check its answer the way you checked the approach on Day 1. Does it keep every constraint? Did it add anything you didn't ask for, like a framework, a bundler or a <code>package.json</code>? Are the steps small? Push back on anything that's off, in plain words.</p>
+      <p>Check its answer the way you checked the approach on Day 1. Does it keep every constraint? Did it add anything you didn't ask for, like a framework, a bundler or a <code>package.json</code>? Is it about six steps? Without a number in the brief, Claude tends to plan a dozen tiny ones, and each one costs you a play-through. Push back on anything that's off, in plain words.</p>
       <p class="note"><strong>Why "no local web server"?</strong> Modern JavaScript can split code into <em>modules</em> that load each other, but browsers refuse to load modules, or read data files, from a page you opened by double-clicking. Without that line, Claude may reach for them, and the game goes blank. Later in the course, when Claude starts running the game itself, a local server earns its keep. For now, double-click keeps it simple.</p>
 
       <div class="policy">
@@ -236,8 +236,9 @@ Tell me the folder layout you'd use, what goes in each file, and the order you'd
       <h3>1. Let the edits through</h3>
       <p>A move creates a lot of files, and approving each one gets old fast. You've checked the plan and you have a save point, so this is a good time to stop approving every edit. Press <kbd>Shift</kbd> + <kbd>Tab</kbd> until the status bar under the prompt shows <code>⏵⏵ accept edits on</code>.</p>
       <p>Claude now creates and edits files in this folder without asking. It still asks before running other commands, including Git, and every edit still scrolls past for you to skim. On Windows, if <kbd>Shift</kbd> + <kbd>Tab</kbd> does nothing, try <kbd>Alt</kbd> + <kbd>M</kbd>.</p>
+      <p>Claude may also ask to run commands that check its own work, such as <code>node --check</code>. Some need tools you might not have installed. If you don't recognize a command, ask Claude what it does before you approve it, or say no and tell it you'll test in the browser yourself.</p>
 
-      <h3>2. Move the data</h3>
+      <h3>2. Make the first move</h3>
       <div class="code wrapme"><span class="lbl">Prompt</span><pre>Go ahead with the first step only. Then stop, and tell me what to check.</pre><button type="button">Copy</button></div>
       <p>Reload the game in the browser (<kbd>Cmd</kbd> + <kbd>R</kbd> on a Mac, <kbd>Ctrl</kbd> + <kbd>R</kbd> or <kbd>F5</kbd> on Windows) and play through <code>PLAYTEST.md</code>. Everything the same? Save it:</p>
       <div class="code"><span class="lbl">Prompt</span><pre>Commit this step.</pre><button type="button">Copy</button></div>
@@ -245,7 +246,7 @@ Tell me the folder layout you'd use, what goes in each file, and the order you'd
       <h3>3. Move the code</h3>
       <p>Now the rest, one step at a time:</p>
       <div class="code wrapme"><span class="lbl">Prompt</span><pre>Do the next step, then stop so I can test it.</pre><button type="button">Copy</button></div>
-      <p>Play the checklist, commit, and repeat until the plan is done. Five steps means five play-throughs and five commits. That feels slow, but when something breaks, you'll know exactly which step did it.</p>
+      <p>Play the checklist, commit, and repeat until the plan is done. Six steps means six play-throughs and six commits. That feels slow, but when something breaks, you'll know exactly which step did it.</p>
 
       <h3>4. When the screen goes blank</h3>
       <p>Somewhere in a move like this, something usually breaks: a blank screen, a Snag who won't move, a review that never appears. The browser records why in its <em>console</em>, a panel of messages from the page. Open it:</p>
@@ -289,6 +290,10 @@ Tell me the folder layout you'd use, what goes in each file, and the order you'd
           </div>
         </details>
         <details class="incident">
+          <summary>Blank after you edit a review, and the console says SyntaxError <span>a stray quote mark</span></summary>
+          <div class="body"><p>Each review sits between quote marks. A plain apostrophe, as in <code>didn't</code>, ends the line early, and the browser can't read the rest of the file. A missing comma does the same. The console names the file and line, such as <code>reviews.js:41</code>. Paste the error in and Claude will fix it, usually by swapping in a curly apostrophe (’).</p></div>
+        </details>
+        <details class="incident">
           <summary>It's way off, and each fix makes it worse <span>a bad step</span></summary>
           <div class="body">
             <p>Don't patch it (§6). Send it back and redo the step smaller:</p>
@@ -306,7 +311,7 @@ Tell me the folder layout you'd use, what goes in each file, and the order you'd
       <h3>6. Collect on the move</h3>
       <p>Now make a change the new shelves make easy. The regulars deserve their own voices:</p>
       <div class="code wrapme"><span class="lbl">Prompt</span><pre>Every parcel is now for one of our regulars: Old Mother Wort, who sends cursed things; the Professor, who orders explosive lab supplies; and Lil' Grub, who keeps ordering live animals. Show who each parcel is for when Snag picks it up, and give each customer their own set of at least five reviews, in their own voice, in the reviews file.</pre><button type="button">Copy</button></div>
-      <p>Watch which files Claude opens and edits. It should be a couple of small ones, and the level shouldn't be one of them. Play a shift, then edit one review yourself: open the reviews file in any text editor, change a line, save, and reload the game. That's a writer's whole workflow now, and none of it touches game code.</p>
+      <p>Watch which files Claude opens and edits. It should be a couple of small ones, and the level shouldn't be one of them. Play a shift, then edit one review yourself: open the reviews file in any text editor, change a line, save, and reload the game. That's a writer's whole workflow now, and none of it touches game code. If the screen goes blank after your edit, the incident reports in step 4 cover it.</p>
       <div class="reviews" aria-label="Example customer reviews">
         <div class="review"><div class="stars" aria-label="3 stars">★★★☆☆</div><p>The hex arrived on time. It's on the cat now, but it was on time.</p><small>— Old Mother Wort</small></div>
         <div class="review"><div class="stars" aria-label="1 star">★☆☆☆☆</div><p>You shook it. I can tell you shook it. The ceiling can tell you shook it.</p><small>— The Professor</small></div>
@@ -314,8 +319,9 @@ Tell me the folder layout you'd use, what goes in each file, and the order you'd
       </div>
 
       <h3>7. Clock out</h3>
-      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit any remaining changes, then show me today's commits, one line each, and the project's files as a tree.</pre><button type="button">Copy</button></div>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit any remaining changes on main, then show me today's commits, one line each, and the project's files as a tree.</pre><button type="button">Copy</button></div>
       <p>Compare that log with yesterday's. Every step of the move is its own commit, so if one broke something you didn't catch, you can send back that step alone.</p>
+      <p class="note"><strong>Why "on main"?</strong> <code>main</code> is your project's line of history, where every commit so far has gone. Claude sometimes puts a commit on a new <em>branch</em> instead, a separate line of history, to keep <code>main</code> safe. That's useful on a team, but this week keep everything on <code>main</code>. If Claude has already made a branch, ask it to merge the branch into main.</p>
     </section>
 
     <section id="checkpoint">
@@ -354,7 +360,7 @@ Tell me the folder layout you'd use, what goes in each file, and the order you'd
         <p>Run the same move on the game from your Day 1 side quest. Write its playtest list first, then brief the split with constraints of your own: maybe it has to run on the oldest laptop in the studio, or a designer will be editing the enemy stats. Compare the layout Claude proposes with the one it gave you for Goblin Express. Which differences come from your constraints, and which from the game?</p>
         <p>Then ask either project a question about the future, without building anything:</p>
         <div class="code wrapme"><span class="lbl">Prompt</span><pre>If we add a second level, which files change, and what would you add? Don't change any code.</pre><button type="button">Copy</button></div>
-        <p>A good answer names one or two files. A long list is a sign the move isn't finished.</p>
+        <p>A good answer can name several files, each for a clear reason, and leaves others alone. In Goblin Express, Snag's movement, the map drawing and the tuning shouldn't need to change. If nearly every file is on the list, the move isn't finished.</p>
       </div>
     </section>
 
