@@ -2,7 +2,7 @@
 
 The course is the **Learn section of gamesandai.org**: a subsection of the site, not a standalone site. Since 2026-10-24 the site is plain HTML, CSS and JavaScript in the `gamesandai-site` repo, with no build step. The repo's root `CLAUDE.md` sets the site conventions and wins over this spec.
 
-**Status (2026-10-24):** the first release's pages are built in `site/learn/goblin-express-academy/`: the course home with the world map, the Week 1 page, and Days 1 and 2. Not deployed yet.
+**Status (2026-10-24):** the first release's pages are built in `site/learn/goblin-express-academy/`: the course home with the world map, the Week 1 page, and Days 1 to 3. Live as a preview at https://spacedustai.com/gamesandai-site/.
 
 ## Must have (first release)
 

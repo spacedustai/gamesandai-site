@@ -36,6 +36,6 @@ Every learner builds the same game, **Goblin Express**: a goblin courier deliver
 
 ## Working on this repo
 
-- Days 1 and 2 are ported, so their site pages are now the source of truth: change those, not the prototypes. A new prototype is the source of truth until it's ported, and porting keeps the copy exactly as written unless a doc here says otherwise.
+- Days 1 and 2 are ported, and Day 3 onward is written directly in the site, so the site pages are the source of truth: change those, not the prototypes. A new prototype is the source of truth until it's ported, and porting keeps the copy exactly as written unless a doc here says otherwise.
 - Settle the open decisions in `docs/06-site-spec.md` with Craig. Fit the course into the site's conventions; don't build a parallel site.
 - When a decision is made, add it to `docs/07-decisions-log.md`. When tester feedback arrives, log it in `docs/08-feedback-log.md` with what changed.

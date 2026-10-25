@@ -7,9 +7,9 @@ A course for game developers who want to build real games with AI. Learners spen
 ## Status (October 24, 2026)
 
 - Course arc, shared game brief and lesson template: drafted and agreed.
-- Week 1, Days 1 and 2: live in the site at `site/learn/goblin-express-academy/week-1/`. The original standalone pages stay in `prototypes/lessons/week-01/` for reference.
+- Week 1, Days 1 to 3: in the site at `site/learn/goblin-express-academy/week-1/`. Days 1 and 2 began as standalone pages, which stay in `prototypes/lessons/week-01/` for reference; Day 3 was written directly in the site.
 - Day 1 has been through one round of beginner testing on Windows 11. Fixes are applied; see `docs/08-feedback-log.md`.
-- The course section of the site: course home with the world map, the Week 1 page, and Days 1 and 2 are built and live as a preview at https://spacedustai.com/gamesandai-site/learn/goblin-express-academy/. See `docs/06-site-spec.md`.
+- The course section of the site: course home with the world map, the Week 1 page, and Days 1 to 3 are built and live as a preview at https://spacedustai.com/gamesandai-site/learn/goblin-express-academy/. See `docs/06-site-spec.md`.
 
 ## Start here
 

@@ -18,7 +18,7 @@ Target: about 70 minutes core plus about 30 minutes optional.
 
 ## Recurring components
 
-- **Policy callout (§N):** a numbered company policy stating one durable practice. Numbering continues across lessons (Day 1 uses §1–§4, Day 2 uses §5–§7).
+- **Policy callout (§N):** a numbered company policy stating one durable practice. Numbering continues across lessons (Day 1 uses §1–§4, Day 2 uses §5–§7, Day 3 uses §8–§10).
 - **Prompt block:** a copyable prompt labeled "Prompt". Prompts describe outcomes and feelings, not line edits.
 - **Command block:** copyable, labeled with where to run it ("Terminal", "PowerShell", "Terminal or PowerShell").
 - **OS tabs:** macOS and Windows. The choice is remembered across the site and auto-detected on first visit.
