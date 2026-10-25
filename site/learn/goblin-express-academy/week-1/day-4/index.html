@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hired, Paid, Fired — Goblin Express Academy</title>
+<meta name="description" content="Finish the shift loop with a job board, tips for good service and the sack for bad. You make the design calls; Claude asks the questions and does the typing.">
+<link rel="canonical" href="https://gamesandai.org/learn/goblin-express-academy/week-1/day-4/">
+<link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Hired, Paid, Fired — Goblin Express Academy">
+<meta property="og:description" content="Finish the shift loop with a job board, tips for good service and the sack for bad. You make the design calls; Claude asks the questions and does the typing.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gamesandai.org/learn/goblin-express-academy/week-1/day-4/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../../../assets/css/academy.css">
+<!-- Picks macOS or Windows before first paint; see academy.js. -->
+<script>try{var o=localStorage.getItem('gea:os')}catch(e){}document.documentElement.dataset.os=o==='mac'||o==='win'?o:/Win/i.test(navigator.userAgent)?'win':'mac'</script>
+<script src="../../../../assets/js/academy.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../../../../">Games and AI</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../../" aria-current="true">Learn</a>
+      <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Learn</a> / <a href="../../">Goblin Express Academy</a> / <a href="../">Week 1: The Depot</a> / Day 4</nav>
+    <span class="stamp">Training Module 1.4</span>
+    <h1 id="top">Hired, Paid, Fired</h1>
+    <p class="dek">Finish the shift loop with a job board, tips for good service and the sack for bad. You make the design calls; Claude asks the questions and does the typing.</p>
+    <ul class="meta">
+      <li><b>~70 min</b> core + optional side quest</li>
+      <li><b>Mac or Windows</b></li>
+      <li><b>You'll ship:</b> a full shift, with jobs to pick, tips to earn and a way to get fired</li>
+    </ul>
+    <div class="road" aria-hidden="true">
+      <div class="runner">
+        <svg viewBox="0 0 120 110" role="presentation">
+          <rect x="62" y="22" width="44" height="40" rx="4" fill="#F2BE3A" stroke="#2A2008" stroke-width="3"/>
+          <path d="M62 34h44M84 22v40" stroke="#2A2008" stroke-width="2"/>
+          <text x="84" y="57" font-family="monospace" font-size="8" text-anchor="middle" fill="#2A2008">FRAGILE?</text>
+          <ellipse cx="44" cy="54" rx="22" ry="24" fill="#6E9B4A" stroke="#1F2219" stroke-width="3"/>
+          <path d="M24 42 L2 30 L24 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M62 40 L80 26 L64 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="38" cy="50" r="6" fill="#FFF8E0"/><circle cx="54" cy="50" r="6" fill="#FFF8E0"/>
+          <circle cx="40" cy="51" r="3" fill="#1F2219"/><circle cx="56" cy="51" r="3" fill="#1F2219"/>
+          <path d="M36 66 Q46 74 58 64" stroke="#1F2219" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M44 67 l3 5 l3-5" fill="#FFF8E0" stroke="#1F2219" stroke-width="1.5"/>
+          <path d="M34 78 L28 100 M54 78 L62 100" stroke="#1F2219" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="dropoff">Payroll</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Lesson parts">
+    <h2>Today's shift</h2>
+    <ol>
+      <li><a href="#memo"><span class="n">00</span><span>Shift memo</span><span class="t">5m</span></a></li>
+      <li><a href="#loop"><span class="n">01</span><span>The missing pieces</span><span class="t">10m</span></a></li>
+      <li><a href="#design"><span class="n">02</span><span>Design it with Claude</span><span class="t">15m</span></a></li>
+      <li><a href="#build"><span class="n">03</span><span>Build it in slices</span><span class="t">35m</span></a></li>
+      <li><a href="#checkpoint"><span class="n">04</span><span>Checkpoint</span><span class="t">5m</span></a></li>
+      <li><a href="#quest"><span class="n">★</span><span>Side quest</span><span class="t">30m</span></a></li>
+    </ol>
+    <div class="total">Core: 70 min · Optional: +30</div>
+  </nav>
+
+  <main>
+    <section id="memo">
+      <p class="eyebrow">00 · Shift memo</p>
+      <h2 class="sec">Nobody gets paid for nothing</h2>
+      <div class="memo">
+        <header>
+          <span>To:</span><b>Courier Snag's handler (you)</b>
+          <span>From:</span><b>Madam Grizzletooth, Proprietor</b>
+          <span>Re:</span><b>Payroll</b>
+        </header>
+        <p>Snag has delivered a great many parcels this week and been paid for none of them. He hasn't noticed. Accounts has.</p>
+        <p>Starting today, jobs go up on a board and couriers pick their own. Good service earns tips, paid in whatever the customer has handy. Bad service earns a meeting with me, and three of those in one shift ends your employment.</p>
+        <p>I'm told you have opinions about how all this should work. Good. Write them down. I don't honor verbal agreements, and neither will Claude tomorrow.</p>
+        <p class="sig">— G.</p>
+      </div>
+      <h3>By the end of this module you will</h3>
+      <ul>
+        <li>Have Claude ask you the design questions before it builds, and make the calls yourself.</li>
+        <li>Keep the design in a file that you, Claude and a teammate can all check.</li>
+        <li>Build a big feature in slices, playing and committing each one.</li>
+        <li>Get Claude to do the math on your numbers before anyone plays them.</li>
+        <li>Check the finished game against the design, and settle any differences.</li>
+      </ul>
+    </section>
+
+    <section id="loop">
+      <p class="eyebrow">01 · The missing pieces · 10 min</p>
+      <h2 class="sec">A shift with nothing at stake</h2>
+      <p class="lead">Snag can walk, dash and deliver, and customers rate every drop. But nothing rides on a shift yet: there's nothing to choose, nothing to earn and nothing to lose. Today fills in the rest of the loop from the game brief.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 640 230" role="img" aria-label="The shift loop: take a job, pick up, deliver, get rated, earn tips, then take the next job. Taking a job, earning tips, and getting fired after a third one-star review are new today. Spending tips between shifts is the side quest.">
+          <defs>
+            <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--ink-soft)"/></marker>
+          </defs>
+          <path d="M568 68 V40 H72 V66" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#arr4)"/>
+          <text x="320" y="33" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--ink-soft)">next job</text>
+          <g stroke-width="2">
+            <rect x="20" y="70" width="104" height="48" rx="6" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)"/>
+            <rect x="144" y="70" width="104" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="268" y="70" width="104" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="392" y="70" width="104" height="48" rx="6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="516" y="70" width="104" height="48" rx="6" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)"/>
+            <rect x="380" y="166" width="128" height="48" rx="6" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)"/>
+            <rect x="528" y="166" width="100" height="48" rx="6" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          </g>
+          <g fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#arr4)">
+            <path d="M126 94 H142"/><path d="M250 94 H266"/><path d="M374 94 H390"/><path d="M498 94 H514"/>
+            <path d="M444 120 V164"/><path d="M568 120 V164"/><path d="M510 190 H526"/>
+          </g>
+          <g font-family="Atkinson Hyperlegible, system-ui, sans-serif" font-size="14" text-anchor="middle" fill="var(--ink)">
+            <text x="72" y="99" font-weight="700">Take a job</text>
+            <text x="196" y="99">Pick up</text>
+            <text x="320" y="99">Deliver</text>
+            <text x="444" y="99">Get rated</text>
+            <text x="568" y="99" font-weight="700">Earn tips</text>
+            <text x="444" y="187" font-weight="700">Fired!</text>
+            <text x="444" y="204" font-size="11" fill="var(--ink-soft)">3rd one-star in a shift</text>
+            <text x="578" y="187">Spend tips</text>
+            <text x="578" y="204" font-size="11" fill="var(--ink-soft)">between shifts</text>
+          </g>
+          <g font-family="JetBrains Mono, monospace" font-size="11" fill="var(--ink-soft)">
+            <rect x="20" y="152" width="18" height="14" rx="3" fill="var(--parcel)" fill-opacity=".25" stroke="var(--rust)" stroke-width="2"/>
+            <text x="46" y="163">new today</text>
+            <rect x="20" y="176" width="18" height="14" rx="3" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="46" y="187">already in the game</text>
+            <rect x="20" y="200" width="18" height="14" rx="3" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="46" y="211">side quest</text>
+          </g>
+        </svg>
+        <figcaption>The shift loop. The three highlighted pieces are new today, and each one is a design decision before it's code.</figcaption>
+      </figure>
+
+      <p>How many one-star reviews before Snag is fired? Does he lose his tips when he goes? Do far jobs pay more than near ones? None of these has a right answer in the code. Each has your answer, and you may not know it until someone asks.</p>
+      <p>Ask Claude for "a job board, tips and getting fired" and it will build all three. Along the way it will settle every one of those questions with a sensible guess, and you'll only find out which guesses weren't yours by playing. On Day 3 you put what you already knew in the brief (§10). Today you'll decide as you go, so turn it around and let Claude ask.</p>
+
+      <div class="policy">
+        <span class="num">§11</span>
+        <p><strong>Company policy</strong>Let Claude ask the questions. When a feature has choices only you can make, have Claude ask them before it builds, each with a suggested answer. Every question it asks is a guess it didn't make.</p>
+      </div>
+    </section>
+
+    <section id="design">
+      <p class="eyebrow">02 · Design it with Claude · 15 min</p>
+      <h2 class="sec">The interview</h2>
+      <p class="lead">You're the designer. Claude reads the game, works out what it needs to know and asks. You answer, and the answers go in a file.</p>
+
+      <h3>1. Start the shift</h3>
+      <div class="code"><span class="lbl">Terminal or PowerShell</span><pre>cd goblin-express
+claude</pre><button type="button">Copy</button></div>
+      <p>If Claude Code is still open from Day 3, type <code>/clear</code> instead for a fresh conversation. Leave it in <code>⏸ manual mode on</code> for now.</p>
+
+      <h3>2. Ask for the questions</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Today we finish the shift loop. Four things are missing:
+
+- a job board, where Snag picks his next delivery
+- tips, paid for good deliveries
+- getting fired after too many 1-star reviews in one shift
+- spending tips on upgrades between shifts
+
+Read the game first. Then, before you change anything, ask me the design questions you need answered. Give each one a suggested answer, so I can just agree where I don't mind.</pre><button type="button">Copy</button></div>
+      <p>Claude reads the game, then asks. In our test run it asked fifteen questions, grouped by feature. Three of them:</p>
+      <div class="code wrapme"><span class="lbl">From Claude</span><pre>1. What is the board, and how does Snag pick a job?
+   Suggested: three jobs wait at once, each parcel on its own numbered shelf.
+   Snag takes a job by grabbing its parcel, so the game never pauses.
+
+8. How many 1-star reviews get Snag fired?
+   Suggested: 3 in one shift, with a counter in the HUD so you see it coming.
+
+9. What does getting fired cost?
+   Suggested: that shift's tips. His savings and upgrades stay.</pre></div>
+      <p>Claude may show its questions as a menu instead, a few at a time. Pick an option, or choose <strong>Other</strong> and type your own answer.</p>
+      <p>Read every question, even the ones you'll agree with. A question you hadn't thought about is a decision Claude would otherwise have made quietly. This is where your experience counts: Claude knows how delivery games usually work, and you know how this one should feel.</p>
+
+      <h3>3. Answer, and write it down</h3>
+      <p>Agree where you don't mind, change what you care about, and ask for the design in a file in the same message:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>[your answers, for example: All your suggestions, except: call the money teeth, and drop the fourth upgrade.]
+
+Write the design we agreed to DESIGN.md, in plain words a designer could check: the rules, the starting numbers, and what we're leaving out for now. Commit it on main, and don't build anything yet.</pre><button type="button">Copy</button></div>
+      <p class="note"><strong>Why "don't build anything yet"?</strong> A full set of answers sounds like a go-ahead. When we tried it without that line, Claude started writing code the moment the answers arrived, before any design was written down or any plan for testing it in pieces.</p>
+
+      <h3>4. Check what Claude filled in</h3>
+      <p>Open <code>DESIGN.md</code> in any text editor and read it. Claude will also list details you never discussed, like where the job list sits on screen or how tips round. Those are its guesses. Agree, or say what you want instead, and Claude will update the file.</p>
+      <p>That file is §5 at work: the design lives where tomorrow's Claude, and a teammate, can read it, and it's the yardstick you'll check the finished game against.</p>
+    </section>
+
+    <section id="build">
+      <p class="eyebrow">03 · Build it in slices · 35 min</p>
+      <h2 class="sec">One slice at a time</h2>
+      <p class="lead">Three new features are too much to check in one go. Build them in slices, each one small, playable and committed before the next starts. It's Day 3's rhythm, applied to new features instead of a move.</p>
+
+      <h3>1. Plan the slices</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Read DESIGN.md and split everything except the upgrades into about three slices I can play one at a time, smallest first. For each slice, tell me what I'll see and the quickest way to test it. Don't change any code yet.</pre><button type="button">Copy</button></div>
+      <p>Expect something like this: getting fired first, because it's only a counter and an end screen; then tips, since getting fired costs you the shift's tips; then the job board, the biggest piece. The upgrades wait for the side quest.</p>
+
+      <h3>2. Build the first slice</h3>
+      <p>Turn on accept edits as you did on Day 3: press <kbd>Shift</kbd> + <kbd>Tab</kbd> until the status bar shows <code>⏵⏵ accept edits on</code> (on Windows, <kbd>Alt</kbd> + <kbd>M</kbd> if <kbd>Shift</kbd> + <kbd>Tab</kbd> does nothing). Then:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Build the first slice. Then stop and tell me how to test it.</pre><button type="button">Copy</button></div>
+      <p>Claude will probably say it couldn't run the game. That's expected: it can't see your browser yet, so this week you're the tester. (Week 3 changes that.)</p>
+      <p>Getting fired takes three bad deliveries, and a bad delivery means standing around holding a parcel. Use the quick test Claude suggests instead. It's usually a temporary change in the tuning file, like setting the limit to 1 so the first slow delivery fires Snag. Check the counter, the "Fired!" screen and a fresh shift afterward, then put the number back and save the slice:</p>
+      <div class="code"><span class="lbl">Prompt</span><pre>Commit this slice.</pre><button type="button">Copy</button></div>
+
+      <div class="policy">
+        <span class="num">§12</span>
+        <p><strong>Company policy</strong>Make it quick to test. If checking a feature takes a whole shift, ask for a shortcut, like a lower limit in the tuning file. Put it back before you commit.</p>
+      </div>
+
+      <h3>3. Tips, then do the math</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Build the next slice, then stop so I can test it.</pre><button type="button">Copy</button></div>
+      <p>Play a shift. Fast deliveries should pay the full tip, slow ones less or nothing, and getting fired should cost the shift's tips but not your savings. Commit it. Then, before you build the board, have Claude check the numbers you chose:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Using the numbers in the tuning file, how many teeth would a careful player earn in one shift, and how many would a sloppy one? Show the math in a small table, and tell me if anything in DESIGN.md looks off. Don't change any code.</pre><button type="button">Copy</button></div>
+      <div class="code"><span class="lbl">From Claude</span><pre>Player                  Deliveries  Stars       Teeth per shift
+Careful, dashing        ~11         5★          ~47
+Careful, walking only   ~9          mostly 5★   ~35
+Sloppy                  ~6          3★          ~9</pre></div>
+      <p>When we ran it, the math found a real design flaw before the job board existed. The furthest jobs paid three times as much as the nearest for about a third more walking, so no player would ever take a near job. It also found that a sloppy player's first shift couldn't buy anything, and that getting fired would be rare. Each of those would have taken many shifts of play to notice.</p>
+      <p>Decide what to change, if anything, and say so. For example:</p>
+      <div class="code wrapme"><span class="lbl">Example</span><pre>Go with your recommendation for the far jobs. Update DESIGN.md and the tuning file to match, then commit.</pre></div>
+
+      <div class="policy">
+        <span class="num">§13</span>
+        <p><strong>Company policy</strong>Do the math before you play it. Numbers set by feel hide surprises. Have Claude work out what they mean for a careful player and a sloppy one, and fix the design before players have to find the problem for you.</p>
+      </div>
+
+      <h3>4. The job board</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Build the next slice, then stop so I can test it.</pre><button type="button">Copy</button></div>
+      <p>Play it the way a player would. Do the numbered parcels match the list on screen? Does grabbing one put up a new job? Does walking past another parcel while carrying one leave it alone? And is there a reason to pick one job over another? If there isn't, that's a design note for later, not a bug. Commit the slice.</p>
+
+      <h3>5. Check the game against the design</h3>
+      <p>The game was built in three pieces, with a design change in the middle. Time to check it still matches the file. Press <kbd>Shift</kbd> + <kbd>Tab</kbd> until the status bar shows <code>⏸ manual mode on</code>, start fresh, and ask:</p>
+      <div class="code"><span class="lbl">Prompt</span><pre>/clear</pre><button type="button">Copy</button></div>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Compare the game with DESIGN.md. List anything that works differently from what the design says, and anything the game does that the design doesn't mention. Don't change anything yet.</pre><button type="button">Copy</button></div>
+      <p>When we ran it, this found three real differences, such as yellow arrows the design promised but the game hid while Snag was carrying a parcel, along with a list of small things the game does that the design never mentions. For each one, decide which is right, the game or the design, and say so:</p>
+      <div class="code wrapme"><span class="lbl">Example</span><pre>Fix 2 in the game. For everything else, the game is right: update DESIGN.md to match it.</pre></div>
+
+      <div class="incidents">
+        <h4>Incident reports</h4>
+        <details class="incident">
+          <summary>Claude starts building while you're still deciding <span>answers read as a go-ahead</span></summary>
+          <div class="body">
+            <p>Press <kbd>Esc</kbd> to stop it mid-step. Claude keeps whatever it has written so far, so send that back and write the design first:</p>
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>Put everything back to the last commit. Then write the design we agreed to DESIGN.md, and don't build anything yet.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+        <details class="incident">
+          <summary>Snag gets fired after one bad delivery <span>a test shortcut got committed</span></summary>
+          <div class="body">
+            <p>A quick-test value is still in the tuning file.</p>
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>Check the tuning file for any values we changed for testing, put them back to what DESIGN.md says, and commit.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+        <details class="incident">
+          <summary>Blank screen after a slice <span>an error in the console</span></summary>
+          <div class="body"><p>Same fix as Day 3: open the browser console, copy the red lines and paste them in. <a href="../day-3/#move">Day 3, step 4</a> has the shortcuts for each browser.</p></div>
+        </details>
+        <details class="incident">
+          <summary>The game has a new feature that PLAYTEST.md doesn't mention <span>the checklist fell behind</span></summary>
+          <div class="body">
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>Add today's features to PLAYTEST.md, keeping it short enough to play through in about three minutes.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+      </div>
+
+      <h3>6. Clock out</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit any remaining changes on main, then show me today's commits, one line each.</pre><button type="button">Copy</button></div>
+      <p>Expect five or six commits: the design, one per slice, and the fixes from your math and design checks. Each one is a save point you can send back on its own.</p>
+    </section>
+
+    <section id="checkpoint">
+      <p class="eyebrow">04 · Checkpoint · 5 min</p>
+      <h2 class="sec">Sign the timesheet</h2>
+      <p>Tick these off. They're saved in this browser only.</p>
+      <ul class="checklist" data-lesson="w1d4">
+        <li><label><input type="checkbox" id="f1"><span>Claude asked me the design questions before it built anything, and I made the calls</span></label></li>
+        <li><label><input type="checkbox" id="f2"><span><code>DESIGN.md</code> records the rules, the starting numbers and what's left out for now</span></label></li>
+        <li><label><input type="checkbox" id="f3"><span>Each slice was played and committed before the next one started</span></label></li>
+        <li><label><input type="checkbox" id="f4"><span>I tested getting fired without playing a whole bad shift, and put the numbers back afterward</span></label></li>
+        <li><label><input type="checkbox" id="f5"><span>Claude checked the numbers before I built the job board</span></label></li>
+        <li><label><input type="checkbox" id="f6"><span>The game and <code>DESIGN.md</code> agree</span></label></li>
+      </ul>
+      <div class="badge" data-lesson="w1d4" data-earned="Earned. Snag can be hired, paid and fired, and you wrote the rules. Madam Grizzletooth has hung your portrait in the break room. Slightly crooked." aria-live="polite">
+        <div class="medal" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="36" height="36"><circle cx="20" cy="15" r="9" fill="none" stroke="var(--parcel-ink)" stroke-width="3"/><path d="M15 23l-4 11 5-2 3 4 1-9M25 23l4 11-5-2-3 4-1-9" fill="none" stroke="var(--parcel-ink)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h4>Employee of the Month</h4>
+          <p class="badge-text">Locked. Finish the checklist to earn it.</p>
+        </div>
+      </div>
+      <h3>Debrief questions</h3>
+      <ul>
+        <li>Which of Claude's questions hadn't you thought about, and what would it have built if it hadn't asked?</li>
+        <li>What did the math check find that would have taken many shifts of play to notice?</li>
+        <li>Where did the game and <code>DESIGN.md</code> disagree, and how did you decide which one was right?</li>
+      </ul>
+    </section>
+
+    <section id="quest">
+      <div class="quest">
+        <p class="eyebrow">★ Side quest · optional · ~30 min</p>
+        <h2 class="sec">Open the shop</h2>
+        <p><code>DESIGN.md</code> already says what Snag spends his tips on. Build it as one more slice, in a fresh conversation, and see whether the file alone is enough for Claude to get it right:</p>
+        <div class="code wrapme"><span class="lbl">Prompt</span><pre>Build the upgrades from DESIGN.md as one more slice, then stop and tell me how to test it.</pre><button type="button">Copy</button></div>
+        <p>Then do the math again, now that tips have somewhere to go:</p>
+        <div class="code wrapme"><span class="lbl">Prompt</span><pre>How many shifts would it take a careful player to buy every upgrade? Would any of them make the game too easy? Show the math. Don't change any code.</pre><button type="button">Copy</button></div>
+        <p>Or take the interview to your own game. Pick the next piece it's missing and let Claude ask:</p>
+        <div class="code wrapme"><span class="lbl">Prompt</span><pre>The next feature I want is [describe it in a sentence or two]. Read the game first. Then, before you change anything, ask me the design questions you need answered, with a suggested answer for each.</pre><button type="button">Copy</button></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="next">
+        <div>
+          <p class="eyebrow">Up next · Weekly lab</p>
+          <span class="soon">The boss delivery <small>Coming soon</small></span>
+        </div>
+        <p class="verified">Commands last verified 2026-10-25 against the Claude Code docs on <a href="https://code.claude.com/docs/en/tools-reference#askuserquestion-tool-behavior" target="_blank" rel="noopener">asking questions</a> and <a href="https://code.claude.com/docs/en/interactive-mode" target="_blank" rel="noopener">interactive mode</a>.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>© 2026 Games and AI · <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
