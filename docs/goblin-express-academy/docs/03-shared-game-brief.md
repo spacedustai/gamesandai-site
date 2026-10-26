@@ -78,7 +78,7 @@ Each week adds one Goblin Express feature that exercises that week's lesson. A p
 
 | Week | Phase | Feature |
 | --- | --- | --- |
-| 1 ★ | Foundations | One-file delivery game playable on Day 1; Depot tile-map level, dash and juice on Day 2; split into a project, with reviews per customer, on Day 3; job board, tips and a shift cut short by bad reviews on Day 4 |
+| 1 ★ | Foundations | One-file delivery game playable on Day 1; Depot tile-map level, dash and juice on Day 2; split into a project, with reviews per customer, on Day 3; job board, tips and a shift cut short by bad reviews on Day 4; a working week ending in a boss delivery, played by someone else, in the lab |
 | 2 | Foundations | Project CLAUDE.md, repo structure, the commit-before-chaos habit |
 | 3 | Foundations | Fragile parcels, condition meter, automated playtests |
 | 4 | 2D web game | PixiJS structure, Muckmarket crowds, explosive and alive parcels |
@@ -110,6 +110,7 @@ Achievements mark real milestones only, never reading or clicking.
 | Return to Sender | Rolling back a change and nothing breaking | Week 1, Day 2 (built) |
 | Handle With Care | Splitting the game into files without changing how it plays | Week 1, Day 3 (built) |
 | Employee of the Month | Finishing the shift loop (jobs, tips and a shift you can lose) from a design you wrote down | Week 1, Day 4 (built) |
+| Special Delivery | A whole week of the game that someone else played from start to finish while you watched | Week 1, lab (built) |
 | Signed For By Nobody | First deploy to the web | Planned |
 | Paper Trail | First commit with a message you're proud of | Planned |
 | Saw It With Its Own Eyes | Claude verifies the game from a screenshot | Planned |

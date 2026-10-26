@@ -1,5 +1,24 @@
 # Feedback log
 
+## Reference run: Week 1 lab (October 25, 2026)
+
+Run before the page was written, with the same setup as Days 3 and 4. It started from a copy of the Day 4 reference with the shop side quest committed, after a headless session renamed getting fired to the shift ending early, as the reworded Day 4 now has it. Both branches were run, each on its own copy. A scripted playtest from `file://` checked every slice: the harder days, the end-of-week screen, the boss delivery, saving (including corrupt saves, old saves and storage that's refused), the restyle and each playtest fix. Every slice passed. About $11 of usage and 42 minutes of Claude time for the whole run. A learner doing the core and one branch would use less.
+
+| # | Finding | How the page uses it |
+| --- | --- | --- |
+| 1 | The interview asked 16 questions, including what gets harder, who Madam Grizzletooth is and what's in her parcel ("her dentures, freshly gilded", with no dashing while carrying them). With "don't build anything yet", it wrote `DESIGN.md` and nothing else. | Step 2 quotes two questions. The answer example shortens the week to three days for the playtester. |
+| 2 | The math check found that the boss delivery couldn't change anyone's verdict (careful players had the top title before it started), and that its 30-second timer would never run out. | The math step, its table and the example fix. |
+| 3 | The slices came out as harder days, then the end-of-week screen, then the boss delivery. Each quick test was a shorter shift in the tuning file, and Claude checked the tuning values were back before every commit. | The build section. |
+| 4 | Code branch: the interview asked about save versions, broken saves, private windows that won't save, and closing the tab to dodge a bad shift. With one answer changed, it took three slices. Claude suggested testing in Chrome because it wasn't sure Safari keeps data for a page opened from a file. | The code branch, and a note about Safari. |
+| 5 | Art branch: in the headless run, Claude couldn't read a sketch outside the project folder without permission. With the sketch in `art/`, the restyle matched it and moved every color into one data file, with play unchanged. One screenshot round fixed parcels getting lost on the shelves. | The art branch keeps images in `art/`; an incident report covers the permission prompt. |
+| 6 | In the art branch's fresh session, "Commit this, including my sketch" put the commit on a new branch, as the Day 3 run did. | Every commit prompt in a fresh session says "on main", and an incident report covers it. |
+| 7 | Given playtest notes, Claude checked each one against the code, found a real bug (the boss card's HUD), saw that the refresh complaint was the save design working as agreed, and picked a top three. The five fixes went in one at a time and all passed. The notes were written from the scripted playtest, not by a real outside player. | §15, the example notes and the excerpt. |
+| 8 | Once the game saved, a later test run restored the previous week instead of starting fresh. | An incident report for the code branch. |
+| 9 | The fresh-session check against `DESIGN.md` found six differences. Settling them turned up one more real bug: the game saved before counting a strike, so walking out could lose one. | Step 5 says settling the differences can turn up bugs. |
+| 10 | Claude saved a note to its auto memory about the workflow (design questions first, small slices, commits only when asked). | No change. Worth covering in Week 2 with `CLAUDE.md`. |
+
+**Still needed:** a human run on Mac and Windows with a real outside playtester, and a check of saving from `file://` in Safari.
+
 ## Reference run: Week 1, Day 4 (October 25, 2026)
 
 Run before the page was written, on a copy of Craig's Goblin Express from the end of Day 3, with the same setup as the Day 3 run. A scripted playtest from `file://` checked every slice: the job board, tips and savings, the 1-star counter, the fail state, and the existing controls. Every slice passed. About $4.75 of usage and 21 minutes of Claude time.

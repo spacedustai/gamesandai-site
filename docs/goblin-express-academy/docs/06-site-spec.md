@@ -2,7 +2,7 @@
 
 The course is the **Learn section of gamesandai.org**: a subsection of the site, not a standalone site. Since 2026-10-24 the site is plain HTML, CSS and JavaScript in the `gamesandai-site` repo, with no build step. The repo's root `CLAUDE.md` sets the site conventions and wins over this spec.
 
-**Status (2026-10-25):** the first release's pages are built in `site/learn/goblin-express-academy/`: the course home with the world map, the Week 1 page, and Days 1 to 4. Live as a preview at https://spacedustai.com/gamesandai-site/.
+**Status (2026-10-25):** the first release's pages are built in `site/learn/goblin-express-academy/`: the course home with the world map, the Week 1 page, Days 1 to 4, and the Week 1 lab. Live as a preview at https://spacedustai.com/gamesandai-site/.
 
 ## Must have (first release)
 
@@ -31,7 +31,7 @@ The course is the **Learn section of gamesandai.org**: a subsection of the site,
 - [x] **How content is authored.** Plain HTML pages with a shared stylesheet and script (Craig, 2026-10-24; see the decisions log).
 - [ ] **How much of the course's own look survives inside the site.** Built as: the course section's full handbook theme inside the site's header and footer, because that is what porting the prototypes unchanged gives. The alternative was reducing it to accents on the site's own look.
 - [ ] **Fonts and theme.** Built as: course pages keep their own fonts (Bowlby One, Atkinson Hyperlegible and JetBrains Mono, from Google Fonts) and palette; the rest of the site uses system fonts. Neither has a theme toggle; both follow the OS light or dark setting and keep the `data-theme` selectors for a future site-wide toggle.
-- [ ] **URL structure.** Built as: `/learn/goblin-express-academy/`, `/week-1/`, `/week-1/day-1/`, with the lab planned at `/week-1/lab/`. Short slugs, so renaming a lesson doesn't break its link.
+- [ ] **URL structure.** Built as: `/learn/goblin-express-academy/`, `/week-1/`, `/week-1/day-1/`, and the lab at `/week-1/lab/`. Short slugs, so renaming a lesson doesn't break its link.
 - [ ] **Free, paid or gated?** Built as: free and public, no accounts. This affects whether accounts are needed for v1.
 - [ ] **Analytics**, if any. None yet.
 - [ ] **Where the reference builds of Goblin Express live**: a separate repo, or folders here?
