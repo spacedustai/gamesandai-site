@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Boss Delivery — Goblin Express Academy</title>
+<meta name="description" content="Turn the shift loop into a working week that someone else can play from start to finish, with harder days, a delivery for Madam Grizzletooth and a verdict at the end. Then watch someone play it.">
+<link rel="canonical" href="https://gamesandai.org/learn/goblin-express-academy/week-1/lab/">
+<link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="The Boss Delivery — Goblin Express Academy">
+<meta property="og:description" content="Turn the shift loop into a working week that someone else can play from start to finish, with harder days, a delivery for Madam Grizzletooth and a verdict at the end. Then watch someone play it.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gamesandai.org/learn/goblin-express-academy/week-1/lab/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../../../assets/css/academy.css">
+<!-- Picks macOS or Windows before first paint; see academy.js. -->
+<script>try{var o=localStorage.getItem('gea:os')}catch(e){}document.documentElement.dataset.os=o==='mac'||o==='win'?o:/Win/i.test(navigator.userAgent)?'win':'mac'</script>
+<script src="../../../../assets/js/academy.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="../../../../">Games and AI</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../../" aria-current="true">Learn</a>
+      <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Learn</a> / <a href="../../">Goblin Express Academy</a> / <a href="../">Week 1: The Depot</a> / Lab</nav>
+    <span class="stamp">Boss Delivery 1</span>
+    <h1 id="top">The Boss Delivery</h1>
+    <p class="dek">Turn the shift loop into a working week that someone else can play from start to finish, with harder days, a delivery for Madam Grizzletooth and a verdict at the end. Then watch someone play it.</p>
+    <ul class="meta">
+      <li><b>~2¾ hours</b> core + optional side quest</li>
+      <li><b>Mac or Windows</b></li>
+      <li><b>You'll ship:</b> a whole week of Goblin Express that someone else has played</li>
+    </ul>
+    <div class="road" aria-hidden="true">
+      <div class="runner">
+        <svg viewBox="0 0 120 110" role="presentation">
+          <rect x="62" y="22" width="44" height="40" rx="4" fill="#F2BE3A" stroke="#2A2008" stroke-width="3"/>
+          <path d="M62 34h44M84 22v40" stroke="#2A2008" stroke-width="2"/>
+          <text x="84" y="57" font-family="monospace" font-size="8" text-anchor="middle" fill="#2A2008">FRAGILE?</text>
+          <ellipse cx="44" cy="54" rx="22" ry="24" fill="#6E9B4A" stroke="#1F2219" stroke-width="3"/>
+          <path d="M24 42 L2 30 L24 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M62 40 L80 26 L64 52 Z" fill="#6E9B4A" stroke="#1F2219" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="38" cy="50" r="6" fill="#FFF8E0"/><circle cx="54" cy="50" r="6" fill="#FFF8E0"/>
+          <circle cx="40" cy="51" r="3" fill="#1F2219"/><circle cx="56" cy="51" r="3" fill="#1F2219"/>
+          <path d="M36 66 Q46 74 58 64" stroke="#1F2219" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M44 67 l3 5 l3-5" fill="#FFF8E0" stroke="#1F2219" stroke-width="1.5"/>
+          <path d="M34 78 L28 100 M54 78 L62 100" stroke="#1F2219" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="dropoff">Grizzletooth</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Lesson parts">
+    <h2>Today's shift</h2>
+    <ol>
+      <li><a href="#memo"><span class="n">00</span><span>Shift memo</span><span class="t">5m</span></a></li>
+      <li><a href="#plan"><span class="n">01</span><span>Plan the week</span><span class="t">25m</span></a></li>
+      <li><a href="#build"><span class="n">02</span><span>Build the week</span><span class="t">50m</span></a></li>
+      <li><a href="#branch"><span class="n">03</span><span>Pick a branch</span><span class="t">35m</span></a></li>
+      <li><a href="#playtest"><span class="n">04</span><span>Outside playtest</span><span class="t">35m</span></a></li>
+      <li><a href="#check"><span class="n">05</span><span>Check and clock out</span><span class="t">10m</span></a></li>
+      <li><a href="#checkpoint"><span class="n">06</span><span>Checkpoint</span><span class="t">5m</span></a></li>
+      <li><a href="#quest"><span class="n">★</span><span>Side quest</span><span class="t">30m</span></a></li>
+    </ol>
+    <div class="total">Core: about 2¾ hours · Optional: +30</div>
+  </nav>
+
+  <main>
+    <section id="memo">
+      <p class="eyebrow">00 · Shift memo</p>
+      <h2 class="sec">A shift is not a week</h2>
+      <div class="memo">
+        <header>
+          <span>To:</span><b>Courier Snag's handler (you)</b>
+          <span>From:</span><b>Madam Grizzletooth, Proprietor</b>
+          <span>Re:</span><b>The boss delivery</b>
+        </header>
+        <p>Snag can work a shift. Lovely. A business runs on weeks: days that get busier, and at the end of it, one delivery for me personally. What's in the parcel is between you and Claude. Handle it with care.</p>
+        <p>Then show the week to someone who has never seen it, and say nothing while they play. If they need you to explain something, the game isn't finished.</p>
+        <p class="sig">— G.</p>
+      </div>
+      <h3>By the end of this lab you will</h3>
+      <ul>
+        <li>Design a bigger feature with Claude's questions, and check its numbers before you build it.</li>
+        <li>Build it in playable slices, with a quick test for each.</li>
+        <li>Take one branch: restyle the Depot from your own sketch, or save the week in the browser.</li>
+        <li>Watch someone else play your game without helping, and turn what you saw into fixes.</li>
+      </ul>
+      <p class="note">This lab picks up where Day 4 left off, with the job board, tips and a shift that can end early. If you did Day 4's shop side quest, the week will use it. If not, Claude will ask what to do about upgrades.</p>
+    </section>
+
+    <section id="plan">
+      <p class="eyebrow">01 · Plan the week · 25 min</p>
+      <h2 class="sec">The interview, again</h2>
+      <p class="lead">A week is a bigger design than a shift, with more choices that only you can make. Day 4's interview (§11) and its math check (§13) are made for exactly this.</p>
+
+      <h3>1. Start fresh</h3>
+      <div class="code"><span class="lbl">Terminal or PowerShell</span><pre>cd goblin-express
+claude</pre><button type="button">Copy</button></div>
+      <p>If Claude Code is still open, type <code>/clear</code> instead. Stay in <code>⏸ manual mode on</code> for the planning.</p>
+
+      <h3>2. Ask for the questions</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>This is the boss delivery: turning the shift loop into a working week that someone else can sit down and play from start to finish. I want:
+
+- shifts that get harder as the week goes on
+- a boss delivery to end the week: one special job from Madam Grizzletooth, who owns Goblin Express
+- an end-of-week screen that sums up how the week went
+
+Read DESIGN.md and the game first. Then, before you change anything, ask me the design questions you need answered. Give each one a suggested answer, so I can just agree where I don't mind.</pre><button type="button">Copy</button></div>
+      <p>In our test run, Claude asked sixteen questions: how long the week is, what gets harder, who Madam Grizzletooth is, what's in her parcel, what the end screen shows. Two of them:</p>
+      <div class="code wrapme"><span class="lbl">From Claude</span><pre>1. How many shifts in a week?
+   Suggested: five shifts, Monday to Friday, then the boss delivery.
+   With 60–90 second shifts and the shop screens in between, that
+   makes a run of about 8 minutes.
+
+10. What's special about the job?
+   Suggested: it's one parcel, "her dentures, freshly gilded". It waits
+   on the shelf farthest from a door, and Snag can't dash while
+   carrying it. This one rule changes how the delivery plays and is
+   easy to see.</pre></div>
+
+      <h3>3. Answer with the playtester in mind</h3>
+      <p>Someone else will play this week at the end of the lab, so every minute of it is a minute of their time. That's a design call, and it's yours:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>[your answers, for example: All your suggestions, except: make the week three days, Monday to Wednesday, so a playtester can finish it in about five minutes.]
+
+Add the design we agreed to DESIGN.md, in plain words a designer could check: the rules, the starting numbers, and what we're leaving out for now. Commit it on main, and don't build anything yet.</pre><button type="button">Copy</button></div>
+      <p>Claude will list the details it filled in on its own, as it did on Day 4. Read them.</p>
+
+      <h3>4. Do the math on the week</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Using the numbers in DESIGN.md, work out how a careful player and a sloppy one would do on each day and on the boss delivery. Show it in a small table, with the verdict each one ends up with. Tell me if anything in DESIGN.md looks off. Don't change any code.</pre><button type="button">Copy</button></div>
+      <div class="code"><span class="lbl">From Claude</span><pre>Player   Monday  Tuesday  Wednesday  Boss delivery  Teeth earned
+Careful  ≈ 49    ≈ 60     ≈ 71       30, 5 stars    ~198–210
+Sloppy   ≈ 9     ≈ 8      ≈ 5        9, 3 stars     ~22–31</pre></div>
+      <p>When we ran it, the math found the week's biggest flaw before a line of it was built: the boss delivery couldn't change anyone's verdict. A careful player had the top title before the boss delivery even started, and a sloppy one couldn't climb out of the bottom whatever happened. It also found that the 30-second timer on the boss delivery would never run out. Decide what to change, and say so:</p>
+      <div class="code wrapme"><span class="lbl">Example</span><pre>Make the boss bonus 80 teeth, so the last delivery can change your title, and give it 15 seconds with no Overtime. The rest is intended: say so in DESIGN.md where it matters, and fill in the small gaps. Update DESIGN.md and commit it on main. Don't build anything yet.</pre></div>
+    </section>
+
+    <section id="build">
+      <p class="eyebrow">02 · Build the week · 50 min</p>
+      <h2 class="sec">Three slices to Wednesday</h2>
+      <p class="lead">The same rhythm as Day 4: plan the slices, then build, play and commit each one before the next.</p>
+
+      <h3>1. Plan the slices</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Read DESIGN.md and split the week into about three slices I can play one at a time, smallest first. For each slice, tell me what I'll see and the quickest way to test it. Don't change any code yet.</pre><button type="button">Copy</button></div>
+      <p>Expect something like this: the harder days first, then the end-of-week screen, then the boss delivery. Most of the quick tests come down to one temporary change: a much shorter shift in the tuning file, so you can get through a whole week in under a minute. That's §12 again. Put the number back before each commit.</p>
+
+      <h3>2. Build, play, commit</h3>
+      <p>Switch to accept edits (<kbd>Shift</kbd> + <kbd>Tab</kbd> until the status bar shows <code>⏵⏵ accept edits on</code>; on Windows, <kbd>Alt</kbd> + <kbd>M</kbd> if that does nothing). Then, for each slice:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Build the next slice, then stop so I can test it.</pre><button type="button">Copy</button></div>
+      <div class="code"><span class="lbl">Prompt</span><pre>Commit this slice.</pre><button type="button">Copy</button></div>
+      <p>Play each slice against <code>DESIGN.md</code>. A few things worth checking:</p>
+      <ul>
+        <li><strong>Harder days:</strong> does the top bar name the day? Does a delivery that was fine on Monday rate lower later in the week?</li>
+        <li><strong>The end of the week:</strong> do the totals add up? Mash <kbd>Space</kbd> as the screen appears: it shouldn't skip. Does a new week start clean?</li>
+        <li><strong>The boss delivery:</strong> does your special rule work, whatever you chose? What happens when the time runs out?</li>
+      </ul>
+      <p>In our run, Claude checked the tuning file for leftover test values before every commit, without being asked. That's worth noticing, and still worth checking yourself.</p>
+    </section>
+
+    <section id="branch">
+      <p class="eyebrow">03 · Pick a branch · 35 min</p>
+      <h2 class="sec">Art or code</h2>
+      <p class="lead">Pick the one closer to your day job, or the one further from it. Either way, you're directing Claude the same way: say what you want, look at the result, and say what's off.</p>
+
+      <h3>Art branch: dress the Depot</h3>
+      <p>Right now the Depot is grey boxes. Make a mood sketch of how it should look. A photo of a paper sketch is fine, and so is ten minutes in any paint program. Show the colors you want, with a note on each thing, the way you'd brief an artist. The game brief's direction is "grimy but warm": mossy greens, rust and sooty purples, with parcels in warning-label yellow.</p>
+      <p>Save it inside your game folder, in a new folder called <code>art</code>, so it stays with the project. Then drag the image onto the Claude Code window, as you did with screenshots on Day 2, and finish the prompt:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>[your sketch] This is how I want the Depot to look. Restyle the floor, walls, crates, shelves, doors and Snag to match it. Keep every color in one place in the data folder so I can tweak them by hand, and don't change how the game plays. Then stop and tell me what to look at.</pre><button type="button">Copy</button></div>
+      <p>Claude can't see the game, so it can't judge the result. You can. Play for a minute, take a screenshot of whatever's off, save it in <code>art</code>, and drag it in:</p>
+      <div class="code wrapme"><span class="lbl">Example</span><pre>[screenshot] The waiting parcels get lost on the wooden shelves, especially when they're dimmed while Snag is carrying. My sketch says parcels must pop against everything. Fix that, and don't change anything else.</pre></div>
+      <p>When it looks right:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit this on main, including my sketch in art/.</pre><button type="button">Copy</button></div>
+
+      <h3>Code branch: save the week</h3>
+      <p>Right now, closing the tab loses the week. Saving it sounds like one feature, but it's a dozen decisions. Let Claude ask them:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>I want the week saved in the browser, so closing the tab on Tuesday and coming back picks up on Tuesday. Read DESIGN.md first. Then, before you change anything, ask me the design questions you need answered, with a suggested answer for each.</pre><button type="button">Copy</button></div>
+      <p>In our run, it asked the questions a careful programmer would: when the game saves, what happens to a save from an older version of the game, what to do in a private window that won't save at all, and whether closing the tab partway through a bad shift lets a player dodge being sent home. Answer, then build it in slices:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>[your answers, for example: All your suggestions, except 2: closing the tab partway through a shift counts as being sent home early.]
+
+Update DESIGN.md and commit it on main. Then build the first slice and stop so I can test it.</pre><button type="button">Copy</button></div>
+      <p>Then build, test and commit the rest of the slices as before. To test a save, reload the page. Once saving works, your own testing will pick up old weeks too, so ask Claude how to start a fresh one.</p>
+      <p class="note">In our run, Claude suggested testing in Chrome, since it wasn't sure Safari keeps saved data for a page opened straight from a file. If your playtester will use Safari, check it there too.</p>
+    </section>
+
+    <section id="playtest">
+      <p class="eyebrow">04 · Outside playtest · 35 min</p>
+      <h2 class="sec">Somebody else's hands</h2>
+      <p class="lead">You know where every parcel is and what every number means. Your playtester doesn't, and that's the point. Anyone who hasn't seen the game counts: a colleague, a friend, someone you live with. They don't need to play games.</p>
+
+      <h3>1. Get the game to them</h3>
+      <p>The easiest way is to sit them at your computer. If they're somewhere else, send the game folder. Because of Day 3's rule, they don't need to install anything: they unzip it and double-click <code>index.html</code>.</p>
+      <div class="os">
+        <div class="os-tabs" role="tablist" aria-label="Operating system">
+          <button type="button" role="tab" data-os="mac">macOS</button>
+          <button type="button" role="tab" data-os="win">Windows</button>
+        </div>
+        <div class="os-panel" data-panel="mac" role="tabpanel">
+          <p>In Finder, Control-click the <code>goblin-express</code> folder and choose <strong>Compress "goblin-express"</strong>. A <code>.zip</code> file appears next to it.</p>
+        </div>
+        <div class="os-panel" data-panel="win" role="tabpanel">
+          <p>In File Explorer, right-click the <code>goblin-express</code> folder and choose <strong>Compress to ZIP file</strong> (on some versions, <strong>Compress to</strong>, then <strong>ZIP File</strong>). On Windows 10, choose <strong>Send to</strong>, then <strong>Compressed (zipped) folder</strong>.</p>
+        </div>
+      </div>
+      <p>Share the zip as a link from a file-sharing service rather than an email attachment: email services such as Gmail block zip files that contain scripts. If they're remote, ask them to share their screen on a video call while they play.</p>
+
+      <h3>2. Watch, and say nothing</h3>
+      <p>Tell them it's a delivery game and you'd like them to play a whole week, then stop talking. Write down what they do and say: where they hesitate, what keys they press, what they read and what they skip, when they laugh. Every time you want to explain something, write that down too. That's a note about the game, not about them.</p>
+      <div class="policy">
+        <span class="num">§14</span>
+        <p><strong>Company policy</strong>Watch, don't help. When someone playtests your game, say nothing and take notes. Every time you'd have explained something, the game needs to.</p>
+      </div>
+
+      <h3>3. Sort the notes</h3>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>I watched someone play the whole week without helping. My notes:
+
+[paste your notes]
+
+Sort these into bugs, design problems and polish. For each one, say what you'd change and how big a change it is. Then pick the three that matter most for a new player. Don't change anything yet.</pre><button type="button">Copy</button></div>
+      <p>We tried it with notes like these:</p>
+      <div class="code wrapme"><span class="lbl">Example</span><pre>- Skimmed the title screen, pressed Space, then asked "what do I do?" Found the parcels after about 10 seconds.
+- Pressed E to pick up a parcel, several times.
+- Didn't notice the ✗ marks at the top. Got sent home on Tuesday and said "wait, why?"
+- Didn't buy anything until the third shop. Hadn't noticed the number keys.
+- Boss card: "the top bar still says Wednesday and Time: 0. Is it broken?"
+- Boss delivery: the timer went red almost straight away, and they thought they'd already failed.
+- Refreshed the page by accident on Wednesday. Welcome back said they'd walked out and been sent home. Annoyed.
+- Laughed at the dentures line and at Grizzletooth's verdict.</pre></div>
+      <p>Claude checked every note against the code before sorting it. It found that the boss card really was a bug, recognized the refresh as the save design working as agreed (and offered two ways to soften it), and put these first:</p>
+      <div class="code wrapme"><span class="lbl">From Claude</span><pre>1. The opening. Every new player hits it in the first ten seconds,
+   and it sets how the rest of the session feels.
+2. The strike warning. A punishment the player doesn't understand
+   feels unfair, not difficult.
+3. The shop keys. The upgrades are the game's whole progression
+   system, and this player missed them for two of three shops.</pre></div>
+      <div class="policy">
+        <span class="num">§15</span>
+        <p><strong>Company policy</strong>Sort before you fix. Playtest notes are a pile, not a plan. Have Claude sort them into bugs, design problems and polish, check each one against the code, and pick the few that matter most. Fix those first.</p>
+      </div>
+
+      <h3>4. Fix the top of the list</h3>
+      <p>Say which ones to fix, and keep the design file in step:</p>
+      <div class="code wrapme"><span class="lbl">Example</span><pre>Go with your top three, plus 1 and 4 since they're tiny. Update DESIGN.md and commit it on main first. Then fix them one at a time, and stop after the first so I can test it.</pre></div>
+      <p>Then, after you've tested each fix:</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit this on main, then do the next one and stop so I can test it.</pre><button type="button">Copy</button></div>
+      <p>If you can, show the fixed game to someone new. A playtester only sees a game for the first time once.</p>
+    </section>
+
+    <section id="check">
+      <p class="eyebrow">05 · Check and clock out · 10 min</p>
+      <h2 class="sec">Back to the book</h2>
+      <p>A design, three slices, a branch and a round of fixes: time to check the game and <code>DESIGN.md</code> still agree. As on Day 4, switch to <code>⏸ manual mode on</code>, start fresh, and ask:</p>
+      <div class="code"><span class="lbl">Prompt</span><pre>/clear</pre><button type="button">Copy</button></div>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Compare the game with DESIGN.md. List anything that works differently from what the design says, and anything the game does that the design doesn't mention. Don't change anything yet.</pre><button type="button">Copy</button></div>
+      <p>Settle each difference: fix the game, or update the design. In our run, settling them turned up one more real bug, which is a good reason not to skip this step.</p>
+      <div class="code wrapme"><span class="lbl">Prompt</span><pre>Commit any remaining changes on main, then show me today's commits, one line each.</pre><button type="button">Copy</button></div>
+
+      <div class="incidents">
+        <h4>Incident reports</h4>
+        <details class="incident">
+          <summary>Claude put a commit on a new branch <span>no "on main" in a fresh session</span></summary>
+          <div class="body">
+            <p>It happened in our run, in the session that did the restyle. Week 1 keeps everything on <code>main</code>:</p>
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>Put that commit on main and delete the other branch.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+        <details class="incident">
+          <summary>Claude can't open your sketch or screenshot <span>the file is outside the game folder</span></summary>
+          <div class="body"><p>Claude needs your permission to read files outside the folder you started it in. Allow it when asked, or move the image into the game's <code>art</code> folder and drag it in from there.</p></div>
+        </details>
+        <details class="incident">
+          <summary>The game opens on an old week <span>your save is working</span></summary>
+          <div class="body">
+            <p>Code branch only. Start a fresh week the way your design says, or ask:</p>
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>How do I start a fresh week while I'm testing?</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+        <details class="incident">
+          <summary>A whole week goes by in seconds <span>a test shortcut got committed</span></summary>
+          <div class="body">
+            <div class="code wrapme"><span class="lbl">Prompt</span><pre>Check the tuning file for any values we changed for testing, put them back to what DESIGN.md says, and commit.</pre><button type="button">Copy</button></div>
+          </div>
+        </details>
+        <details class="incident">
+          <summary>Blank screen after a slice <span>an error in the console</span></summary>
+          <div class="body"><p>Same fix as Day 3: open the browser console, copy the red lines and paste them in. <a href="../day-3/#move">Day 3, step 4</a> has the shortcuts for each browser.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <section id="checkpoint">
+      <p class="eyebrow">06 · Checkpoint · 5 min</p>
+      <h2 class="sec">Sign for the delivery</h2>
+      <p>Tick these off. They're saved in this browser only.</p>
+      <ul class="checklist" data-lesson="w1lab">
+        <li><label><input type="checkbox" id="l1"><span>Claude asked the design questions for the week, and <code>DESIGN.md</code> has my answers</span></label></li>
+        <li><label><input type="checkbox" id="l2"><span>Claude did the math on the week before I built it, and I changed what didn't add up</span></label></li>
+        <li><label><input type="checkbox" id="l3"><span>The week plays from the first shift to the end-of-week screen, and each slice was committed</span></label></li>
+        <li><label><input type="checkbox" id="l4"><span>I finished a branch: the Depot restyled from my sketch, or the week saved in the browser</span></label></li>
+        <li><label><input type="checkbox" id="l5"><span>Someone else played the whole week while I watched without helping</span></label></li>
+        <li><label><input type="checkbox" id="l6"><span>I fixed the top problems from their playtest, and the game and <code>DESIGN.md</code> agree</span></label></li>
+      </ul>
+      <div class="badge" data-lesson="w1lab" data-earned="Earned. A whole week of Goblin Express, played start to finish by someone who isn't you, while you kept quiet. Madam Grizzletooth got her parcel. She's smiling. It's unsettling." aria-live="polite">
+        <div class="medal" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="36" height="36"><rect x="7" y="13" width="26" height="20" rx="2" fill="none" stroke="var(--parcel-ink)" stroke-width="3"/><path d="M7 19h26" stroke="var(--parcel-ink)" stroke-width="2.5"/><path d="M20 4l2.2 4.6 5 .6-3.7 3.4 1 4.9-4.5-2.5-4.5 2.5 1-4.9-3.7-3.4 5-.6z" fill="var(--parcel-ink)"/></svg>
+        </div>
+        <div>
+          <h4>Special Delivery</h4>
+          <p class="badge-text">Locked. Finish the checklist to earn it.</p>
+        </div>
+      </div>
+      <h3>Debrief questions</h3>
+      <ul>
+        <li>What did your playtester do that you never would have?</li>
+        <li>Which number did the math check change, and how many weeks of play would it have taken to notice?</li>
+        <li>On your branch, what did Claude get right without being told, and what did you have to show it?</li>
+      </ul>
+    </section>
+
+    <section id="quest">
+      <div class="quest">
+        <p class="eyebrow">★ Side quest · optional · ~30 min</p>
+        <h2 class="sec">The other branch</h2>
+        <p>Take the branch you skipped. If you saved the week, the art branch is a gentle way to try directing visuals. If you restyled the Depot, the code branch shows how many decisions hide inside "just save it".</p>
+        <p>Or take the playtest to your own game. Watch someone play it without helping, then hand Claude your notes:</p>
+        <div class="code wrapme"><span class="lbl">Prompt</span><pre>I watched someone play my game without helping. My notes:
+
+[paste your notes]
+
+Read the game first. Then sort these into bugs, design problems and polish, say what you'd change for each, and pick the three that matter most for a new player. Don't change anything yet.</pre><button type="button">Copy</button></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="next">
+        <div>
+          <p class="eyebrow">Up next · Week 2</p>
+          <span class="soon">Context and Control <small>Coming soon</small></span>
+        </div>
+        <p class="verified">Commands last verified 2026-10-25 against the Claude Code docs on <a href="https://code.claude.com/docs/en/common-workflows#work-with-images" target="_blank" rel="noopener">working with images</a> and <a href="https://code.claude.com/docs/en/interactive-mode" target="_blank" rel="noopener">interactive mode</a>.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>© 2026 Games and AI · <a href="https://newsletter.gamesandai.org" rel="noopener">Newsletter</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
