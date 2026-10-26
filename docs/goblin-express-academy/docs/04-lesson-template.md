@@ -31,6 +31,7 @@ Target: about 70 minutes core plus about 30 minutes optional.
 
 - Speak to the learner as a capable professional. Their experience is the asset; the change is who does the typing. Never imply their past skills are obsolete.
 - Humor lives in the world and never at the learner's expense.
+- No jokes about losing a job. Many learners have been laid off, some of them because of AI. Snag can have a bad shift, but nobody is fired, laid off or replaced, and Claude is the learner's assistant, never a cheaper hire.
 - Plain, direct sentences. Explain every term a command-line beginner might not know the first time it appears (terminal, shell, PATH, repository).
 - Show what success looks like: example output, what the screen should show, the exact finished message.
 - Warn about anything that looks broken but isn't, like an installer with no progress bar.

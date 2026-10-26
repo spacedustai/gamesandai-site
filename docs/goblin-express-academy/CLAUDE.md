@@ -28,6 +28,7 @@ Every learner builds the same game, **Goblin Express**: a goblin courier deliver
 - **Lessons cover Mac and Windows equally.** Every install step, shortcut and command has both versions. Windows testers are beginners on the command line; explain terms like *terminal*, *shell* and *PATH* the first time they appear.
 - **Don't teach plan mode.** Planning happens in conversation ("tell me your approach before you write code"). See the decisions log.
 - **Humor is never at the learner's expense.** Jokes live in the world: goblins, parcels, customers, Madam Grizzletooth. The technical content stays straight and accurate.
+- **No jokes about losing a job.** Many learners have been laid off, some of them because of AI. Nobody gets fired, laid off or replaced, and Claude is the learner's assistant, never a cheaper hire.
 - **Claude Code facts must be verified** against the official docs (https://code.claude.com/docs) before publishing, and each lesson shows a "last verified" date. Commands and UI change often.
 - **Achievements mark real milestones only**, never reading or clicking. Gamified elements never gate content.
 - **Respect `prefers-reduced-motion`** and support light and dark themes.
