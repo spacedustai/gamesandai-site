@@ -12,8 +12,8 @@
       content="Two Minute Sports — a playable 3D football coaching scrimmage."
     />
     <title>Two Minute Sports · Coaching Scrimmage</title>
-    <script type="module" crossorigin src="./assets/index-8m0zn_RP.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DuH36DVS.css">
+    <script type="module" crossorigin src="./assets/index-CvabxfeM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DNBFUw2C.css">
   </head>
   <body>
     <main id="app" aria-label="Two Minute Sports coaching scrimmage">
@@ -25,15 +25,28 @@
         <div id="loading" role="status">Opening Sunset Dome…</div>
       </div>
       <header class="scoreboard" aria-label="Score and situation">
-        <div class="score-team embers">
-          <i></i><span>EMBERS</span><b id="score-0">0</b>
-        </div>
-        <div class="situation">
-          <strong id="down-distance">1st &amp; 10</strong
-          ><span id="possession">EMBERS BALL · OWN 25</span>
-        </div>
-        <div class="score-team comets">
-          <b id="score-1">0</b><span>COMETS</span><i></i>
+        <div class="scoreboard-main">
+          <div class="score-team embers">
+            <i></i><span>EMBERS</span><b id="score-0">0</b>
+          </div>
+          <div class="situation">
+            <strong id="down-distance">1st &amp; 10</strong
+            ><span id="possession">EMBERS BALL · OWN 25</span>
+          </div>
+          <div class="score-team comets">
+            <b id="score-1">0</b><span>COMETS</span><i></i>
+          </div>
+          <div
+            id="result-notice"
+            class="result-notice"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            hidden
+          >
+            <strong id="result-title"></strong><span id="result-summary"></span
+            ><small id="result-next"></small>
+          </div>
         </div>
         <div class="scoreboard-bottom">
           <span id="coach-role">YOU COACH EMBERS</span
@@ -75,7 +88,7 @@
           aria-label="Preset audibles"
         ></div>
         <p id="play-message" role="status" aria-live="polite">
-          Choose a play, then manually snap the ball.
+          Choose a play, the quarterback snaps when ready.
         </p>
         <div
           id="penalty-choices"
@@ -86,6 +99,15 @@
         ></div>
         <p id="regroup-status" class="regroup-status" role="status" hidden></p>
         <div class="action-row">
+          <button
+            id="audible-toggle"
+            class="secondary"
+            aria-expanded="false"
+            aria-controls="audible-choices"
+            hidden
+          >
+            Audible
+          </button>
           <button id="action" class="primary">Choose a play</button
           ><button
             id="subs-toggle"
@@ -101,17 +123,6 @@
           </button>
         </div>
       </section>
-      <div
-        id="result-notice"
-        class="result-notice"
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-        hidden
-      >
-        <strong id="result-title"></strong><span id="result-summary"></span
-        ><small id="result-next"></small>
-      </div>
       <div id="replay-banner" class="replay-banner" hidden>
         <span
           ><strong id="replay-angle">REPLAY</strong
@@ -208,8 +219,8 @@
         <p class="eyebrow">SUNSET DOME</p>
         <h1>Stadium sound.</h1>
         <p>
-          Finite contact sounds and whistles, with brief applause after
-          successful plays. Quiet between sounds.
+          Recorded cadence, turf, contact and referee sounds. Brief crowd
+          reactions follow the final result; quiet between plays.
         </p>
         <button id="sound-toggle" class="primary">Enable sound</button>
         <label class="audio-volume"
@@ -231,6 +242,36 @@
         <p id="audio-state" role="status" class="help-note">Sound muted</p>
         <button id="preview-audio" class="secondary">Preview sounds</button>
         <a id="audio-download" hidden>Save this sound preview</a>
+        <details class="help-note">
+          <summary>Sound credits</summary>
+          <p>
+            Material foley and recorded voice:
+            <a
+              href="https://kenney.nl/assets/impact-sounds"
+              target="_blank"
+              rel="noopener"
+              >Kenney</a
+            >, CC0. Metal whistle:
+            <a
+              href="https://freesound.org/people/strongbot/sounds/568995/"
+              target="_blank"
+              rel="noopener"
+              >strongbot</a
+            >, CC0. Football Crowd:
+            <a
+              href="https://soundbible.com/1882-Football-Crowd.html"
+              target="_blank"
+              rel="noopener"
+              >GoGo</a
+            >,
+            <a
+              href="https://creativecommons.org/licenses/by/3.0/"
+              target="_blank"
+              rel="noopener"
+              >CC BY3.0</a
+            >; trimmed, filtered and faded.
+          </p>
+        </details>
       </dialog>
 
       <dialog id="help">
@@ -239,12 +280,13 @@
         <h1>Coach the next play.</h1>
         <p>
           You coach the bright orange Embers. Choose an offensive play, see the
-          formation, then snap. Players handle the action. When Comets have
-          possession, choose defense; their computer coach snaps.
+          formation, the quarterback snaps when ready. Players handle the
+          action. When Comets have possession, choose defense; their computer
+          coach snaps.
         </p>
         <p>
-          After each whistle, players recover, then the offense jogs to a huddle
-          and the defense gathers in small conversational groups. Open Subs to
+          After each whistle, players recover and can gather between calls.
+          An early call sends available players directly to their formation. Open Subs to
           send an eligible Embers reserve; the outgoing player must leave before
           the replacement enters. Names, jerseys and ratings change with the
           player. This scrimmage has a local two-way roster; Comets keep their
@@ -254,8 +296,8 @@
           The result and substitution window is untimed. Call next play starts
           the 20-second play clock. The first clock starts when you open Choose
           a play, never simply from loading the page. It keeps running through
-          selection, exchanges and lineup. An early call waits for regrouping
-          and offensive substitutions to finish. Complete long recoveries or
+          selection, exchanges and lineup. Required offensive recovery, ball
+          spotting and substitutions finish physically. Complete long recoveries or
           exchanges in the untimed window before calling. Snap waits for a
           legally set offense, the ball/current center, completed offensive
           exchanges and an official safely clear of the center. Defensive
@@ -269,8 +311,8 @@
         <p>
           Call next play starts twenty seconds, including selection and
           formation travel. Expiry brings delay of game. You have one timeout
-          for this scrimmage; resume it when ready. Audibles offer two preset
-          alternatives.
+          for this scrimmage; resume it when ready. Audibles remain available during formation with two preset
+          alternatives and do not reset the clock.
         </p>
         <p>
           Drag the field to orbit. Scroll or pinch to zoom. Use the camera menu
@@ -279,10 +321,11 @@
         </p>
         <p>
           The sideline camera follows the ball and adjusts its framing during
-          play. Key plays get a short alternate-angle replay after recovery;
-          Replay can show the last recorded play again. Skip replay, Subs or
-          Call next play returns to the current live scene. Players keep
-          regrouping underneath replay, and a running play clock keeps running.
+          play. Each captured play gets a short, skippable replay before its
+          concise result appears in the top scoreboard. Pending offside shows
+          the actual play first, then Accept/Decline. Replay can show the last
+          recorded play again. Players keep recovering underneath replay, and
+          a running play clock keeps running.
         </p>
         <p class="help-note">
           Development scrimmage: touchdowns are six points and start a new drive
