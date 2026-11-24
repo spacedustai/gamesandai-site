@@ -12,8 +12,8 @@
       content="Two Minute Sports — a playable 3D football coaching scrimmage."
     />
     <title>Two Minute Sports · Coaching Scrimmage</title>
-    <script type="module" crossorigin src="./assets/index-DMtzhVp6.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BpMv1LnV.css">
+    <script type="module" crossorigin src="./assets/index-CnEsZOkn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CNWYOlAZ.css">
   </head>
   <body>
     <main id="app" aria-label="Two Minute Sports coaching scrimmage">
@@ -42,14 +42,13 @@
         </div>
       </header>
       <div class="view-tools">
-        <label
-          ><span class="sr-only">Camera view</span
-          ><select id="camera">
-            <option value="sideline">Sideline</option>
-            <option value="field">Field level</option>
-            <option value="overview">Stadium overview</option>
-          </select></label
-        ><button id="help-button" aria-label="Open scrimmage help" title="Help">
+        <button id="camera" aria-label="Choose camera view" title="Camera view">
+          ▣ <span>Camera</span>
+        </button>
+        <button id="roster-button" aria-label="Open team roster" title="Roster">
+          ▦ <span>Roster</span>
+        </button>
+        <button id="help-button" aria-label="Open scrimmage help" title="Help">
           ?
         </button>
         <button
@@ -69,17 +68,6 @@
           <span id="tray-title">CALL YOUR OFFENSE</span
           ><span id="formation-info"></span>
         </div>
-        <label id="play-library-controls" class="play-library-controls" hidden>
-          <span>CALL FAMILY</span
-          ><select id="play-category" aria-label="Play category"></select
-          ><small id="play-library-count"></small>
-        </label>
-        <div
-          id="play-choices"
-          class="play-choices"
-          role="group"
-          aria-label="Available plays"
-        ></div>
         <div
           id="audible-choices"
           class="audible-choices"
@@ -90,27 +78,8 @@
           Choose a play, then manually snap the ball.
         </p>
         <p id="regroup-status" class="regroup-status" role="status" hidden></p>
-        <section id="sub-panel" aria-label="Embers substitutions" hidden>
-          <div class="sub-fields">
-            <label
-              >Player off<select id="sub-slot" aria-label="Player off"></select
-            ></label>
-            <label
-              >Reserve on<select
-                id="sub-reserve"
-                aria-label="Reserve on"
-              ></select
-            ></label>
-          </div>
-          <p id="sub-comparison"></p>
-          <button id="send-sub" class="primary">Send replacement</button>
-          <p class="sub-note">
-            Local scrimmage roster · 11 assigned + 4 reserves per team. You
-            substitute Embers; Comets retain their lineup.
-          </p>
-        </section>
         <div class="action-row">
-          <button id="action" class="primary" disabled>Choose a play</button
+          <button id="action" class="primary">Choose a play</button
           ><button
             id="subs-toggle"
             class="secondary"
@@ -149,13 +118,85 @@
           >PLAY LIVE · WATCH YOUR TEAM EXECUTE</span
         >
       </div>
+      <dialog id="play-dialog" aria-labelledby="play-dialog-title">
+        <button
+          id="close-plays"
+          class="dialog-close"
+          aria-label="Close playbook"
+        >
+          Close
+        </button>
+        <h2 id="play-dialog-title">Call the next play</h2>
+        <p class="choice-clock exchange-clock"></p>
+        <p class="help-note">
+          Choose a call family, then a play. The play clock continues.
+        </p>
+        <div id="play-library-controls" class="play-library-controls" hidden>
+          <span>CALL FAMILY</span
+          ><button
+            id="play-category"
+            aria-label="Choose call family"
+            class="secondary"
+          >
+            Familiar calls</button
+          ><small id="play-library-count"></small>
+        </div>
+        <div
+          id="play-choices"
+          class="play-choices"
+          role="group"
+          aria-label="Available plays"
+        ></div>
+      </dialog>
+      <dialog id="sub-panel" aria-labelledby="sub-title">
+        <button
+          id="close-subs"
+          class="dialog-close"
+          aria-label="Close substitutions"
+        >
+          Close
+        </button>
+        <h2 id="sub-title">Send a replacement</h2>
+        <p id="sub-clock" class="exchange-clock" role="status"></p>
+        <div class="sub-fields">
+          <div>
+            <span>PLAYER OFF</span
+            ><button id="sub-slot" class="roster-pick"></button>
+          </div>
+          <div>
+            <span>RESERVE ON</span
+            ><button id="sub-reserve" class="roster-pick"></button>
+          </div>
+        </div>
+        <p id="sub-comparison"></p>
+        <button id="send-sub" class="primary">Send replacement</button>
+        <p class="sub-note">
+          Embers local roster. Exit first, then entry. Choose replacements in
+          the untimed result window for more time. The clock runs after Call
+          next play; this dialog does not pause it.
+        </p>
+      </dialog>
+      <dialog id="roster-dialog" aria-labelledby="roster-title">
+        <button
+          id="close-roster"
+          class="dialog-close"
+          aria-label="Close player information"
+        >
+          Close
+        </button>
+        <h2 id="roster-title">Team roster</h2>
+        <p class="choice-clock exchange-clock"></p>
+        <div id="roster-tabs" class="roster-tabs"></div>
+        <p id="roster-note"></p>
+        <div id="roster-cards"></div>
+      </dialog>
       <dialog id="audio-settings">
         <button
           id="close-audio"
           class="dialog-close"
           aria-label="Close sound settings"
         >
-          ×
+          Close
         </button>
         <p class="eyebrow">SUNSET DOME</p>
         <h1>Stadium sound.</h1>
@@ -186,7 +227,7 @@
       </dialog>
 
       <dialog id="help">
-        <button id="close-help" aria-label="Close help">×</button>
+        <button id="close-help" aria-label="Close help">Close</button>
         <p class="eyebrow">TWO MINUTE SPORTS</p>
         <h1>Coach the next play.</h1>
         <p>
@@ -206,8 +247,9 @@
           The result and substitution window is untimed. Call next play starts
           the 40-second play clock. It keeps running through selection,
           exchanges and lineup. An early call waits for regrouping and
-          substitutions to finish. Snap stays locked until everyone reaches
-          formation.
+          substitutions to finish. Snap waits for a legally set offense, the
+          ball/current center, completed exchanges and a clear official.
+          Defenders may keep moving on their side.
         </p>
         <p>
           The play clock starts at 40 seconds during selection. Expiry brings
@@ -216,7 +258,8 @@
         </p>
         <p>
           Drag the field to orbit. Scroll or pinch to zoom. Use the camera menu
-          for a lower sideline, a close field view, or the full stadium.
+          for a lower sideline, a close field view, or a tilted stadium
+          overview. Tap a player or open Roster to inspect actual abilities.
         </p>
         <p>
           The sideline camera follows the ball and adjusts its framing during
