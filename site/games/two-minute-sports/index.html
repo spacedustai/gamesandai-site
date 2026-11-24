@@ -12,8 +12,8 @@
       content="Two Minute Sports — a playable 3D football coaching scrimmage."
     />
     <title>Two Minute Sports · Coaching Scrimmage</title>
-    <script type="module" crossorigin src="./assets/index-CnEsZOkn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CNWYOlAZ.css">
+    <script type="module" crossorigin src="./assets/index-CprdJjYV.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DuH36DVS.css">
   </head>
   <body>
     <main id="app" aria-label="Two Minute Sports coaching scrimmage">
@@ -37,7 +37,7 @@
         </div>
         <div class="scoreboard-bottom">
           <span id="coach-role">YOU COACH EMBERS</span
-          ><span class="clock-label">PLAY <b id="play-clock">40</b></span
+          ><span class="clock-label">PLAY <b id="play-clock">—</b></span
           ><span id="phase-label">SELECT PLAY</span>
         </div>
       </header>
@@ -77,6 +77,13 @@
         <p id="play-message" role="status" aria-live="polite">
           Choose a play, then manually snap the ball.
         </p>
+        <div
+          id="penalty-choices"
+          class="penalty-choices"
+          role="group"
+          aria-label="Offside penalty decision"
+          hidden
+        ></div>
         <p id="regroup-status" class="regroup-status" role="status" hidden></p>
         <div class="action-row">
           <button id="action" class="primary">Choose a play</button
@@ -245,16 +252,25 @@
         </p>
         <p>
           The result and substitution window is untimed. Call next play starts
-          the 40-second play clock. It keeps running through selection,
-          exchanges and lineup. An early call waits for regrouping and
-          substitutions to finish. Snap waits for a legally set offense, the
-          ball/current center, completed exchanges and a clear official.
-          Defenders may keep moving on their side.
+          the 10-second play clock. The first clock starts when you open Choose
+          a play, never simply from loading the page. It keeps running through
+          selection, exchanges and lineup. An early call waits for regrouping
+          and offensive substitutions to finish. Complete long recoveries or
+          exchanges in the untimed window before calling. Snap waits for a
+          legally set offense, the ball/current center, completed offensive
+          exchanges and an official safely clear of the center. Defensive
+          gatherings and substitutions do not hold the offense. Defenders keep
+          their actual positions and motion. A defender in or beyond the neutral
+          zone at the snap draws offside; play continues, then the offensive
+          coach may accept the five-yard penalty or keep the play. Impending
+          contact or an unobstructed moving rusher is whistled dead before the
+          snap.
         </p>
         <p>
-          The play clock starts at 40 seconds during selection. Expiry brings
-          delay of game. You have one timeout for this scrimmage; resume it when
-          ready. Audibles offer two preset alternatives.
+          Call next play starts ten seconds, including selection and formation
+          travel. Expiry brings delay of game. You have one timeout for this
+          scrimmage; resume it when ready. Audibles offer two preset
+          alternatives.
         </p>
         <p>
           Drag the field to orbit. Scroll or pinch to zoom. Use the camera menu
