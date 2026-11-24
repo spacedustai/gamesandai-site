@@ -12,8 +12,8 @@
       content="Two Minute Sports — a playable 3D football coaching scrimmage."
     />
     <title>Two Minute Sports · Coaching Scrimmage</title>
-    <script type="module" crossorigin src="./assets/index-Djr7Ehdl.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BahvUYFO.css">
+    <script type="module" crossorigin src="./assets/index-B1M-4EuH.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CTrYGlee.css">
   </head>
   <body>
     <main id="app" aria-label="Two Minute Sports coaching scrimmage">
@@ -118,7 +118,7 @@
           >
             Subs</button
           ><button id="replay-last" class="secondary" hidden>Replay</button
-          ><button id="timeout" class="secondary" disabled>
+          ><button id="timeout" class="secondary" hidden disabled>
             Timeout <span id="timeout-count">1</span>
           </button>
         </div>
@@ -146,10 +146,9 @@
             Close
           </button>
           <h2 id="play-dialog-title">Call the next play</h2>
-          <p class="choice-clock exchange-clock"></p>
-          <p class="help-note">
-            Choose a call family, then a play. The play clock continues.
-          </p>
+          <div id="play-clock-tools" class="choice-status">
+            <p class="choice-clock exchange-clock"></p>
+          </div>
           <div id="play-library-controls" class="play-library-controls" hidden>
             <span>CALL FAMILY</span
             ><button
