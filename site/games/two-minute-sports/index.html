@@ -12,7 +12,7 @@
       content="Two Minute Sports — a playable 3D football coaching scrimmage."
     />
     <title>Two Minute Sports · Coaching Scrimmage</title>
-    <script type="module" crossorigin src="./assets/index-D6K4pb-_.js"></script>
+    <script type="module" crossorigin src="./assets/index-Dc4LWgR_.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-ANwQ0ivi.css">
   </head>
   <body>
@@ -50,6 +50,7 @@
         </div>
         <div class="scoreboard-bottom">
           <span id="coach-role">YOU COACH EMBERS</span
+          ><span class="clock-label">GAME <b id="game-clock" role="timer" aria-label="Game time remaining">2:00</b></span
           ><span class="clock-label">PLAY <b id="play-clock">—</b></span
           ><span id="phase-label">SELECT PLAY</span>
         </div>
@@ -191,8 +192,8 @@
         <button id="send-sub" class="primary">Send replacement</button>
         <p class="sub-note">
           Embers local roster. Exit first, then entry. Choose replacements in
-          the untimed result window for more time. The clock runs after Call
-          next play; this dialog does not pause it.
+          the result window before calling. The game clock can still run after
+          an inbounds play; this dialog does not pause either clock.
         </p>
       </dialog>
       <dialog id="roster-dialog" aria-labelledby="roster-title">
@@ -294,12 +295,12 @@
           lineup.
         </p>
         <p>
-          The result and substitution window is untimed. Call next play starts
+          The play clock is stopped during results and substitutions. Call next play starts
           the 20-second play clock. The first clock starts when you open Choose
           a play, never simply from loading the page. It keeps running through
           selection, exchanges and lineup. Required offensive recovery, ball
           spotting and substitutions finish physically. Complete long recoveries or
-          exchanges in the untimed window before calling. Snap waits for a
+          exchanges before calling. Snap waits for a
           legally set offense, the ball/current center, completed offensive
           exchanges and an official safely clear of the center. Defensive
           gatherings and substitutions do not hold the offense. Defenders keep
@@ -312,7 +313,7 @@
         <p>
           Call next play starts twenty seconds, including selection and
           formation travel. Expiry brings delay of game. You have one timeout
-          for this scrimmage; resume it when ready. Audibles remain available during formation with two preset
+          for this game; resume it when ready. Audibles remain available during formation with two preset
           alternatives and do not reset the clock.
         </p>
         <p>
@@ -322,20 +323,23 @@
         </p>
         <p>
           The sideline camera follows the ball and adjusts its framing during
-          play. Each captured play gets a short, skippable replay before its
-          concise result appears in the top scoreboard. Pending offside shows
+          play. The concise result appears in the scoreboard at the whistle, followed
+          by a short, skippable replay. Pending offside shows
           the actual play first, then Accept/Decline. Replay can show the last
           recorded play again. Players keep recovering underneath replay, and
           a running play clock keeps running.
         </p>
         <p class="help-note">
-          Development scrimmage: touchdowns are six points and start a new drive
-          at the other team's 25. Special teams, full matches, saving, and
-          online play come later. The two-minute game-clock policy remains
-          undecided; only the play clock runs. Help does not pause it.
+          Two-minute game: GAME time starts at the first snap and continues
+          between inbounds plays. Incompletions, out of bounds, scores, possession
+          changes, penalties and timeouts stop it until the next snap. Replay
+          pauses it; menus do not. A live final play finishes at 0:00. An accepted
+          defensive offside can grant an untimed down. Regulation ties are shown
+          as ties; overtime and special teams are still to come. Touchdowns
+          currently start the other team at its 25. Saving and online play come later.
         </p>
         <p id="render-status" class="help-note">Initializing graphics…</p>
-        <button id="reset" class="secondary">New scrimmage</button>
+        <button id="reset" class="secondary">New two-minute game</button>
         <button id="reset-defense" class="secondary">Start on defense</button>
         <button id="reset-short" class="secondary">Defend 3rd &amp; 3</button>
       </dialog>
