@@ -20,14 +20,102 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/configure-pages@v6
-      - uses: actions/upload-pages-artifact@v5
+      - id: upload
+        uses: actions/upload-pages-artifact@v5
         with:
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
           path: site
+      - name: Wait for Pages artifact metadata
+        uses: actions/github-script@v8
+        timeout-minutes: 4
+        env:
+          EXPECTED_ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+        with:
+          script: |
+            const token = process.env.ACTIONS_RUNTIME_TOKEN;
+            const resultsUrl = process.env.ACTIONS_RESULTS_URL;
+            const name = process.env.PAGES_ARTIFACT_NAME;
+            const expectedId = process.env.EXPECTED_ARTIFACT_ID;
+            if (!token || !resultsUrl) throw new Error('Artifact runtime credentials unavailable');
+            core.setSecret(token);
+            if (name !== `github-pages-${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}` || !/^[1-9]\d*$/.test(expectedId || '')) {
+              throw new Error('Missing or inconsistent uploaded artifact identity');
+            }
+
+            // Use the same runtime scope and ListArtifacts endpoint as deploy-pages.
+            let scope;
+            try {
+              const claims = JSON.parse(Buffer.from(token.split('.')[1], 'base64url').toString());
+              scope = claims.scp.split(' ').find(value => value.startsWith('Actions.Results:'))?.split(':');
+            } catch {
+              throw new Error('Invalid artifact runtime scope');
+            }
+            if (scope?.length !== 3 || !scope[1] || !scope[2]) throw new Error('Invalid artifact runtime scope');
+            const url = new URL('/twirp/github.actions.results.api.v1.ArtifactService/ListArtifacts', resultsUrl);
+            if (url.protocol !== 'https:') throw new Error('Artifact service requires HTTPS');
+            const body = JSON.stringify({ workflowRunBackendId: scope[1], workflowJobRunBackendId: scope[2] });
+            const deadline = Date.now() + 120000;
+            let state = 'artifact not visible';
+            while (Date.now() < deadline) {
+              let response, payload;
+              try {
+                response = await fetch(url, {
+                  method: 'POST',
+                  headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                  body,
+                  redirect: 'error',
+                  signal: AbortSignal.timeout(Math.min(10000, Math.max(1, deadline - Date.now())))
+                });
+                if (response.ok) payload = await response.json();
+              } catch {
+                state = 'metadata request unavailable';
+                response = undefined;
+              }
+              if (response && !response.ok) {
+                if (response.status !== 429 && response.status < 500) {
+                  throw new Error(`Artifact metadata request failed: HTTP ${response.status}`);
+                }
+                state = `metadata service HTTP ${response.status}`;
+              }
+              if (payload !== undefined) {
+                if (!payload || typeof payload !== 'object' || Array.isArray(payload)) throw new Error('Invalid artifact metadata response');
+                const artifacts = payload.artifacts ?? [];
+                if (!Array.isArray(artifacts)) throw new Error('Invalid artifact metadata response');
+                const matches = artifacts.filter(artifact => artifact?.name === name);
+                if (matches.length > 1) throw new Error('Multiple artifacts match this run attempt');
+                if (matches.length === 1) {
+                  const artifact = matches[0];
+                  if (String(artifact.databaseId ?? artifact.database_id) !== expectedId) {
+                    throw new Error('Artifact ID does not match this upload');
+                  }
+                  const run = artifact.workflowRunBackendId ?? artifact.workflow_run_backend_id;
+                  const job = artifact.workflowJobRunBackendId ?? artifact.workflow_job_run_backend_id;
+                  if ((run && run !== scope[1]) || (job && job !== scope[2])) {
+                    throw new Error('Artifact belongs to a different runtime scope');
+                  }
+                  if (/^[1-9]\d*$/.test(String(artifact.size))) {
+                    core.info(`Pages artifact ${name} (${expectedId}) is visible to the deployment API`);
+                    return;
+                  }
+                  state = 'artifact size not ready';
+                } else {
+                  state = 'artifact not visible';
+                }
+              }
+              core.info(`Waiting for Pages artifact metadata: ${state}`);
+              const delay = Math.min(5000, deadline - Date.now());
+              if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));
+            }
+            throw new Error(`Pages artifact metadata not ready after 120 seconds: ${state}`);
       - id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
