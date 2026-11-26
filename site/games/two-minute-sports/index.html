@@ -12,8 +12,8 @@
       content="Two Minute Sports — a playable 3D football coaching scrimmage."
     />
     <title>Two Minute Sports · Coaching Scrimmage</title>
-    <script type="module" crossorigin src="./assets/index-CDkgLIP8.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DuwdPIl4.css">
+    <script type="module" crossorigin src="./assets/index-Ppxipvef.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-juEueymY.css">
   </head>
   <body>
     <main id="app" aria-label="Two Minute Sports coaching scrimmage">
@@ -50,11 +50,14 @@
         </div>
         <div class="scoreboard-bottom">
           <span id="coach-role">YOU COACH EMBERS</span
-          ><span class="clock-label">GAME <b id="game-clock" role="timer" aria-label="Game time remaining">2:00</b></span
           ><span class="clock-label">PLAY <b id="play-clock">—</b></span
           ><span id="phase-label">SELECT PLAY</span>
         </div>
       </header>
+      <div class="game-time">
+        <span>GAME</span>
+        <b id="game-clock" role="timer" aria-label="Game time remaining">2:00</b>
+      </div>
       <div class="view-tools">
         <button id="camera" aria-label="Choose camera view" title="Camera view">
           ▣ <span>Camera</span>
@@ -78,6 +81,10 @@
         class="coaching-tray"
         aria-label="Coaching controls"
       >
+        <div id="final-score" class="final-score" role="status" aria-atomic="true" hidden>
+          <h2 id="final-title"></h2>
+          <p id="final-points"></p>
+        </div>
         <div class="tray-heading">
           <span id="tray-title">CALL YOUR OFFENSE</span
           ><span id="formation-info"></span>
