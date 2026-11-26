@@ -12,8 +12,8 @@
       content="Two Minute Sports — a playable 3D football coaching scrimmage."
     />
     <title>Two Minute Sports · Coaching Scrimmage</title>
-    <script type="module" crossorigin src="./assets/index-BvxqDufn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-juEueymY.css">
+    <script type="module" crossorigin src="./assets/index-CZFhpG7N.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dr0S6ClP.css">
   </head>
   <body>
     <main id="app" aria-label="Two Minute Sports coaching scrimmage">
@@ -49,8 +49,8 @@
           </div>
         </div>
         <div class="scoreboard-bottom">
-          <span id="coach-role">YOU COACH EMBERS</span
-          ><span class="clock-label">PLAY <b id="play-clock">—</b></span
+          <span id="coach-role">YOU COACH EMBERS</span>
+          <span id="result-score"></span><span class="clock-label">PLAY <b id="play-clock">—</b></span
           ><span id="phase-label">SELECT PLAY</span>
         </div>
       </header>
@@ -70,10 +70,10 @@
         </button>
         <button
           id="audio-button"
-          aria-label="Open sound settings"
-          title="Sound settings"
+          aria-label="Mute game sound"
+          title="Mute game sound"
         >
-          ♪
+          Mute
         </button>
       </div>
       <section
@@ -232,7 +232,7 @@
           Recorded cadence, turf, contact and referee sounds. Brief crowd
           reactions follow the final result; quiet between plays.
         </p>
-        <button id="sound-toggle" class="primary">Enable sound</button>
+        <button id="sound-toggle" class="primary">Mute sound</button>
         <label class="audio-volume"
           >Volume <output id="volume-value">60%</output
           ><input
@@ -249,7 +249,7 @@
         <p id="voice-status" class="help-note">
           Uses a neutral voice supplied by your browser.
         </p>
-        <p id="audio-state" role="status" class="help-note">Sound muted</p>
+        <p id="audio-state" role="status" class="help-note">Sound on</p>
         <button id="preview-audio" class="secondary">Preview sounds</button>
         <a id="audio-download" hidden>Save this sound preview</a>
         <details class="help-note">
@@ -289,6 +289,7 @@
         <button id="close-help" aria-label="Close help">Close</button>
         <p class="eyebrow">TWO MINUTE SPORTS</p>
         <h1>Coach the next play.</h1>
+        <button id="open-audio-settings" class="secondary">Sound settings</button>
         <p>
           You coach the bright orange Embers. Choose an offensive play, see the
           formation, the quarterback snaps when ready. Players handle the
@@ -332,8 +333,8 @@
         </p>
         <p>
           The sideline camera follows the ball and adjusts its framing during
-          play. The concise result appears in the scoreboard at the whistle, followed
-          by a short, skippable replay. Pending offside shows
+          play. The scoreboard shows the result from the whistle through the replay.
+          When the replay ends or you skip it, the scoreboard shows the next down. Pending offside shows
           the actual play first, then Accept/Decline. Replay can show the last
           recorded play again. Players keep recovering underneath replay, and
           a running play clock keeps running.
